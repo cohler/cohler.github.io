@@ -1,24 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
   <title>Jonathan Cohler — Papers</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-    h1 { color: #333; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 15px 0; }
-    a { text-decoration: none; color: #0066cc; font-size: 1.1em; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 30px;
+    }
+    h1 {
+      font-size: 2.4em;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 1.35em;
+      color: #555;
+      margin-bottom: 40px;
+    }
+    .paper-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .paper-item {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #eee;
+    }
+    .paper-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .paper-title {
+      font-size: 1.35em;
+      font-weight: 600;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .paper-title:hover {
+      text-decoration: underline;
+    }
+    .paper-date {
+      color: #666;
+      font-size: 1.05em;
+      margin-top: 4px;
+    }
+    .intro {
+      font-size: 1.15em;
+      color: #444;
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+    footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+      font-size: 0.95em;
+      color: #777;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>Jonathan Cohler — Papers</h1>
-  <p>Preprints and published papers with full landing pages</p>
-  
-  <ul>
-    <!-- Add your papers here later, one line per paper -->
-    <li><a href="https://papers.jcohler.com/your-first-paper-slug/">Your First Paper Title (2026)</a></li>
-  </ul>
-  
-  <p><small>All PDFs are hosted on my own server for speed and reliability.</small></p>
+  <div class="container">
+    <h1>Jonathan Cohler</h1>
+    <p class="subtitle">Preprints and published works</p>
+
+    <p class="intro">
+      This page provides direct access to my preprints and published papers, each with a full landing page containing the complete abstract, PDF download, and citation information.
+    </p>
+
+    <ul class="paper-list">
+      <li class="paper-item">
+        <a href="https://papers.jcohler.com/physical-tether-theorem/" class="paper-title">
+          The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics
+        </a>
+        <div class="paper-date">Preprint • March 28, 2026</div>
+      </li>
+      
+      <!-- Add future papers here in the same format -->
+    </ul>
+
+    <footer>
+      Questions or comments: <a href="mailto:cohler@post.harvard.edu">cohler@post.harvard.edu</a>
+    </footer>
+  </div>
 </body>
 </html>
