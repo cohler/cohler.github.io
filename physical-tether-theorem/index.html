@@ -67,7 +67,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
     }
-    select { padding: 8px 12px; font-size: 1em; margin-bottom: 15px; }
+    select { padding: 8px 12px; font-size: 1em; margin-bottom: 15px; width: 100%; }
     .cite-text {
       font-family: monospace;
       background: #fff;
@@ -81,17 +81,17 @@
       background: #0066cc;
       color: white;
       border: none;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 12px;
+      width: 100%;
     }
     .copy-btn:hover { background: #0055aa; }
   </style>
 </head>
 <body>
 
-  <!-- Back link -->
   <a href="https://papers.jcohler.com/" class="back-link">← All Papers</a>
 
   <h1>The Physical Tether Theorem:<br>
@@ -115,10 +115,9 @@
     <p><strong>Key Result:</strong> The GMST construct is physically meaningless.</p>
   </div>
 
-  <!-- Stats right above download button -->
   <div class="stats">
     <div class="stat">👁️ <span id="viewCount">0</span></div>
-    <div class="stat">⬇️ <span id="downloadCount">0</span></div>
+    <div class="stat">📥 <span id="downloadCount">0</span></div>
   </div>
 
   <a href="physical-tether-theorem.pdf" class="download-btn" id="downloadBtn">↓ Download Full PDF</a>
@@ -133,10 +132,12 @@
       <option value="bibtex">BibTeX</option>
     </select>
     <div id="citationText" class="cite-text"></div>
-    <button class="copy-btn" onclick="copyCitation()">Copy to Clipboard</button>
+    <button class="copy-btn" onclick="copyCitation()">📋 Copy to Clipboard</button>
   </div>
 
   <script>
+    console.log("✅ Counter script loaded");
+
     const PAGE_ID = "physical-tether-theorem";
     const VIEW_KEY = `views-${PAGE_ID}`;
     const DOWNLOAD_KEY = `downloads-${PAGE_ID}`;
@@ -145,38 +146,30 @@
       try {
         const res = await fetch(`https://api.countapi.xyz/get/cohler-papers/${key}`);
         const data = await res.json();
+        console.log(`Count for ${key}:`, data.value);
         return data.value || 0;
-      } catch(e) { return 0; }
+      } catch(e) {
+        console.error("CountAPI get failed:", e);
+        return 0;
+      }
     }
 
     async function incrementCount(key) {
       try {
-        await fetch(`https://api.countapi.xyz/hit/cohler-papers/${key}`);
-      } catch(e) {}
+        console.log(`Incrementing ${key}...`);
+        const res = await fetch(`https://api.countapi.xyz/hit/cohler-papers/${key}`);
+        const data = await res.json();
+        console.log(`Incremented ${key} →`, data.value);
+        return data.value;
+      } catch(e) {
+        console.error("CountAPI hit failed:", e);
+        return 0;
+      }
     }
 
     async function updateCounters() {
       document.getElementById("viewCount").textContent = await getCount(VIEW_KEY);
       document.getElementById("downloadCount").textContent = await getCount(DOWNLOAD_KEY);
-    }
-
-    // Citation data
-    const citationData = {
-      apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
-      mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
-      chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
-      harvard: "Cohler, J. 2026. 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics'. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
-      bibtex: `@misc{cohler2026physicaltether,\n  title        = {The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics},\n  author       = {Cohler, Jonathan},\n  year         = {2026},\n  month        = {March},\n  day          = {28},\n  howpublished = {Preprint at \\url{https://papers.jcohler.com/physical-tether-theorem/}},\n  note         = {Available at \\url{https://papers.jcohler.com/physical-tether-theorem/}}\n}`
-    };
-
-    function updateCitation() {
-      const style = document.getElementById('citationStyle').value;
-      document.getElementById('citationText').textContent = citationData[style];
-    }
-
-    function copyCitation() {
-      const text = document.getElementById('citationText').textContent;
-      navigator.clipboard.writeText(text).then(() => alert('Citation copied to clipboard!'));
     }
 
     // Track download clicks
@@ -185,10 +178,12 @@
       setTimeout(updateCounters, 600);
     });
 
-    window.onload = () => {
-      incrementCount(VIEW_KEY);
-      setTimeout(updateCounters, 800);
-      updateCitation();
+    // On page load
+    window.onload = async () => {
+      console.log("Page loaded - incrementing view count");
+      await incrementCount(VIEW_KEY);
+      await updateCounters();
+      updateCitation();   // show citation dropdown
     };
   </script>
 
