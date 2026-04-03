@@ -33,14 +33,13 @@
       margin: 0;
     }
     .paper-item {
-      margin-bottom: 28px;
+      margin-bottom: 32px;
       padding-bottom: 28px;
       border-bottom: 1px solid #eee;
     }
     .paper-item:last-child {
       border-bottom: none;
       padding-bottom: 0;
-      margin-bottom: 0;
     }
     .paper-title {
       font-size: 1.35em;
@@ -56,23 +55,24 @@
       font-size: 1.05em;
       margin-top: 4px;
     }
+    .paper-stats {
+      margin-top: 8px;
+      display: flex;
+      gap: 20px;
+      font-size: 0.95em;
+      color: #555;
+    }
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .intro {
       font-size: 1.15em;
       color: #444;
       max-width: 700px;
       margin-bottom: 45px;
     }
-    .stats {
-      margin: 20px 0 40px 0;
-      padding: 12px 20px;
-      background: #f4f4f4;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-    .stat-item { font-weight: 600; }
     footer {
       margin-top: 80px;
       padding-top: 30px;
@@ -88,13 +88,8 @@
     <h1>Jonathan Cohler — Papers</h1>
     <p class="subtitle">Preprints and published works</p>
 
-    <!-- Total visits counter -->
-    <div class="stats">
-      <div class="stat-item">Total Visits: <span id="viewCount">0</span></div>
-    </div>
-
     <p class="intro">
-      This page provides direct access to my preprints and published papers, each with a full landing page containing the complete abstract, PDF download, citation information, and live view/download statistics.
+      This page provides direct access to my preprints and published papers, each with a full landing page containing the complete abstract, PDF download, citation information, and live statistics.
     </p>
 
     <ul class="paper-list">
@@ -103,41 +98,45 @@
           The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics
         </a>
         <div class="paper-date">Preprint • March 28, 2026</div>
+        <div class="paper-stats">
+          <div class="stat">👁️ <span id="views-physical-tether-theorem">0</span></div>
+          <div class="stat">⬇️ <span id="downloads-physical-tether-theorem">0</span></div>
+        </div>
       </li>
-      
+
       <!-- Add future papers here in the same format -->
     </ul>
 
     <footer>
+      All PDFs are hosted directly on my server for maximum speed and reliability.<br>
       Questions or comments: <a href="mailto:cohler@post.harvard.edu">cohler@post.harvard.edu</a>
     </footer>
   </div>
 
   <script>
-    const VIEW_KEY = "index-views";
+    // CountAPI namespace for your site
+    const NAMESPACE = "cohler-papers";
 
     async function getCount(key) {
       try {
-        const res = await fetch(`https://api.countapi.xyz/get/cohler-papers/${key}`);
+        const res = await fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${key}`);
         const data = await res.json();
         return data.value || 0;
       } catch(e) { return 0; }
     }
 
-    async function incrementCount(key) {
-      try {
-        await fetch(`https://api.countapi.xyz/hit/cohler-papers/${key}`);
-      } catch(e) {}
+    async function updateAllCounters() {
+      // Update the tether paper counters
+      document.getElementById("views-physical-tether-theorem").textContent = 
+        await getCount("views-physical-tether-theorem");
+      
+      document.getElementById("downloads-physical-tether-theorem").textContent = 
+        await getCount("downloads-physical-tether-theorem");
+      
+      // Add more papers here later with the same pattern
     }
 
-    async function updateCounters() {
-      document.getElementById("viewCount").textContent = await getCount(VIEW_KEY);
-    }
-
-    window.onload = () => {
-      incrementCount(VIEW_KEY);   // count this visit to the main index
-      updateCounters();           // show current total
-    };
+    window.onload = updateAllCounters;
   </script>
 </body>
 </html>
