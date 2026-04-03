@@ -62,6 +62,17 @@
       max-width: 700px;
       margin-bottom: 45px;
     }
+    .stats {
+      margin: 20px 0 40px 0;
+      padding: 12px 20px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      font-size: 1.1em;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .stat-item { font-weight: 600; }
     footer {
       margin-top: 80px;
       padding-top: 30px;
@@ -74,11 +85,16 @@
 </head>
 <body>
   <div class="container">
-    <h1>Jonathan Cohler</h1>
+    <h1>Jonathan Cohler — Papers</h1>
     <p class="subtitle">Preprints and published works</p>
 
+    <!-- Total visits counter -->
+    <div class="stats">
+      <div class="stat-item">Total Visits: <span id="viewCount">0</span></div>
+    </div>
+
     <p class="intro">
-      This page provides direct access to my preprints and published papers, each with a full landing page containing the complete abstract, PDF download, and citation information.
+      This page provides direct access to my preprints and published papers, each with a full landing page containing the complete abstract, PDF download, citation information, and live view/download statistics.
     </p>
 
     <ul class="paper-list">
@@ -96,5 +112,32 @@
       Questions or comments: <a href="mailto:cohler@post.harvard.edu">cohler@post.harvard.edu</a>
     </footer>
   </div>
+
+  <script>
+    const VIEW_KEY = "index-views";
+
+    async function getCount(key) {
+      try {
+        const res = await fetch(`https://api.countapi.xyz/get/cohler-papers/${key}`);
+        const data = await res.json();
+        return data.value || 0;
+      } catch(e) { return 0; }
+    }
+
+    async function incrementCount(key) {
+      try {
+        await fetch(`https://api.countapi.xyz/hit/cohler-papers/${key}`);
+      } catch(e) {}
+    }
+
+    async function updateCounters() {
+      document.getElementById("viewCount").textContent = await getCount(VIEW_KEY);
+    }
+
+    window.onload = () => {
+      incrementCount(VIEW_KEY);   // count this visit to the main index
+      updateCounters();           // show current total
+    };
+  </script>
 </body>
 </html>
