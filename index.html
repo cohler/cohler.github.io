@@ -55,17 +55,28 @@
       font-size: 1.05em;
       margin-top: 4px;
     }
-    .paper-stats {
-      margin-top: 8px;
+    .paper-actions {
+      margin-top: 10px;
       display: flex;
+      align-items: center;
       gap: 20px;
       font-size: 0.95em;
-      color: #555;
     }
     .stat {
       display: flex;
       align-items: center;
       gap: 6px;
+      color: #555;
+    }
+    .action-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .action-link:hover {
+      text-decoration: underline;
     }
     .intro {
       font-size: 1.15em;
@@ -89,7 +100,7 @@
     <p class="subtitle">Preprints and published works</p>
 
     <p class="intro">
-      This page provides direct access to my preprints and published papers, each with a full landing page containing the complete abstract, PDF download, citation information, and live statistics.
+      Direct access to my papers with full landing pages, abstracts, live statistics, instant PDF download, and citation options.
     </p>
 
     <ul class="paper-list">
@@ -98,13 +109,33 @@
           The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics
         </a>
         <div class="paper-date">Preprint • March 28, 2026</div>
-        <div class="paper-stats">
+
+        <div class="paper-actions">
           <div class="stat">👁️ <span id="views-physical-tether-theorem">0</span></div>
-          <div class="stat">⬇️ <span id="downloads-physical-tether-theorem">0</span></div>
+          <div class="stat">📥 <span id="downloads-physical-tether-theorem">0</span></div>
+          
+          <!-- Direct PDF download link -->
+          <a href="https://papers.jcohler.com/physical-tether-theorem/physical-tether-theorem.pdf" class="action-link">
+            ⬇️ Download PDF
+          </a>
+
+          <!-- Citation dropdown (same as before) -->
+          <a href="#" onclick="toggleCitation(this); return false;" class="action-link">
+            📋 Cite
+          </a>
+          <div class="citation-box" style="display:none;">
+            <select id="citationStyle-physical-tether-theorem" onchange="updateCitation(this)" style="width:100%; margin-bottom:10px;">
+              <option value="apa">APA</option>
+              <option value="mla">MLA</option>
+              <option value="chicago">Chicago</option>
+              <option value="harvard">Harvard</option>
+              <option value="bibtex">BibTeX</option>
+            </select>
+            <div id="citationText-physical-tether-theorem" class="cite-text" style="font-size:0.9em;"></div>
+            <button onclick="copyCitation(this)" style="width:100%; margin-top:10px;">Copy to Clipboard</button>
+          </div>
         </div>
       </li>
-
-      <!-- Add future papers here in the same format -->
     </ul>
 
     <footer>
@@ -114,7 +145,6 @@
   </div>
 
   <script>
-    // CountAPI namespace for your site
     const NAMESPACE = "cohler-papers";
 
     async function getCount(key) {
@@ -126,14 +156,37 @@
     }
 
     async function updateAllCounters() {
-      // Update the tether paper counters
       document.getElementById("views-physical-tether-theorem").textContent = 
         await getCount("views-physical-tether-theorem");
-      
       document.getElementById("downloads-physical-tether-theorem").textContent = 
         await getCount("downloads-physical-tether-theorem");
-      
-      // Add more papers here later with the same pattern
+    }
+
+    // Citation data (same as before)
+    const citationData = {
+      apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
+      mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+      chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
+      harvard: "Cohler, J. 2026. 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics'. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+      bibtex: `@misc{cohler2026physicaltether,\n  title        = {The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics},\n  author       = {Cohler, Jonathan},\n  year         = {2026},\n  month        = {March},\n  day          = {28},\n  howpublished = {Preprint at \\url{https://papers.jcohler.com/physical-tether-theorem/}},\n  note         = {Available at \\url{https://papers.jcohler.com/physical-tether-theorem/}}\n}`
+    };
+
+    function toggleCitation(el) {
+      const box = el.nextElementSibling;
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    }
+
+    function updateCitation(select) {
+      const box = select.parentElement;
+      const textEl = box.querySelector(".cite-text");
+      textEl.textContent = citationData[select.value];
+    }
+
+    function copyCitation(btn) {
+      const textEl = btn.parentElement.querySelector(".cite-text");
+      navigator.clipboard.writeText(textEl.textContent).then(() => {
+        alert("Citation copied to clipboard!");
+      });
     }
 
     window.onload = updateAllCounters;
