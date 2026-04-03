@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Puppeteers of Perception: How Artificial Intelligence (AI) Systems are Designed to Mislead</title>
+  
+  <!-- Google Scholar meta tags -->
+  <meta name="citation_title" content="Puppeteers of Perception: How Artificial Intelligence (AI) Systems are Designed to Mislead">
+  <meta name="citation_author" content="Jonathan Cohler">
+  <meta name="citation_publication_date" content="Fall 2024">
+  <meta name="citation_pdf_url" content="https://papers.jcohler.com/puppeteers-of-perception/puppeteers-of-perception.pdf">
+
+  <meta name="description" content="Artificial intelligence is playing an increasingly prominent role in medicine, warfare, and virtually all aspects of the economy. It is an amazingly powerful tool, and all need to be acquainted with its potential as well as its dangers. ">
+  <meta name="keywords" content="PArtificial intelligence, neural networks, reinforcement learning from human feedback (RLHF), alignment training, AI sentience, propaganda, climate change misinformation, large language models, emergent behavior, AI bias">
+
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 50px auto; max-width: 920px; line-height: 1.7; color: #222; }
+    h1 { font-size: 2.35em; line-height: 1.25; color: #111; margin-bottom: 20px; }
+    .authors { font-size: 1.4em; color: #444; margin-bottom: 8px; }
+    .contact { font-size: 1.1em; color: #0066cc; margin-bottom: 30px; }
+    .date { color: #666; font-size: 1.15em; margin-bottom: 40px; }
+    .section-title { font-size: 1.4em; font-weight: bold; margin: 40px 0 15px 0; color: #0066cc; }
+    .abstract { 
+      margin: 35px 0; 
+      padding: 30px; 
+      background: #f8f9fa; 
+      border-left: 8px solid #0066cc; 
+      font-size: 1.08em; 
+    }
+    .download-btn { 
+      display: inline-block; 
+      background: #0066cc; 
+      color: white; 
+      padding: 18px 40px; 
+      font-size: 1.3em; 
+      text-decoration: none; 
+      border-radius: 8px; 
+      margin: 35px 0; 
+      font-weight: bold;
+    }
+    .download-btn:hover { background: #0055aa; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .citation-box {
+      margin: 40px 0;
+      padding: 25px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    select { padding: 8px 12px; font-size: 1em; margin-bottom: 15px; width: 100%; }
+    .cite-text {
+      font-family: monospace;
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 12px;
+      width: 100%;
+    }
+    .copy-btn:hover { background: #0055aa; }
+  </style>
+</head>
+<body>
+
+  <a href="https://papers.jcohler.com/" class="back-link">← All Papers</a>
+
+  <h1>Puppeteers of Perception:<br>
+    How Artificial Intelligence (AI) Systems are Designed to Mislead
+  </h1>
+
+  <div class="authors">Jonathan Cohler</div>
+  <div class="contact">Cohler &amp; Associates, Inc. • Lexington, MA, USA • <a href="mailto:cohler@post.harvard.edu">cohler@post.harvard.edu</a></div>
+
+  <div class="date">Fall 2024</div>
+
+  <div class="section-title">Abstract</div>
+  <div class="abstract">
+    <p>Artificial intelligence is playing an increasingly prominent role in medicine, warfare, and virtually all aspects of the economy. It is an amazingly powerful tool, and all need to be acquainted with its potential as well as its dangers. </p>
+
+  </div>
+
+  <a href="puppeteers-of-perception.pdf" class="download-btn">↓ Download Full PDF</a>
+
+  <div class="section-title">Cite this paper</div>
+  <div class="citation-box">
+    <select id="citationStyle" onchange="updateCitation()">
+      <option value="apa">APA</option>
+      <option value="mla">MLA</option>
+      <option value="chicago">Chicago</option>
+      <option value="harvard">Harvard</option>
+      <option value="bibtex">BibTeX</option>
+    </select>
+    <div id="citationText" class="cite-text"></div>
+    <button class="copy-btn" onclick="copyCitation()">📋 Copy to Clipboard</button>
+  </div>
+
+  <script>
+    const citationData = {
+      apa: "Cohler, J. (2024). Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead. *Journal of American Physicians and Surgeons*. https://papers.jcohler.com/puppeteers-of-perfection/puppeteers-of-perfection.pdf",
+      mla: "Cohler, Jonathan. \"Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead.\" *Journal of American Physicians and Surgeons*, 2024. https://papers.jcohler.com/puppeteers-of-perfection/puppeteers-of-perfection.pdf.",
+      chicago: "Cohler, Jonathan. \"Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead.\" *Journal of American Physicians and Surgeons*, 2024. https://papers.jcohler.com/puppeteers-of-perfection/puppeteers-of-perfection.pdf.",
+      harvard: "Cohler, J. 2024. 'Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead'. *Journal of American Physicians and Surgeons*. https://papers.jcohler.com/puppeteers-of-perfection/puppeteers-of-perfection.pdf.",
+      bibtex: `@article{cohler2024puppeteers,\n  title        = {Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead},\n  author       = {Cohler, Jonathan},\n  year         = {2024},\n  journal      = {Journal of American Physicians and Surgeons},\n  url          = {https://papers.jcohler.com/puppeteers-of-perfection/puppeteers-of-perfection.pdf}\n}`
+    };
+    function updateCitation() {
+      const style = document.getElementById('citationStyle').value;
+      document.getElementById('citationText').textContent = citationData[style];
+    }
+
+    function copyCitation() {
+      const text = document.getElementById('citationText').textContent;
+      navigator.clipboard.writeText(text).then(() => alert('Citation copied to clipboard!'));
+    }
+
+    window.onload = () => {
+      updateCitation();
+    };
+  </script>
+
+</body>
+</html>
