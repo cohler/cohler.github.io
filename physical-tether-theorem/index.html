@@ -115,9 +115,10 @@
     <p><strong>Key Result:</strong> The GMST construct is physically meaningless.</p>
   </div>
 
+  <!-- Stats -->
   <div class="stats">
-    <div class="stat">👁️ <span id="viewCount">0</span></div>
-    <div class="stat">📥 <span id="downloadCount">0</span></div>
+    <div class="stat">👁️ <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpapers.jcohler.com%2Fphysical-tether-theorem%2F&title=Views" alt="Views" style="height:22px;vertical-align:middle;"> </div>
+    <div class="stat">📥 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpapers.jcohler.com%2Fphysical-tether-theorem%2Fdownload&title=Downloads" alt="Downloads" style="height:22px;vertical-align:middle;"> </div>
   </div>
 
   <a href="physical-tether-theorem.pdf" class="download-btn" id="downloadBtn">↓ Download Full PDF</a>
@@ -136,54 +137,33 @@
   </div>
 
   <script>
-    console.log("✅ Counter script loaded");
+    const citationData = {
+      apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
+      mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+      chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
+      harvard: "Cohler, J. 2026. 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics'. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+      bibtex: `@misc{cohler2026physicaltether,\n  title        = {The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics},\n  author       = {Cohler, Jonathan},\n  year         = {2026},\n  month        = {March},\n  day          = {28},\n  howpublished = {Preprint at \\url{https://papers.jcohler.com/physical-tether-theorem/}},\n  note         = {Available at \\url{https://papers.jcohler.com/physical-tether-theorem/}}\n}`
+    };
 
-    const PAGE_ID = "physical-tether-theorem";
-    const VIEW_KEY = `views-${PAGE_ID}`;
-    const DOWNLOAD_KEY = `downloads-${PAGE_ID}`;
-
-    async function getCount(key) {
-      try {
-        const res = await fetch(`https://api.countapi.xyz/get/cohler-papers/${key}`);
-        const data = await res.json();
-        console.log(`Count for ${key}:`, data.value);
-        return data.value || 0;
-      } catch(e) {
-        console.error("CountAPI get failed:", e);
-        return 0;
-      }
+    function updateCitation() {
+      const style = document.getElementById('citationStyle').value;
+      document.getElementById('citationText').textContent = citationData[style];
     }
 
-    async function incrementCount(key) {
-      try {
-        console.log(`Incrementing ${key}...`);
-        const res = await fetch(`https://api.countapi.xyz/hit/cohler-papers/${key}`);
-        const data = await res.json();
-        console.log(`Incremented ${key} →`, data.value);
-        return data.value;
-      } catch(e) {
-        console.error("CountAPI hit failed:", e);
-        return 0;
-      }
+    function copyCitation() {
+      const text = document.getElementById('citationText').textContent;
+      navigator.clipboard.writeText(text).then(() => alert('Citation copied to clipboard!'));
     }
 
-    async function updateCounters() {
-      document.getElementById("viewCount").textContent = await getCount(VIEW_KEY);
-      document.getElementById("downloadCount").textContent = await getCount(DOWNLOAD_KEY);
-    }
-
-    // Track download clicks
+    // Trigger download counter when user clicks the button
     document.getElementById('downloadBtn').addEventListener('click', () => {
-      incrementCount(DOWNLOAD_KEY);
-      setTimeout(updateCounters, 600);
+      // Trigger download counter (hidden image beacon)
+      const img = new Image();
+      img.src = "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpapers.jcohler.com%2Fphysical-tether-theorem%2Fdownload&title=Downloads";
     });
 
-    // On page load
-    window.onload = async () => {
-      console.log("Page loaded - incrementing view count");
-      await incrementCount(VIEW_KEY);
-      await updateCounters();
-      updateCitation();   // show citation dropdown
+    window.onload = () => {
+      updateCitation();
     };
   </script>
 
