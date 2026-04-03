@@ -39,17 +39,6 @@
       font-weight: bold;
     }
     .download-btn:hover { background: #0055aa; }
-    .stats {
-      margin: 25px 0 10px 0;
-      padding: 12px 20px;
-      background: #f4f4f4;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: flex;
-      gap: 30px;
-      justify-content: center;
-    }
-    .stat { display: flex; align-items: center; gap: 6px; }
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -115,13 +104,7 @@
     <p><strong>Key Result:</strong> The GMST construct is physically meaningless.</p>
   </div>
 
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat">👁️ <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpapers.jcohler.com%2Fphysical-tether-theorem%2F&title=Views" alt="Views" style="height:22px;vertical-align:middle;"> </div>
-    <div class="stat">📥 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpapers.jcohler.com%2Fphysical-tether-theorem%2Fdownload&title=Downloads" alt="Downloads" style="height:22px;vertical-align:middle;"> </div>
-  </div>
-
-  <a href="physical-tether-theorem.pdf" class="download-btn" id="downloadBtn">↓ Download Full PDF</a>
+  <a href="physical-tether-theorem.pdf" class="download-btn">↓ Download Full PDF</a>
 
   <div class="section-title">Cite this paper</div>
   <div class="citation-box">
@@ -154,13 +137,6 @@
       const text = document.getElementById('citationText').textContent;
       navigator.clipboard.writeText(text).then(() => alert('Citation copied to clipboard!'));
     }
-
-    // Trigger download counter when user clicks the button
-    document.getElementById('downloadBtn').addEventListener('click', () => {
-      // Trigger download counter (hidden image beacon)
-      const img = new Image();
-      img.src = "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpapers.jcohler.com%2Fphysical-tether-theorem%2Fdownload&title=Downloads";
-    });
 
     window.onload = () => {
       updateCitation();
