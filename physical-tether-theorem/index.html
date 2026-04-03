@@ -39,6 +39,16 @@
       font-weight: bold;
     }
     .download-btn:hover { background: #0055aa; }
+    .stats {
+      margin: 25px 0;
+      padding: 15px 20px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      font-size: 1.1em;
+      display: flex;
+      gap: 30px;
+    }
+    .stat-item { font-weight: 600; }
     .citation-box {
       margin: 40px 0;
       padding: 25px;
@@ -46,11 +56,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
     }
-    select {
-      padding: 8px 12px;
-      font-size: 1em;
-      margin-bottom: 15px;
-    }
+    select { padding: 8px 12px; font-size: 1em; margin-bottom: 15px; }
     .cite-text {
       font-family: monospace;
       background: #fff;
@@ -82,6 +88,11 @@
 
   <div class="date"><strong>Preprint</strong> • March 28, 2026</div>
 
+  <div class="stats">
+    <div class="stat-item">Views: <span id="viewCount">0</span></div>
+    <div class="stat-item">Downloads: <span id="downloadCount">0</span></div>
+  </div>
+
   <div class="section-title">Abstract</div>
   <div class="abstract">
     <p>We develop a rigorous formal framework that defines the necessary and sufficient conditions for an abstract construct to serve as a useful probe of physical reality. Within this framework we prove the <strong>Physical Tether Theorem</strong>: an abstract construct <em>A</em> is a scientifically valid probe of physical reality <em>PR</em> if and only if <em>A</em> is tethered to <em>PR</em> by a unique induced quotient-valued operational mapping (equivalently, unique up to empirical-content symmetries).</p>
@@ -95,7 +106,7 @@
     <p><strong>Key Result:</strong> The GMST construct is physically meaningless.</p>
   </div>
 
-  <a href="physical-tether-theorem.pdf" class="download-btn">↓ Download Full PDF</a>
+  <a href="physical-tether-theorem.pdf" class="download-btn" id="downloadBtn">↓ Download Full PDF</a>
 
   <div class="section-title">Cite this paper</div>
   <div class="citation-box">
@@ -111,7 +122,33 @@
   </div>
 
   <script>
-    const citationData = {
+    // CountAPI counters (free, no account needed)
+    const PAGE_ID = "physical-tether-theorem";
+    const VIEW_KEY = `views-${PAGE_ID}`;
+    const DOWNLOAD_KEY = `downloads-${PAGE_ID}`;
+
+    async function getCount(key) {
+      try {
+        const res = await fetch(`https://api.countapi.xyz/get/grokhelp/${key}`);
+        const data = await res.json();
+        return data.value || 0;
+      } catch(e) { return 0; }
+    }
+
+    async function incrementCount(key) {
+      try {
+        await fetch(`https://api.countapi.xyz/hit/grokhelp/${key}`);
+      } catch(e) {}
+    }
+
+    // Update displayed numbers
+    async function updateCounters() {
+      document.getElementById("viewCount").textContent = await getCount(VIEW_KEY);
+      document.getElementById("downloadCount").textContent = await getCount(DOWNLOAD_KEY);
+    }
+
+    // Citation dropdown
+    const citationData = { /* same as previous version */ 
       apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
       mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
       chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
@@ -126,14 +163,20 @@
 
     function copyCitation() {
       const text = document.getElementById('citationText').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Citation copied to clipboard!');
-      });
+      navigator.clipboard.writeText(text).then(() => alert('Citation copied!'));
     }
 
-    // Initialize with APA
+    // Track download clicks
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      incrementCount(DOWNLOAD_KEY);
+      setTimeout(updateCounters, 800);   // refresh numbers
+    });
+
+    // Initialize everything
     window.onload = () => {
-      updateCitation();
+      incrementCount(VIEW_KEY);          // count this page view
+      updateCitation();                  // show default citation
+      updateCounters();                  // load current counts
     };
   </script>
 
