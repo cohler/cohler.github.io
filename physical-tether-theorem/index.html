@@ -60,11 +60,38 @@
       margin-bottom: 25px;
     }
     .back-link:hover { text-decoration: underline; }
+    .citation-box {
+      margin: 40px 0;
+      padding: 25px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    select { padding: 8px 12px; font-size: 1em; margin-bottom: 15px; }
+    .cite-text {
+      font-family: monospace;
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .copy-btn:hover { background: #0055aa; }
   </style>
 </head>
 <body>
 
-  <!-- Back link at the very top -->
+  <!-- Back link -->
   <a href="https://papers.jcohler.com/" class="back-link">← All Papers</a>
 
   <h1>The Physical Tether Theorem:<br>
@@ -88,13 +115,26 @@
     <p><strong>Key Result:</strong> The GMST construct is physically meaningless.</p>
   </div>
 
-  <!-- Stats right above the download button -->
+  <!-- Stats right above download button -->
   <div class="stats">
     <div class="stat">👁️ <span id="viewCount">0</span></div>
     <div class="stat">⬇️ <span id="downloadCount">0</span></div>
   </div>
 
   <a href="physical-tether-theorem.pdf" class="download-btn" id="downloadBtn">↓ Download Full PDF</a>
+
+  <div class="section-title">Cite this paper</div>
+  <div class="citation-box">
+    <select id="citationStyle" onchange="updateCitation()">
+      <option value="apa">APA</option>
+      <option value="mla">MLA</option>
+      <option value="chicago">Chicago</option>
+      <option value="harvard">Harvard</option>
+      <option value="bibtex">BibTeX</option>
+    </select>
+    <div id="citationText" class="cite-text"></div>
+    <button class="copy-btn" onclick="copyCitation()">Copy to Clipboard</button>
+  </div>
 
   <script>
     const PAGE_ID = "physical-tether-theorem";
@@ -120,6 +160,26 @@
       document.getElementById("downloadCount").textContent = await getCount(DOWNLOAD_KEY);
     }
 
+    // Citation data
+    const citationData = {
+      apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
+      mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+      chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
+      harvard: "Cohler, J. 2026. 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics'. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+      bibtex: `@misc{cohler2026physicaltether,\n  title        = {The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics},\n  author       = {Cohler, Jonathan},\n  year         = {2026},\n  month        = {March},\n  day          = {28},\n  howpublished = {Preprint at \\url{https://papers.jcohler.com/physical-tether-theorem/}},\n  note         = {Available at \\url{https://papers.jcohler.com/physical-tether-theorem/}}\n}`
+    };
+
+    function updateCitation() {
+      const style = document.getElementById('citationStyle').value;
+      document.getElementById('citationText').textContent = citationData[style];
+    }
+
+    function copyCitation() {
+      const text = document.getElementById('citationText').textContent;
+      navigator.clipboard.writeText(text).then(() => alert('Citation copied to clipboard!'));
+    }
+
+    // Track download clicks
     document.getElementById('downloadBtn').addEventListener('click', () => {
       incrementCount(DOWNLOAD_KEY);
       setTimeout(updateCounters, 600);
@@ -128,6 +188,7 @@
     window.onload = () => {
       incrementCount(VIEW_KEY);
       setTimeout(updateCounters, 800);
+      updateCitation();
     };
   </script>
 
