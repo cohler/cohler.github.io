@@ -722,6 +722,32 @@ document.addEventListener('click', function(e) {
             m.classList.remove('open');
         });
     }
+    if (!e.target.closest('.citation-output') && !e.target.closest('.citation-dropdown')) {
+        document.querySelectorAll('.citation-output').forEach(function(o) {
+            o.style.display = 'none';
+        });
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.citation-menu').forEach(function(m) {
+            m.classList.remove('open');
+        });
+        document.querySelectorAll('.citation-output').forEach(function(o) {
+            o.style.display = 'none';
+        });
+    }
+    if (e.key === 'ArrowLeft') {
+        var backLink = document.querySelector('.back-link');
+        if (backLink) window.location.href = backLink.href;
+    }
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+        var backLink = document.querySelector('.back-link');
+        if (backLink) window.location.href = backLink.href;
+    }
 });
 </script>
 </body>
