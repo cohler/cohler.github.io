@@ -875,6 +875,7 @@ function render_landing(string $slug, array $paper, array $counts): void {
 ?>
     <a href="/" class="back-link">&#8592; All papers</a>
 
+    <?php render_paper_card($slug, $paper, $counts, false, true); ?>
     <?php if (!empty($paper['affiliations'])): ?>
         <div class="author-details">
             <?php
@@ -897,7 +898,6 @@ function render_landing(string $slug, array $paper, array $counts): void {
             <div class="corresponding-note">* Corresponding author</div>
         </div>
     <?php endif; ?>
-    <?php render_paper_card($slug, $paper, $counts, false, true); ?>
     <?php if ($paper['citation_abstract']): ?>
         <div class="abstract">
             <span class="abstract-label">Abstract: </span>
