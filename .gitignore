@@ -8,3 +8,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+counts/
+error_log
+phpinfo.php
