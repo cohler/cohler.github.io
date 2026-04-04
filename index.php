@@ -8,7 +8,7 @@
 // ── Paper Database ──────────────────────────────────────────────────────────
 // Authors: first name first, semicolon-separated. e.g. "Jonathan Cohler; Willie Soon"
 // Status: "Preprint", "Under review", or "" (published)
-// sort_date: YYYY-MM-DD used for ordering only (most recent first)
+// sort_date: YYYY-MM-DD used for ordering only (most recent first) XXXX
 
 $papers = [
 

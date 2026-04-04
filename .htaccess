@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteRule ^(sitemap\.xml|robots\.txt)$ - [L]
+RewriteRule ^(sitemap\.xml|robots\.txt|deploy\.php)$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php?$1 [QSA,L]
