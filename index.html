@@ -147,6 +147,38 @@
         </div>
       </li>
       <li class="paper-item">
+        <a href="https://papers.jcohler.com/co2-dynamics/" class="paper-title">
+          Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles
+        </a>
+        <div class="paper-date">Under Review • March 2026</div>
+
+        <div class="paper-actions">
+          
+          <!-- Direct PDF download link -->
+          <a href="https://papers.jcohler.com/co2-dynamics/co2-dynamics.pdf" class="action-link">
+            ⬇️ Download PDF
+          </a>
+
+          <!-- Citation dropdown (same as before) -->
+          <a href="#" onclick="toggleCitation(this); return false;" class="action-link">
+            📋 Cite
+          </a>
+          <div class="citation-box" style="display:none; width: auto; max-width: 620px;">
+            <select id="citationStyle-co2-dynamics" onchange="updateCitation(this)" style="width: 100px; padding: 6px 10px;">
+                <option value="apa">APA</option>
+                <option value="mla">MLA</option>
+                <option value="chicago">Chicago</option>
+                <option value="harvard">Harvard</option>
+                <option value="bibtex">BibTeX</option>
+            </select>
+            <div id="citationText-co2-dynamics" class="cite-text" style="font-size:0.92em; margin-top:10px; max-width: none;"></div>
+            <a href="#" onclick="copyCitation(this); return false;" style="display:inline-flex; align-items:center; gap:6px; color:#0066cc; text-decoration:none; margin-top:12px; font-size:1.05em;">
+                📋 Copy
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="paper-item">
         <a href="https://papers.jcohler.com/puppeteers-of-perception/" class="paper-title">
           Puppeteers of Perception: How Artificial Intelligence (AI) Systems are Designed to Mislead
         </a>
@@ -164,14 +196,14 @@
             📋 Cite
           </a>
           <div class="citation-box" style="display:none; width: auto; max-width: 620px;">
-            <select id="citationStyle-physical-tether-theorem" onchange="updateCitation(this)" style="width: 100px; padding: 6px 10px;">
+            <select id="citationStyle-puppeteers-of-perception" onchange="updateCitation(this)" style="width: 100px; padding: 6px 10px;">
                 <option value="apa">APA</option>
                 <option value="mla">MLA</option>
                 <option value="chicago">Chicago</option>
                 <option value="harvard">Harvard</option>
                 <option value="bibtex">BibTeX</option>
             </select>
-            <div id="citationText-physical-tether-theorem" class="cite-text" style="font-size:0.92em; margin-top:10px; max-width: none;"></div>
+            <div id="citationText-puppeteers-of-perception" class="cite-text" style="font-size:0.92em; margin-top:10px; max-width: none;"></div>
             <a href="#" onclick="copyCitation(this); return false;" style="display:inline-flex; align-items:center; gap:6px; color:#0066cc; text-decoration:none; margin-top:12px; font-size:1.05em;">
                 📋 Copy
             </a>
@@ -188,13 +220,28 @@
   <script>
     const NAMESPACE = "cohler-papers";
 
-    // Citation data (same as before)
     const citationData = {
-      apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
-      mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
-      chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
-      harvard: "Cohler, J. 2026. 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics'. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
-      bibtex: `@misc{cohler2026physicaltether,\n  title        = {The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics},\n  author       = {Cohler, Jonathan},\n  year         = {2026},\n  month        = {March},\n  day          = {28},\n  howpublished = {Preprint at \\url{https://papers.jcohler.com/physical-tether-theorem/}},\n  note         = {Available at \\url{https://papers.jcohler.com/physical-tether-theorem/}}\n}`
+      "physical-tether-theorem": {
+        apa: "Cohler, J. (2026). The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics. Preprint. https://papers.jcohler.com/physical-tether-theorem/",
+        mla: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" 28 Mar. 2026. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+        chicago: "Cohler, Jonathan. \"The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics.\" Preprint, March 28, 2026. https://papers.jcohler.com/physical-tether-theorem/.",
+        harvard: "Cohler, J. 2026. 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics'. Preprint. https://papers.jcohler.com/physical-tether-theorem/.",
+        bibtex: `@misc{cohler2026physicaltether,\n  title        = {The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics},\n  author       = {Cohler, Jonathan},\n  year         = {2026},\n  month        = {March},\n  day          = {28},\n  howpublished = {Preprint at \\url{https://papers.jcohler.com/physical-tether-theorem/}},\n  note         = {Available at \\url{https://papers.jcohler.com/physical-tether-theorem/}}\n}`
+      },
+      "co2-dynamics": {
+        apa: "Cohler, J., & Soon, W. (2026). Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles. Manuscript under review. https://papers.jcohler.com/co2-dynamics/",
+        mla: "Cohler, Jonathan, and Willie Soon. \"Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles.\" 2026. Manuscript under review. https://papers.jcohler.com/co2-dynamics/.",
+        chicago: "Cohler, Jonathan, and Willie Soon. \"Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles.\" Manuscript under review, 2026. https://papers.jcohler.com/co2-dynamics/.",
+        harvard: "Cohler, J. and Soon, W. (2026) 'Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles'. Manuscript under review. Available at: https://papers.jcohler.com/co2-dynamics/.",
+        bibtex: `@misc{cohler2026co2dynamics,\n  title        = {Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles},\n  author       = {Cohler, Jonathan and Soon, Willie},\n  year         = {2026},\n  howpublished = {Manuscript under review},\n  url          = {https://papers.jcohler.com/co2-dynamics/}\n}`
+      },
+      "puppeteers-of-perception": {
+        apa: "Cohler, J. (2024). Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead. *Journal of American Physicians and Surgeons*. https://papers.jcohler.com/puppeteers-of-perception/puppeteers-of-perfection.pdf",
+        mla: "Cohler, Jonathan. \"Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead.\" *Journal of American Physicians and Surgeons*, 2024. https://papers.jcohler.com/puppeteers-of-perception/puppeteers-of-perfection.pdf.",
+        chicago: "Cohler, Jonathan. \"Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead.\" *Journal of American Physicians and Surgeons*, 2024. https://papers.jcohler.com/puppeteers-of-perception/puppeteers-of-perfection.pdf.",
+        harvard: "Cohler, J. 2024. 'Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead'. *Journal of American Physicians and Surgeons*. https://papers.jcohler.com/puppeteers-of-perception/puppeteers-of-perfection.pdf.",
+        bibtex: `@article{cohler2024puppeteers,\n  title        = {Puppeteers of Perfection: How Artificial Intelligence (AI) Systems are Designed to Mislead},\n  author       = {Cohler, Jonathan},\n  year         = {2024},\n  journal      = {Journal of American Physicians and Surgeons},\n  url          = {https://papers.jcohler.com/puppeteers-of-perception/puppeteers-of-perfection.pdf}\n}`
+      }
     };
 
 function toggleCitation(el) {
@@ -210,9 +257,10 @@ function toggleCitation(el) {
 }
 
     function updateCitation(select) {
+      const slug = select.id.replace("citationStyle-", "");
       const box = select.parentElement;
       const textEl = box.querySelector(".cite-text");
-      textEl.textContent = citationData[select.value];
+      textEl.textContent = citationData[slug][select.value];
     }
 
     function copyCitation(btn) {
