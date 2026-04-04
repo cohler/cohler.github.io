@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jcohler/public_html/papers/
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
