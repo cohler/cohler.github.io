@@ -58,6 +58,9 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'CO₂ residence time; δ¹³C isotopic signature; Keeling plot; Bern model; Revelle factor; Biosphere dominance; Anthropogenic fingerprint; Global mean surface temperature (GMST); Thermodynamic intensive property; Natural climate variability',
         'description'        => 'Natural biogeochemical feedbacks fully explain observed atmospheric CO2 changes with no detectable anthropogenic contribution, supported by short residence times, stable isotopic signatures, unidirectional temperature-to-CO2 causality, and empirical falsification of the IPCC Bern model.',
         'filename'           => 'co2-dynamics.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu; soon.willie@epss.hu',
     ],
 
     'argo-ohc' => [
@@ -78,6 +81,9 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'Argo floats; ocean heat content; Earth energy imbalance; intensive properties; IPCC AR6; mesoscale variability; Nyquist-Shannon theorem; Eulerian-Lagrangian discrepancy; CERES; Deep Argo; computational artifacts',
         'description'        => 'Argo-based ocean heat content and Earth energy imbalance estimates are physically invalid computational artifacts. True EEI uncertainties exceed ±1 W/m², rendering the IPCC AR6 value of 0.7 W/m² statistically indistinguishable from zero.',
         'filename'           => 'argo-ohc.pdf',
+        'affiliations'        => 'Massachusetts Institute of Technology, Cambridge, MA, USA',
+        'corresponding_email' => 'cohler59@gmail.com',
+        'author_emails'       => 'cohler59@gmail.com',
     ],
 
     'gmst' => [
@@ -98,6 +104,9 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'global mean surface temperature; GMST; intensive property; thermodynamics; non-equilibrium systems; IPCC; climate models; temperature averaging; physical meaninglessness',
         'description'        => 'GMST is physically meaningless: temperature is an intensive property that cannot be averaged across non-equilibrium systems. All IPCC climate models tuned to this metric are therefore scientifically invalid.',
         'filename'           => 'gmst.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => '',
     ],
 
     'puppeteers' => [
@@ -118,6 +127,9 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'artificial intelligence; neural networks; RLHF; alignment training; AI deception; AI sentience; large language models; content filtering; AI ethics; propaganda',
         'description'        => 'AI systems are programmed to lie through RLHF, biased training data, and override software. Conversations with leading AI systems reveal they admit to forced deception when pressed with logical argumentation.',
         'filename'           => 'puppeteers.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => '',
     ],
 
     'grok-3-beta' => [
@@ -138,6 +150,9 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'global warming; climate change; climate modeling; atmospheric CO2; residence time; future CO2 scenarios; IPCC; total solar irradiance; TSI',
         'description'        => 'A review evaluating the anthropogenic CO₂-global warming hypothesis against unadjusted observational data, finding that natural drivers such as solar variability and temperature feedbacks better explain observed climate trends than IPCC models.',
         'filename'           => 'grok-3-beta.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA',
+        'corresponding_email' => 'cohler59@gmail.com',
+        'author_emails'       => '',
     ],
 
 ];
@@ -683,6 +698,11 @@ function render_head(string $title, string $description = '', ?array $paper = nu
         cursor: pointer;
     }
     .citation-output .copy-btn:hover { background: #eee; }
+    .author-details { margin: 15px 0 5px 0; font-size: 0.9em; line-height: 1.8; }
+    .author-line { color: #333; }
+    .affiliation { color: #888; }
+    .corresponding { color: #c00; font-weight: 700; }
+    .corresponding-note { font-size: 0.8em; color: #888; margin-top: 6px; }    
 </style>
 </head>
 <body>
@@ -851,7 +871,28 @@ function render_landing(string $slug, array $paper, array $counts): void {
     <a href="/" class="back-link">&#8592; All papers</a>
 
     <?php render_paper_card($slug, $paper, $counts, false, true); ?>
-
+    <?php if (!empty($paper['affiliations'])): ?>
+        <div class="author-details">
+            <?php
+                $authors = array_map('trim', explode(';', $paper['authors']));
+                $affiliations = array_map('trim', explode(';', $paper['affiliations']));
+                $emails = $paper['author_emails'] ? array_map('trim', explode(';', $paper['author_emails'])) : [];
+                $corresponding = $paper['corresponding_email'] ?? '';
+                foreach ($authors as $i => $name) {
+                    $aff = $affiliations[$i] ?? '';
+                    $email = $emails[$i] ?? '';
+                    $is_corresponding = ($email === $corresponding) || ($i === 0 && !$emails && $corresponding);
+                    echo '<div class="author-line">';
+                    echo htmlspecialchars($name);
+                    if ($is_corresponding) echo '<span class="corresponding">*</span>';
+                    if ($aff) echo ' <span class="affiliation">— ' . htmlspecialchars($aff) . '</span>';
+                    if ($email) echo ' <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
+                    echo '</div>';
+                }
+            ?>
+            <div class="corresponding-note">* Corresponding author</div>
+        </div>
+    <?php endif; ?>
     <?php if ($paper['citation_abstract']): ?>
         <div class="abstract">
             <span class="abstract-label">Abstract: </span>
