@@ -38,6 +38,9 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'Physical Tether Theorem; representational measurement theory; operationalism; classical thermodynamics; GMST; intensive quantities; non-equilibrium systems; admissible operational mapping; aggregation operator; scientific validity',
         'description'        => 'The Physical Tether Theorem proves that an abstract construct is scientifically valid if and only if it is tethered by a unique admissible operational mapping. Key Result: the GMST construct is physically meaningless.',
         'filename'           => 'physical-tether-theorem.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => '',
     ],
 
     'co2-dynamics' => [
