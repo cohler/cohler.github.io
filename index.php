@@ -40,7 +40,7 @@ Key Result: The GMST construct is physically meaningless.',
         'filename'           => 'physical-tether-theorem.pdf',
         'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA',
         'corresponding_email' => 'cohler@post.harvard.edu',
-        'author_emails'       => '',
+        'author_emails'       => 'cohler@post.harvard.edu',
     ],
 
     'co2-dynamics' => [
