@@ -800,7 +800,9 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
             <span class="paper-title" style="color: #000;"><?= $title_display ?></span>
         <?php endif; ?>
 
-        <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
+        <?php if ($link_title): ?>
+            <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
+        <?php endif; ?>
         <div class="paper-date">
             <?= htmlspecialchars($date) ?>
             <?php if ($show_status && $status): ?>
@@ -873,7 +875,6 @@ function render_landing(string $slug, array $paper, array $counts): void {
 ?>
     <a href="/" class="back-link">&#8592; All papers</a>
 
-    <?php render_paper_card($slug, $paper, $counts, false, true); ?>
     <?php if (!empty($paper['affiliations'])): ?>
         <div class="author-details">
             <?php
@@ -896,6 +897,7 @@ function render_landing(string $slug, array $paper, array $counts): void {
             <div class="corresponding-note">* Corresponding author</div>
         </div>
     <?php endif; ?>
+    <?php render_paper_card($slug, $paper, $counts, false, true); ?>
     <?php if ($paper['citation_abstract']): ?>
         <div class="abstract">
             <span class="abstract-label">Abstract: </span>
