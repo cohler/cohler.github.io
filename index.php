@@ -802,6 +802,31 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
 
         <?php if ($link_title): ?>
             <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
+        <?php else: ?>
+            <?php if (!empty($paper['affiliations'])): ?>
+                <div class="author-details">
+                    <?php
+                        $auth_list = array_map('trim', explode(';', $paper['authors']));
+                        $affiliations = array_map('trim', explode(';', $paper['affiliations']));
+                        $emails = $paper['author_emails'] ? array_map('trim', explode(';', $paper['author_emails'])) : [];
+                        $corresponding = $paper['corresponding_email'] ?? '';
+                        foreach ($auth_list as $i => $name) {
+                            $aff = $affiliations[$i] ?? '';
+                            $email = $emails[$i] ?? '';
+                            $is_corresponding = ($email && $email === $corresponding) || (!$emails && $i === 0 && $corresponding);
+                            echo '<div class="author-line">';
+                            echo htmlspecialchars($name);
+                            if ($is_corresponding) echo '<span class="corresponding">*</span>';
+                            if ($aff) echo ' <span class="affiliation">— ' . htmlspecialchars($aff) . '</span>';
+                            if ($email) echo ' <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
+                            echo '</div>';
+                        }
+                    ?>
+                    <div class="corresponding-note">* Corresponding author</div>
+                </div>
+            <?php else: ?>
+                <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
+            <?php endif; ?>
         <?php endif; ?>
         <div class="paper-date">
             <?= htmlspecialchars($date) ?>
@@ -876,28 +901,6 @@ function render_landing(string $slug, array $paper, array $counts): void {
     <a href="/" class="back-link">&#8592; All papers</a>
 
     <?php render_paper_card($slug, $paper, $counts, false, true); ?>
-    <?php if (!empty($paper['affiliations'])): ?>
-        <div class="author-details">
-            <?php
-                $authors = array_map('trim', explode(';', $paper['authors']));
-                $affiliations = array_map('trim', explode(';', $paper['affiliations']));
-                $emails = $paper['author_emails'] ? array_map('trim', explode(';', $paper['author_emails'])) : [];
-                $corresponding = $paper['corresponding_email'] ?? '';
-                foreach ($authors as $i => $name) {
-                    $aff = $affiliations[$i] ?? '';
-                    $email = $emails[$i] ?? '';
-                    $is_corresponding = ($email === $corresponding) || ($i === 0 && !$emails && $corresponding);
-                    echo '<div class="author-line">';
-                    echo htmlspecialchars($name);
-                    if ($is_corresponding) echo '<span class="corresponding">*</span>';
-                    if ($aff) echo ' <span class="affiliation">— ' . htmlspecialchars($aff) . '</span>';
-                    if ($email) echo ' <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
-                    echo '</div>';
-                }
-            ?>
-            <div class="corresponding-note">* Corresponding author</div>
-        </div>
-    <?php endif; ?>
     <?php if ($paper['citation_abstract']): ?>
         <div class="abstract">
             <span class="abstract-label">Abstract: </span>
