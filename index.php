@@ -15,8 +15,8 @@ $papers = [
     'physical-tether-theorem' => [
         'citation_title'     => 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics',
         'authors'            => 'Jonathan Cohler',
-        'citation_date'      => '2026-03-28',
-        'sort_date'          => '2026-03-28',
+        'citation_date'      => '2026-04-05',
+        'sort_date'          => '2026-04-05',
         'citation_year'      => '2026',
         'status'             => 'Preprint',
         'citation_journal'   => '',
@@ -32,7 +32,7 @@ The theorem is proved within the formal framework developed here, informed by re
 
 The theorem is genuinely formal: the objects, equivalence relation, and proof obligations are all stated explicitly. We then derive a thermodynamic application theorem. If a proposed global construct on a non-equilibrium system requires choosing an aggregation operator for local intensive quantities, and classical thermodynamics does not select a unique empirically equivalent operator class, then the construct is untethered and therefore not a scientifically valid probe of physical reality. This thermodynamic result is conditional on the stated physical premise of non-uniqueness; it does not smuggle that premise in by definition. The framework is then applied to demonstrate that the GMST construct (as used by the IPCC, NASA, and others) is untethered and therefore physically meaningless.
 
-The framework developed in this paper is one rigorous mathematical transcription of the foundational first principles of classical science. The Physical Tether Theorem and every result derived from it (including the untetheredness and physical meaninglessness of the GMST construct) are not artifacts of this particular formalization. Their substantive physical and mathematical content — the necessity of a unique (up to empirical-content symmetries) admissible operational mapping for scientific validity, and the consequent invalidity of any global intensive aggregate over non-equilibrium systems — holds with full logical force in every canonical formalization of classical science and of classical thermodynamics (Callen 1985, Carathéodory 1909, Landau & Lifshitz 1980, Lieb & Yngvason 1999–2022, Giles 1964, Truesdell 1984, and every variant of rational thermodynamics). No additional postulates are introduced.
+The framework developed in this paper is one rigorous mathematical transcription of the founda- tional first principles of classical science. The Physical Tether Theorem and every result derived from it (including the untetheredness and physical meaninglessness of the GMST construct) are not artifacts of this particular formalization. Their substantive physical and mathematical content — the necessity of a unique (up to empirical-content symmetries) admissible operational mapping for scientific validity, and the consequent invalidity of any global intensive aggregate over non- equilibrium systems — holds with full logical force in every canonical formalization of classical science and of classical thermodynamics (Callen 1985, Carathéodory 1909, Landau & Lifshitz 1980, Lieb & Yngvason 1999–2022, Giles 1964, Truesdell 1984, Lavis & Frigg 2025, and every variant of rational thermodynamics). No additional postulates are introduced.
 
 Key Result: The GMST construct is physically meaningless.',
         'citation_keywords'  => 'Physical Tether Theorem; representational measurement theory; operationalism; classical thermodynamics; GMST; intensive quantities; non-equilibrium systems; admissible operational mapping; aggregation operator; scientific validity',
