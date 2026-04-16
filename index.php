@@ -911,7 +911,7 @@ function render_landing(string $slug, array $paper, array $counts): void {
     <?php if ($paper['citation_keywords']): ?>
         <div class="keywords">
             <span class="keywords-label">Keywords: </span>
-            <?= htmlspecialchars(=$paper['citation_keywords']) ?>
+            <?= htmlspecialchars($paper['citation_keywords']) ?>
         </div>
     <?php endif; ?>
 
