@@ -521,7 +521,7 @@ function render_head(string $title, string $description = '', ?array $paper = nu
 <meta name="citation_pdf_url" content="<?= $site_url . '/' . $slug . '/' . htmlspecialchars($paper['filename']) ?>">
 <meta name="citation_abstract" content="<?= htmlspecialchars($paper['citation_abstract']) ?>">
 <?php if ($paper['citation_keywords']): ?>
-<meta name="citation_keywords" content="<?= htmlspecialchars(str_replace(';', ', ', $paper['citation_keywords'])) ?>">
+<meta name="citation_keywords" content="<?= htmlspecialchars($paper['citation_keywords']) ?>">
 <?php endif; ?>
 
 <!-- Schema.org structured data -->
@@ -911,7 +911,7 @@ function render_landing(string $slug, array $paper, array $counts): void {
     <?php if ($paper['citation_keywords']): ?>
         <div class="keywords">
             <span class="keywords-label">Keywords: </span>
-            <?= htmlspecialchars(str_replace(';', ', ', $paper['citation_keywords'])) ?>
+            <?= htmlspecialchars(=$paper['citation_keywords']) ?>
         </div>
     <?php endif; ?>
 
