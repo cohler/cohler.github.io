@@ -12,13 +12,59 @@
 
 $papers = [
 
+    'keeling' => [
+        'citation_title'     => 'Mathematical Falsification of the Fossil-Dominant Hypothesis for Rising Atmospheric CO2 Using the Keeling Relation',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-08-25',
+        'sort_date'          => '2026-08-25',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '13',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => '<p>The IPCC, NASA, NOAA, and EPA state that essentially all of the observed rise in 
+            atmospheric CO<sub>2</sub> since the pre-industrial era originates from fossil-fuel combustion. 
+            This paper shows that claim is mathematically inconsistent with the isotopic record those same 
+            agencies rely on. The Keeling plot of &delta;<sup>13</sup>C against 1/C has an intercept &delta;<sup>13</sup>C<sub>I</sub> 
+            equal to the flux-weighted isotopic signature of the net carbon addition to the atmosphere. 
+            Applied by Koutsoyiannis (2024) to instrumental &delta;<sup>13</sup>C records from four Scripps 
+            CO<sub>2</sub> Program stations (Barrow, La Jolla, Mauna Loa, South Pole) spanning about 1978 
+            to present, this construction gives &delta;<sup>13</sup>C<sub>I</sub> = &minus;13.2 &plusmn; 0.2&permil;. 
+            Caribbean sclerosponge &delta;<sup>13</sup>C reconstructions of surface-water dissolved inorganic carbon by 
+            B&ouml;hm et al. (2002) extend this value back to approximately 1500 AD with no significant drift. 
+            Independent Keeling regression of the Law Dome ice-core record by K&ouml;hler et al. (2006) yields 
+            the same intercept with <i>r</i><sup>2</sup> = 0.96. The two-endmember mixture equation 
+            &delta;<sup>13</sup>C<sub>I</sub> = <i>f</i>&nbsp;&delta;<sup>13</sup>C<sub>F</sub> + (1&nbsp;&minus;&nbsp;<i>f</i>)&nbsp;&delta;<sup>13</sup>C<sub>N</sub>, 
+            using the standard fossil signature &delta;<sup>13</sup>C<sub>F</sub> &approx; &minus;28&permil; 
+            and the physically admissible range &minus;13.2&permil; &le; &delta;<sup>13</sup>C<sub>N</sub> &le; &minus;8&permil;, 
+            forces the fossil fraction <i>f</i> of the net addition into the interval [0, 0.26]. Even under the counterfactual 
+            relaxation &delta;<sup>13</sup>C<sub>N</sub> = 0&permil;, well outside any physically realizable natural-reservoir 
+            signature, <i>f</i> is bounded above by 0.471. The five-century invariance of &delta;<sup>13</sup>C<sub>I</sub> 
+            across a roughly 10<sup>4</sup>-fold increase in fossil emissions further collapses the admissible band 
+            to <i>f</i> &approx; 0. The claim of fossil dominance is therefore not merely empirically weak; 
+            it is inconsistent with the arithmetic of the isotopic constraint applied to the standard measurement 
+            record. The rejection of the conclusion requires the rejection of one of three inputs: elementary 
+            mass-balance algebra, the standard isotopic endmember values used throughout the carbon-cycle literature, 
+            or the primary Scripps and sclerosponge datasets themselves.</p>',
+        'citation_keywords'  => 'atmospheric CO<sub>2</sub>; carbon isotopes; Keeling plot; fossil-fuel attribution; carbon cycle; &delta;<sup>13</sup>C; sclerosponge proxy; mass balance; IPCC',
+        'description'        => '',
+        'filename'           => 'keeling.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu; soon.willie@epss.hu',
+    ],
+
     'physical-tether-theorem' => [
         'citation_title'     => 'The Physical Tether Theorem: A Rigorous Formal Synthesis of Representational Measurement Theory, Operationalism, and Classical Thermodynamics',
         'authors'            => 'Jonathan Cohler',
         'citation_date'      => '2026-04-05',
         'sort_date'          => '2026-04-05',
         'citation_year'      => '2026',
-        'status'             => 'Preprint',
+        'status'             => 'Under review',
         'citation_journal'   => '',
         'citation_volume'    => '',
         'citation_issue'     => '',
