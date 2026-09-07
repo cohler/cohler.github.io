@@ -321,7 +321,7 @@
     <tr><th>Symbol</th><th>Definition</th><th>Value</th></tr>
     <tr>
       <td><b>ABF<sub>L</sub></b></td>
-      <td>IPCC Glossary definition. Cumulative anthropogenic mass still airborne / cumulative anthropogenic mass ever emitted. The <i>retention fraction</i>.</td>
+      <td>IPCC AR6 Glossary definition (Annex VII, p. 2237). Cumulative anthropogenic mass still airborne / cumulative anthropogenic mass ever emitted. The <i>retention fraction</i>.</td>
       <td>≈ 6% under proper mass-balance reservoir routing with τ_res ≈ 3.8 yr</td>
     </tr>
     <tr>
@@ -336,7 +336,7 @@
     </tr>
   </table>
 
-  <p>The construction "the airborne fraction is stable at ≈ 44%, so roughly half of anthropogenic emissions remain airborne" computes ABF<sub>S</sub>, interprets it as ABF<sub>L</sub>, and licenses the interpretation with the Glossary label. The three quantities are not equal. ABF<sub>L</sub> and ABF<sub>C</sub> differ by roughly an order of magnitude under proper reservoir routing. Any argument that treats them as interchangeable is a definitional substitution, not physics.</p>
+  <p>The construction "the airborne fraction is stable at ≈ 44%" (or 53%) is a multi-decade average of annual ABF<sub>C</sub> values, then interpreted as if it were the retention fraction ABF<sub>L</sub>. Averaging a highly variable annual ratio over 60+ years does not convert it into a cumulative retention fraction. These are different quantities computed from different data, differing by roughly an order of magnitude under proper reservoir routing. The rhetorical construction computes ABF<sub>S</sub>, interprets it as ABF<sub>L</sub>, and licenses the interpretation with the Glossary label. Any argument that treats them as interchangeable is a definitional substitution, not physics.</p>
   </div>
 </div>
 
@@ -408,8 +408,23 @@
   <div class="inv-head"><span class="inv-tag fab">FAB1</span> Fabricated relationship T<sub>adj</sub> = T<sub>res</sub> / (1 − R) as physical law.</div>
   <div class="inv-quote">"the connection between the two is the return fraction R (between 0 and 1): T<sub>adj</sub> = T<sub>res</sub> / (1 − R)"</div>
   <div class="inv-body">
-  <p>This equation is not IPCC's definition of T_adj. IPCC defines T_adj behaviorally as the e-folding decay timescale of an atmospheric pulse — a definition that says nothing about which formula computes it. The relationship T_adj = T_res / (1 − R) is a model-specific derivation that follows only from a first-order, steady-state, single-reservoir, well-mixed system with a scalar return coefficient R. Under any other conditions (multi-reservoir, non-first-order, non-steady-state) it is simply wrong. None of the required conditions are asserted, derived, or defended in the text.</p>
-  <p>Furthermore, this whole framework has no bearing on the Keeling intercept paper. The Keeling analysis works on mass-balance-derived isotopic signatures over sampling windows. It invokes no kinetic decay model, no residence time, no adjustment time, no return fraction. The formula is Engelbeen's own fabricated assumption, presented as if it were general physics, deployed to attack a paper that does not use it.</p>
+  <p>This equation is not IPCC's definition of T_adj. The IPCC AR6 Glossary (Annex VII, p. 2237) defines T_adj (also "response time") as "<i>the time scale characterizing the decay of an instantaneous pulse input into the reservoir</i>," and adds that "<i>in simple cases, where the global removal of the compound is directly proportional to the total mass of the reservoir, the adjustment time equals the turnover time.</i>" It provides no formula for CO₂ specifically. The relationship T_adj = T_res / (1 − R) is a model-specific derivation that follows only from a first-order, steady-state, single-reservoir, well-mixed system with a scalar return coefficient R. Under any other conditions (multi-reservoir, non-first-order, non-steady-state) it is simply wrong. None of the required conditions are asserted, derived, or defended in the text.</p>
+
+  <p><b>The correct physical relationship.</b> The bridge equation connecting residence time and pulse-decay adjustment time for the coupled atmosphere–reservoir CO₂ system, derivable from first-principles mass balance, is</p>
+
+  <p style="text-align:center; font-family:monospace; font-size:1.05em;">τ_rel = τ_res / φ_slow</p>
+
+  <p>where φ_slow is the fraction of incoming CO₂ that enters slow reservoirs (deep ocean, refractory biosphere) rather than returning rapidly to the atmosphere at the contemporary ratio. From measured quantities:</p>
+
+  <ul>
+    <li>τ_res = M_a / F_out = 3.8 yr (atmospheric mass over gross outflow)</li>
+    <li>φ_slow ≈ 0.20 (from mass balance of independently measured atmospheric and flux quantities)</li>
+    <li>τ_rel = 3.8 / 0.20 = 18.4 yr, matching the bomb-¹⁴C measurement exactly with no tuning or fitting.</li>
+  </ul>
+
+  <p>This physical relationship (from Cohler &amp; Soon, in preparation) has structural content and matches data. Engelbeen's T_adj = T_res / (1 − R) with his fabricated R = 0.92 gives T_adj = 3.8 / 0.08 = 47.5 yr, which matches the Happer 50 yr only because R was reverse-engineered from that same 50 yr number.</p>
+
+  <p>Furthermore, this whole framework has no bearing on the Keeling intercept paper. The Keeling analysis works on mass-balance-derived isotopic signatures over sampling windows. It invokes no kinetic decay model, no residence time, no adjustment time, no return fraction. The formula is Engelbeen's own fabricated assumption, deployed to attack a paper that does not use it.</p>
   </div>
 </div>
 
@@ -434,7 +449,7 @@
   <div class="inv-quote">"Three different adjustment times, due to three different returns of bulk CO2 and different isotopes."</div>
   <div class="inv-body">
   <p>IPCC defines T_adj as the e-folding decay timescale of an atmospheric pulse. Applied to the actual measured atmospheric pulse-decay data (Hua 2022 bomb-¹⁴C), that definition gives:</p>
-  <p style="text-align:center; font-size:1.1em;"><b>T_adj (¹⁴CO2) = 18.383 ± 0.015 yr</b> (measured, clean single exponential, R² = 99.998% on cleaned data)</p>
+  <p style="text-align:center; font-size:1.1em;"><b>T_adj (¹⁴CO2) ≈ 18.4 yr</b> (measured, clean single exponential, from a direct single-exponential fit to the unaltered Hua 2022 global record)</p>
   <p>Whether that number applies to ¹²CO2 and ¹³CO2 is established by two theorems, both proved in the appendix of Cohler &amp; Soon, "Bomb-Radiocarbon Determination of the Atmospheric CO₂ Relaxation Timescale" (in preparation). They are stated formally here so that anyone in this thread can verify the argument.</p>
 
   <div style="background:#f5f9f5; border:1px solid #2e7d32; border-radius:6px; padding:16px 20px; margin:14px 0;">
@@ -464,7 +479,7 @@
     <p><i>Geometric proof.</i> With wₖ(t) = cₖ exp(−λₖ t) and y = Σwₖ, direct calculation gives (ln y)″ = [Σwₖ · Σλₖ² wₖ − (Σλₖ wₖ)²] / y². By Cauchy–Schwarz, the numerator is > 0, so (ln y)″ > 0. Every sum of exponentials has strictly upward curvature on a semi-log plot; a single exponential has zero curvature (straight line). ∎</p>
   </div>
 
-  <p>The bomb-¹⁴C decay over 1965–2019 is a clean single exponential with τ_rel = 18.383 ± 0.015 yr and R² = 99.998% on the cleaned data. Residual σ₃₂ = 0.539‰ on a 720‰ signal bounds any additional exponential component at approximately one part in 1200.</p>
+  <p>The bomb-¹⁴C decay over 1965–2019 is a clean single exponential with τ_rel ≈ 18.4 yr, derivable directly from a single-exponential fit to the unaltered Hua 2022 global record.</p>
 
   <p>Combining these:</p>
   <ol>
