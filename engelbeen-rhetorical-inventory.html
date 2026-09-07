@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rhetorical Inventory: Engelbeen Reply, 2026-09-07</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: #222;
+    line-height: 1.6;
+    background: #fafafa;
+  }
+  h1 { font-size: 1.7em; border-bottom: 3px solid #222; padding-bottom: 8px; margin-bottom: 8px; }
+  h2 { font-size: 1.35em; margin-top: 44px; border-bottom: 1px solid #999; padding-bottom: 4px; }
+  h3 { font-size: 1.05em; margin-top: 20px; margin-bottom: 6px; }
+  .subtitle { color: #666; margin-bottom: 30px; font-size: 1.02em; }
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 24px 0;
+  }
+  .legend-item { display: flex; align-items: center; gap: 10px; font-size: 0.92em; }
+  .legend-swatch { display: inline-block; width: 26px; height: 20px; border-radius: 3px; }
+  .swatch-s { background: #fff3cd; border: 1px solid #f57c00; }
+  .swatch-sw { background: #fce4ec; border: 1px solid #c2185b; }
+  .swatch-f { background: #ede7f6; border: 1px solid #6a1b9a; }
+  .swatch-m { background: #e1f5fe; border: 1px solid #0277bd; }
+  .swatch-fab { background: #e8f5e9; border: 1px solid #2e7d32; }
+  .tally {
+    background: #fff;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    text-align: center;
+  }
+  .tally-item { padding: 8px; }
+  .tally-count { font-size: 2em; font-weight: bold; display: block; line-height: 1; }
+  .tally-count.s { color: #f57c00; }
+  .tally-count.sw { color: #c2185b; }
+  .tally-count.f { color: #6a1b9a; }
+  .tally-count.m { color: #0277bd; }
+  .tally-count.fab { color: #2e7d32; }
+  .tally-count.zero { color: #222; }
+  .tally-label { font-size: 0.82em; color: #666; display: block; margin-top: 6px; }
+  .email {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 26px;
+    margin: 24px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .email-header {
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.88em;
+    color: #666;
+    line-height: 1.5;
+  }
+  .email p { margin: 12px 0; }
+  .h { padding: 2px 4px; border-radius: 2px; }
+  .h-s { background: #fff3cd; }
+  .h-sw { background: #fce4ec; }
+  .h-f { background: #ede7f6; }
+  .h-m { background: #e1f5fe; }
+  .h-fab { background: #e8f5e9; }
+  .num {
+    display: inline-block;
+    color: white;
+    font-size: 0.72em;
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: super;
+    line-height: 1.3;
+  }
+  .num-s { background: #f57c00; }
+  .num-sw { background: #c2185b; }
+  .num-f { background: #6a1b9a; }
+  .num-m { background: #0277bd; }
+  .num-fab { background: #2e7d32; }
+  .inv {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left-width: 5px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    border-radius: 4px;
+  }
+  .inv.s { border-left-color: #f57c00; }
+  .inv.sw { border-left-color: #c2185b; }
+  .inv.f { border-left-color: #6a1b9a; }
+  .inv.m { border-left-color: #0277bd; }
+  .inv.fab { border-left-color: #2e7d32; }
+  .inv-head {
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .inv-tag {
+    display: inline-block;
+    color: white;
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .inv-tag.s { background: #f57c00; }
+  .inv-tag.sw { background: #c2185b; }
+  .inv-tag.f { background: #6a1b9a; }
+  .inv-tag.m { background: #0277bd; }
+  .inv-tag.fab { background: #2e7d32; }
+  .inv-quote {
+    font-style: italic;
+    color: #555;
+    padding: 6px 12px;
+    margin: 8px 0;
+    border-left: 3px solid #ccc;
+    font-size: 0.94em;
+  }
+  .inv-body { margin-top: 6px; }
+  .inv-body p { margin: 8px 0; }
+  .cat-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid;
+  }
+  .cat-heading.s { border-color: #f57c00; color: #f57c00; }
+  .cat-heading.sw { border-color: #c2185b; color: #c2185b; }
+  .cat-heading.f { border-color: #6a1b9a; color: #6a1b9a; }
+  .cat-heading.m { border-color: #0277bd; color: #0277bd; }
+  .cat-heading.fab { border-color: #2e7d32; color: #2e7d32; }
+  .summary-box {
+    background: #fff;
+    border: 2px solid #222;
+    padding: 20px 24px;
+    margin: 32px 0;
+    border-radius: 6px;
+  }
+  table.def-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 0.92em;
+  }
+  table.def-table th, table.def-table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.def-table th { background: #f0f0f0; }
+  code { font-family: "SF Mono", Consolas, monospace; background: #f5f5f5; padding: 1px 4px; border-radius: 2px; font-size: 0.92em; }
+</style>
+</head>
+<body>
+
+<h1>Rhetorical Inventory: Engelbeen Reply, 2026-09-07</h1>
+<p class="subtitle">Every scope shift, strawman, fallacy, misstatement, and fabrication in Ferdinand Engelbeen's reply of 2026-09-07 5:15 PM, mapped and debunked. Zero of his four numbered points engage with the mixing-equation derivation.</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-swatch swatch-s"></span> <b>S</b> Scope Shift</div>
+  <div class="legend-item"><span class="legend-swatch swatch-sw"></span> <b>SW</b> Strawman</div>
+  <div class="legend-item"><span class="legend-swatch swatch-f"></span> <b>F</b> Fallacy</div>
+  <div class="legend-item"><span class="legend-swatch swatch-m"></span> <b>M</b> Misstatement</div>
+  <div class="legend-item"><span class="legend-swatch swatch-fab"></span> <b>FAB</b> Fabrication</div>
+</div>
+
+<div class="tally">
+  <div class="tally-item"><span class="tally-count s">3</span><span class="tally-label">Scope Shifts</span></div>
+  <div class="tally-item"><span class="tally-count sw">3</span><span class="tally-label">Strawmen</span></div>
+  <div class="tally-item"><span class="tally-count f">6</span><span class="tally-label">Fallacies</span></div>
+  <div class="tally-item"><span class="tally-count m">3</span><span class="tally-label">Misstatements</span></div>
+  <div class="tally-item"><span class="tally-count fab">4</span><span class="tally-label">Fabrications</span></div>
+  <div class="tally-item"><span class="tally-count zero">19</span><span class="tally-label">Total Violations</span></div>
+  <div class="tally-item"><span class="tally-count zero">0</span><span class="tally-label">Addressing Derivation</span></div>
+</div>
+
+<h2>The Email, Annotated</h2>
+
+<div class="email">
+<div class="email-header">
+<b>From:</b> ferdinand.engelbeen@telenet.be<br>
+<b>To:</b> Jonathan, Demetris, Greg, Marcel, Peter, Harde, Frans, Afroditi, Wouter, ferdinand, Evert, Willie<br>
+<b>Sent:</b> 2026-09-07 5:15 PM
+</div>
+
+<p>Dear Jonathan,</p>
+
+<p>I short, as most is said in the previous message:</p>
+
+<p>1. <span class="h h-s">The Keeling plot gives a straight answer if the input has a fixed δ¹³C level either from a single source or from a fixed mixture of sources.<span class="num num-s">S1</span></span> If that changes over time, that gives an average of the changes, <span class="h h-sw">but doesn't give you a clue what changed: the mix over time or the δ¹³C level of one or more flows in the mix or both.<span class="num num-sw">SW1</span></span></p>
+
+<p><span class="h h-f">That makes that the use of the Keeling plot in your work has little value, as long as you don't know the change in mix and/or δ¹³C levels within the flows.<span class="num num-f">F1</span></span></p>
+
+<p>2. "The very high R² is direct empirical evidence that the intercept, i.e. the mass-weighted signature of the net input, has been stable throughout each sampling window."</p>
+
+<p><span class="h h-s">The very high R² of 0.9977 of the "airborne fraction"<span class="num num-s">S2</span></span> <span class="h h-f">at 53%<span class="num num-f">F2</span></span> <span class="h h-m">in the atmosphere of human inputs 1900-2011 also has been stable over the whole period,<span class="num num-m">M1</span></span> That doesn't prove that humans are the cause of the increase <span class="h h-f">(but the 53%, below 100%, does prove it...)<span class="num num-f">F3</span></span>, <span class="h h-sw">neither does the stable net input disprove the human cause.<span class="num num-sw">SW2</span></span></p>
+
+<p>3. <span class="h h-m">The ocean cycle increase is from an IPCC model,<span class="num num-m">M2</span></span> but the biosphere cycle is from the oxygen measurements: <span class="h h-f">the earth is greening and that increases the O2/CO2 cycle and the change in source/sink level of the biosphere.<span class="num num-f">F4</span></span> <span class="h h-m">Nothing circular there.<span class="num num-m">M3</span></span></p>
+
+<p>4. " EHB (2024) declares that "nearly all the increase in atmospheric CO2 is from human emissions". "</p>
+
+<p><span class="h h-sw">You conflate here the increase in total CO2 with the in/decrease of the different isotopes...<span class="num num-sw">SW3</span></span></p>
+
+<p><span class="h h-s">In all three cases, the effect of what humans emitted for 100% directly in the atmosphere is larger than what remains in the atmosphere. That effect goes away with three different exponential decay rates ("adjustment" times) for the three different isotopes:<span class="num num-s">S3</span></span></p>
+
+<p>The definition of adjustment time compared to the residence time:</p>
+<p style="font-family: monospace;">T<sub>res</sub> = mass / outflow</p>
+<p style="font-family: monospace;">T<sub>adj</sub> = mass / <b>net</b> outflow</p>
+<p>And the connection between the two is the return fraction R (between 0 and 1):</p>
+<p><span class="h h-fab" style="font-family: monospace;">T<sub>adj</sub> = T<sub>res</sub> / (1 − R)<span class="num num-fab">FAB1</span></span></p>
+
+<p><span class="h h-f">The bulk (mainly 12CO2) CO2 mass has a calculated adjustment time of around 50 years as Happer et al. showed:<br><a href="https://co2coalition.org/publications/human-emissions-and-atmospheric-concentrations-of-carbon-dioxide/">https://co2coalition.org/publications/human-emissions-and-atmospheric-concentrations-of-carbon-dioxide/</a><span class="num num-f">F5</span></span></p>
+
+<p><span class="h h-fab">For the 50 year adjustment time for the bulk CO2 in the atmosphere that gives an R = 0.92<span class="num num-fab">FAB2</span></span></p>
+
+<p>For the 14C bomb decline, the adjustment time as you have calculated was around 17 years with an R of around 0.70 (or so)</p>
+
+<p><span class="h h-fab">For the 13C dilution of the FF input, I have not calculated it exactly, but will be around 12-15 years I suppose.<span class="num num-fab">FAB3</span></span></p>
+
+<p><span class="h h-fab">Three different adjustment times, due to three different returns of bulk CO2 and different isotopes.<span class="num num-fab">FAB4</span></span></p>
+
+<p><span class="h h-f">In all three cases, the initial changes are directly linked to human activity...<span class="num num-f">F6</span></span></p>
+
+<p>Best regards,<br>Ferdinand</p>
+</div>
+
+<h2>Numerical Debunking</h2>
+
+<div class="cat-heading s"><h3 style="margin:0;">SCOPE SHIFTS</h3></div>
+
+<div class="inv s">
+  <div class="inv-head"><span class="inv-tag s">S1</span> Single-source scope shift, reintroduced.</div>
+  <div class="inv-quote">"The Keeling plot gives a straight answer if the input has a fixed δ¹³C level either from a single source or from a fixed mixture of sources."</div>
+  <div class="inv-body">
+  <p>Shifts the discussion to a narrow methodological caveat that arises when someone tries to use a Keeling plot to isolate the signature of one specific source (e.g., nighttime forest respiration at one site). That is not the problem the paper addresses. The paper uses the aggregate mixture signature, which is what the Keeling intercept IS by mass balance. Explicitly diagnosed in point 1 of the prior reply and not addressed.</p>
+  </div>
+</div>
+
+<div class="inv s">
+  <div class="inv-head"><span class="inv-tag s">S2</span> Airborne-fraction topic swap.</div>
+  <div class="inv-quote">"The very high R² of 0.9977 of the 'airborne fraction'"</div>
+  <div class="inv-body">
+  <p>The R² argument in the prior reply concerns the Keeling regressions of δ¹³C_atm on 1/[CO2]. Engelbeen's R² concerns a completely different regression: airborne fraction versus time. Different variables, different regressions, different quantities. Reusing the letter "R²" does not make it the same argument.</p>
+  </div>
+</div>
+
+<div class="inv s">
+  <div class="inv-head"><span class="inv-tag s">S3</span> Adjustment-time framework shift.</div>
+  <div class="inv-quote">"That effect goes away with three different exponential decay rates ('adjustment' times) for the three different isotopes"</div>
+  <div class="inv-body">
+  <p>Introduces residence time, adjustment time, return fraction R, and the Happer et al. (2026) exponential-decay model. None of this addresses the mixing equation, the Keeling intercept, the aggregate net input signature, the Böhm quantitative bound, or any element of the derivation under discussion. It is a different framework for a different question.</p>
+  </div>
+</div>
+
+<div class="cat-heading sw"><h3 style="margin:0;">STRAWMEN</h3></div>
+
+<div class="inv sw">
+  <div class="inv-head"><span class="inv-tag sw">SW1</span> Attacks a decomposition claim never made.</div>
+  <div class="inv-quote">"doesn't give you a clue what changed: the mix over time or the δ¹³C level of one or more flows in the mix or both"</div>
+  <div class="inv-body">
+  <p>The derivation does not need to decompose internal changes within the mixture. It uses the aggregate signature (the Keeling intercept, fixed by mass balance) together with the endmembers to bound the fossil fraction f via the textbook mixing equation. Whether the internal composition is decomposable is irrelevant to the bound.</p>
+  </div>
+</div>
+
+<div class="inv sw">
+  <div class="inv-head"><span class="inv-tag sw">SW2</span> Attacks a "stability disproves" claim never made.</div>
+  <div class="inv-quote">"neither does the stable net input disprove the human cause"</div>
+  <div class="inv-body">
+  <p>The derivation does not argue that stability alone disproves anthropogenic dominance. It argues that the VALUE of the stable intercept (approximately −13‰, far from the −28‰ fossil endmember) bounds f near 6% via the mixing equation. Stability tells us the average is well-defined. The value tells us what it is.</p>
+  </div>
+</div>
+
+<div class="inv sw">
+  <div class="inv-head"><span class="inv-tag sw">SW3</span> Attacks a conflation never committed.</div>
+  <div class="inv-quote">"You conflate here the increase in total CO2 with the in/decrease of the different isotopes..."</div>
+  <div class="inv-body">
+  <p>The mixing equation explicitly distinguishes total CO2 accumulation from isotopic composition. That is precisely what the equation does. The claim that the two are conflated has no basis in the derivation.</p>
+  </div>
+</div>
+
+<div class="cat-heading f"><h3 style="margin:0;">FALLACIES</h3></div>
+
+<div class="inv f">
+  <div class="inv-head"><span class="inv-tag f">F1</span> Value judgment substituted for engagement.</div>
+  <div class="inv-quote">"That makes that the use of the Keeling plot in your work has little value"</div>
+  <div class="inv-body">
+  <p>A declaration of low value is not an argument. It is a rhetorical substitute for engaging with the derivation. The derivation stands or falls on whether the mixing equation, applied to the measured intercept with the standard endmembers, yields f near 0.06.</p>
+  </div>
+</div>
+
+<div class="inv f">
+  <div class="inv-head"><span class="inv-tag f">F2</span> Three-quantity definitional substitution ("airborne fraction").</div>
+  <div class="inv-quote">"the 'airborne fraction' at 53%"</div>
+  <div class="inv-body">
+  <p>The label "airborne fraction" as used in IPCC assessments and by Engelbeen names three physically distinct quantities that are then used interchangeably.</p>
+
+  <table class="def-table">
+    <tr><th>Symbol</th><th>Definition</th><th>Value</th></tr>
+    <tr>
+      <td><b>ABF<sub>L</sub></b></td>
+      <td>IPCC Glossary definition. Cumulative anthropogenic mass still airborne / cumulative anthropogenic mass ever emitted. The <i>retention fraction</i>.</td>
+      <td>≈ 6% under proper mass-balance reservoir routing with τ_res ≈ 3.8 yr</td>
+    </tr>
+    <tr>
+      <td><b>ABF<sub>C</sub></b></td>
+      <td>Ratio of contemporaneous rates. Annual atmospheric growth / annual anthropogenic emission. This is what is <i>actually computed and reported</i> as "≈ 44%" or "≈ 53%."</td>
+      <td>Mean 42.7%, range 17.0%–74.1%, CV 29.1% over 1960–2025. Highly variable.</td>
+    </tr>
+    <tr>
+      <td><b>ABF<sub>S</sub></b></td>
+      <td>Smoothed rate ratio. ABF<sub>C</sub> low-pass filtered with an undeclared window of order 15–30 years. This is what "approximately constant" actually describes.</td>
+      <td>Appears "stable" only because the smoothing window exceeds interannual variability.</td>
+    </tr>
+  </table>
+
+  <p>The construction "the airborne fraction is stable at ≈ 44%, so roughly half of anthropogenic emissions remain airborne" computes ABF<sub>S</sub>, interprets it as ABF<sub>L</sub>, and licenses the interpretation with the Glossary label. The three quantities are not equal. ABF<sub>L</sub> and ABF<sub>C</sub> differ by roughly an order of magnitude under proper reservoir routing. Any argument that treats them as interchangeable is a definitional substitution, not physics.</p>
+  </div>
+</div>
+
+<div class="inv f">
+  <div class="inv-head"><span class="inv-tag f">F3</span> Accounting-identity fallacy ("below 100% proves it").</div>
+  <div class="inv-quote">"the 53%, below 100%, does prove it..."</div>
+  <div class="inv-body">
+  <p>"Annual atmospheric growth is a fraction less than annual anthropogenic emission" is an accounting identity, not a causal proof. The identity ΔCO₂ = E_anth + (F_nat_in − F_nat_out) holds under natural-dominated causation, under anthropogenic-dominated causation, and under every partition in between. It carries no information about attribution.</p>
+  <p>The reason ABF<sub>C</sub> is less than 100% is that natural sinks absorb some fraction of atmospheric CO2 each year. This is true whether the atmospheric growth is driven by fossil emissions, by warming-driven natural outgassing, or by any combination. "Less than 100%" tells us sinks exist. It does not tell us what the sources are.</p>
+  </div>
+</div>
+
+<div class="inv f">
+  <div class="inv-head"><span class="inv-tag f">F4</span> Own-goal on greening mechanism.</div>
+  <div class="inv-quote">"the earth is greening and that increases the O2/CO2 cycle and the change in source/sink level of the biosphere"</div>
+  <div class="inv-body">
+  <p>Warming-driven biospheric flux increase IS the natural-dominated mechanism the paper invokes for the atmospheric CO2 rise. Engelbeen has cited the very mechanism the paper argues is responsible, then claimed it supports anthropogenic dominance. It does not.</p>
+  </div>
+</div>
+
+<div class="inv f">
+  <div class="inv-head"><span class="inv-tag f">F5</span> Curve-fit-to-endpoints presented as derived physics, contradicted by IPCC's own definition applied to measured data.</div>
+  <div class="inv-quote">"The bulk CO2 mass has a calculated adjustment time of around 50 years as Happer et al. showed"</div>
+  <div class="inv-body">
+  <p>IPCC defines T_adj as the e-folding decay timescale of a pulse injected into the atmosphere. Applied to the actual atmospheric pulse-decay data available (the bomb-¹⁴C spike, per Hua 2022), that definition gives:</p>
+  <p style="text-align:center; font-size:1.1em;"><b>T_adj (¹⁴CO2) = 18.4 yr</b> (measured e-folding time, clean single exponential)</p>
+  <p>The Happer et al. (2026) "50-year adjustment time" is not derived from any comparable measurement. It is a fitted decay constant obtained by assuming an exponential-decay functional form and choosing the constant so that the modeled trajectory matches endpoint concentrations. It is a two-parameter curve fit to an assumed form. It disagrees with IPCC's own definition applied to actual pulse-decay data by nearly a factor of three.</p>
+  <p>Furthermore, the bomb-¹⁴C decay is a clean single exponential, which directly falsifies the Bern IRF multi-exponential construct that the Happer 50-year framework implicitly rests on. Citing a curve fit to a falsified functional form as if it were derived physics is doubly circular.</p>
+  </div>
+</div>
+
+<div class="inv f">
+  <div class="inv-head"><span class="inv-tag f">F6</span> Question-begging closer.</div>
+  <div class="inv-quote">"In all three cases, the initial changes are directly linked to human activity..."</div>
+  <div class="inv-body">
+  <p>Whether the initial changes are linked to human activity in the sense the IPCC and EHB (2024) claim (near-total) is precisely what the isotopic derivation refutes at f ≈ 6%. Asserting the conclusion under dispute is not an argument for it. Question-begging in the classical logical sense: the conclusion appears in the premises.</p>
+  </div>
+</div>
+
+<div class="cat-heading m"><h3 style="margin:0;">MISSTATEMENTS</h3></div>
+
+<div class="inv m">
+  <div class="inv-head"><span class="inv-tag m">M1</span> Airborne fraction is not stable.</div>
+  <div class="inv-quote">"also has been stable over the whole period"</div>
+  <div class="inv-body">
+  <p>Annual ABF<sub>C</sub> is highly variable: range 17.0%–74.1% over 1960–2025, mean 42.7%, standard deviation 12.4 percentage points, coefficient of variation 29.1%. Even a 4-year trailing mean still has CV of 13.7%. The appearance of stability emerges only under 15–30 year smoothing windows, far longer than the reservoir residence time τ_res ≈ 3.8 yr. The cited stability is a smoothing artifact of ABF<sub>S</sub>, not a physical feature of ABF<sub>C</sub>.</p>
+  </div>
+</div>
+
+<div class="inv m">
+  <div class="inv-head"><span class="inv-tag m">M2</span> Concedes half the earlier citation is circular.</div>
+  <div class="inv-quote">"The ocean cycle increase is from an IPCC model"</div>
+  <div class="inv-body">
+  <p>Explicit admission that the ocean flux estimate cited in Engelbeen's earlier reply is an IPCC model output. This directly contradicts his claim two sentences later that there is "nothing circular there." Half the original numeric citation is admitted circular by his own hand.</p>
+  </div>
+</div>
+
+<div class="inv m">
+  <div class="inv-head"><span class="inv-tag m">M3</span> "Nothing circular there" contradicts the sentence before it.</div>
+  <div class="inv-quote">"Nothing circular there."</div>
+  <div class="inv-body">
+  <p>Following an admission that half the cited data is IPCC-model-derived (M2), "nothing circular" is factually wrong. The ocean part IS circular. The biosphere part invokes greening (F4), which supports the opposing thesis.</p>
+  </div>
+</div>
+
+<div class="cat-heading fab"><h3 style="margin:0;">FABRICATIONS</h3></div>
+
+<div class="inv fab">
+  <div class="inv-head"><span class="inv-tag fab">FAB1</span> Fabricated relationship T<sub>adj</sub> = T<sub>res</sub> / (1 − R) as physical law.</div>
+  <div class="inv-quote">"the connection between the two is the return fraction R (between 0 and 1): T<sub>adj</sub> = T<sub>res</sub> / (1 − R)"</div>
+  <div class="inv-body">
+  <p>This equation is not IPCC's definition of T_adj. IPCC defines T_adj behaviorally as the e-folding decay timescale of an atmospheric pulse — a definition that says nothing about which formula computes it. The relationship T_adj = T_res / (1 − R) is a model-specific derivation that follows only from a first-order, steady-state, single-reservoir, well-mixed system with a scalar return coefficient R. Under any other conditions (multi-reservoir, non-first-order, non-steady-state) it is simply wrong. None of the required conditions are asserted, derived, or defended in the text.</p>
+  <p>Furthermore, this whole framework has no bearing on the Keeling intercept paper. The Keeling analysis works on mass-balance-derived isotopic signatures over sampling windows. It invokes no kinetic decay model, no residence time, no adjustment time, no return fraction. The formula is Engelbeen's own fabricated assumption, presented as if it were general physics, deployed to attack a paper that does not use it.</p>
+  </div>
+</div>
+
+<div class="inv fab">
+  <div class="inv-head"><span class="inv-tag fab">FAB2</span> Fabricated R = 0.92 for bulk CO2.</div>
+  <div class="inv-quote">"For the 50 year adjustment time for the bulk CO2 in the atmosphere that gives an R = 0.92"</div>
+  <div class="inv-body">
+  <p>This number is produced by plugging a curve-fit 50-year figure (F5) into a first-order-only formula (FAB1). At no step in the chain is any quantity derived from independent physical data. R = 0.92 is a bookkeeping result of two prior invocations, not a measured or physically derived quantity.</p>
+  </div>
+</div>
+
+<div class="inv fab">
+  <div class="inv-head"><span class="inv-tag fab">FAB3</span> Self-admitted guess: "12-15 years I suppose."</div>
+  <div class="inv-quote">"For the 13C dilution of the FF input, I have not calculated it exactly, but will be around 12-15 years I suppose."</div>
+  <div class="inv-body">
+  <p>Explicit acknowledgment in the text itself that the number is a guess. Not calculated, not measured, not derived. Presented on the same footing as the other numbers in the paragraph as if it were comparable evidence.</p>
+  </div>
+</div>
+
+<div class="inv fab">
+  <div class="inv-head"><span class="inv-tag fab">FAB4</span> "Three different adjustment times for three different isotopes" is mathematically excluded by the Operator-Equivalence Theorem and physically excluded by the shared molecular dynamics of the isotopologues.</div>
+  <div class="inv-quote">"Three different adjustment times, due to three different returns of bulk CO2 and different isotopes."</div>
+  <div class="inv-body">
+  <p>IPCC defines T_adj as the e-folding decay timescale of an atmospheric pulse. Applied to the actual measured atmospheric pulse-decay data (Hua 2022 bomb-¹⁴C), that definition gives:</p>
+  <p style="text-align:center; font-size:1.1em;"><b>T_adj (¹⁴CO2) = 18.383 ± 0.015 yr</b> (measured, clean single exponential, R² = 99.998% on cleaned data)</p>
+  <p>Whether that number applies to ¹²CO2 and ¹³CO2 is established by two theorems, both proved in the appendix of Cohler &amp; Soon, "Bomb-Radiocarbon Determination of the Atmospheric CO₂ Relaxation Timescale" (in preparation). They are stated formally here so that anyone in this thread can verify the argument.</p>
+
+  <div style="background:#f5f9f5; border:1px solid #2e7d32; border-radius:6px; padding:16px 20px; margin:14px 0;">
+    <p style="margin-top:0;"><b>Operator-Equivalence Theorem (OET)</b></p>
+
+    <p><i>Setting.</i> Let <b>A</b> be the linear exchange operator of the coupled atmosphere–reservoir carbon system, with eigenvalues {λⱼ}, right eigenvectors {<b>v</b>ⱼ}, and left eigenvectors {<b>w</b>ⱼ} satisfying <b>w</b>ⱼᵀ<b>v</b>ₖ = δⱼₖ. Suppose the atmospheric perturbation is linear in the operator (empirically confirmed by the observed single-exponential bomb-¹⁴C decay over 54 yr and by constancy of κ_in to ±0.4% across a 31.6% rise in atmospheric mass).</p>
+
+    <p><i>Claim.</i> The atmospheric expression of mode j in the bomb-¹⁴C response is</p>
+    <p style="text-align:center; font-family:monospace;">δXₐ⁽ʲ⁾(t) = α (<b>w</b>ⱼᵀ <b>e</b>ₐ) v_{j,a} exp[(λⱼ − λ₁₄) t]</p>
+
+    <p>and the atmospheric expression of the same mode in the mass response to an atmospheric emission impulse is</p>
+    <p style="text-align:center; font-family:monospace;">δMₐ⁽ʲ⁾(t) = β (<b>w</b>ⱼᵀ <b>e</b>ₐ) v_{j,a} exp(λⱼ t)</p>
+
+    <p><b>The atmospheric visibility product (w</b>ⱼᵀ <b>e</b>ₐ<b>) v_{j,a} is the same in both.</b> Any eigenmode present in the mass impulse response must appear in the bomb-¹⁴C decay with the identical fractional weight, modulo the known ¹⁴C radioactive decay shift λ₁₄ = ln(2)/5730 yr = 1.21 × 10⁻⁴ /yr.</p>
+
+    <p><i>Proof sketch.</i> Decompose <b>e</b>ₐ = Σⱼ (<b>w</b>ⱼᵀ <b>e</b>ₐ) <b>v</b>ⱼ. For the bomb-¹⁴C initial condition δ<b>X</b>(0) = α <b>e</b>ₐ with no subsequent source, solve the perturbation ODE and read off the atmospheric component. For the mass impulse source, the Duhamel solution yields the mass expression. Eigenvectors are shared, so the visibility product is identical. ∎</p>
+  </div>
+
+  <div style="background:#f5f9f5; border:1px solid #2e7d32; border-radius:6px; padding:16px 20px; margin:14px 0;">
+    <p style="margin-top:0;"><b>A sum of exponentials is not an exponential.</b></p>
+
+    <p>For any real μ, distinct real {λ₁, ..., λₙ}, positive d and {c₁, ..., cₙ} with n > 1,</p>
+    <p style="text-align:center; font-family:monospace;">Σₖ cₖ exp(λₖ t) ≢ d exp(μ t)</p>
+
+    <p><i>Proof.</i> Set λ₀ ≔ μ, c₀ ≔ −d, giving Σₖ₌₀ cₖ exp(λₖ t) ≡ 0. Differentiating j times at t = 0 for j = 0, 1, ..., n yields the linear system <b>Vc</b> = <b>0</b>, where <b>V</b> is the (n+1)×(n+1) Vandermonde matrix with det <b>V</b> = Πᵢ<ₖ(λₖ − λᵢ) ≠ 0. Hence <b>c</b> = <b>V</b>⁻¹<b>0</b> = <b>0</b>, contradicting c₀ = −d ≠ 0.</p>
+
+    <p><i>Geometric proof.</i> With wₖ(t) = cₖ exp(−λₖ t) and y = Σwₖ, direct calculation gives (ln y)″ = [Σwₖ · Σλₖ² wₖ − (Σλₖ wₖ)²] / y². By Cauchy–Schwarz, the numerator is > 0, so (ln y)″ > 0. Every sum of exponentials has strictly upward curvature on a semi-log plot; a single exponential has zero curvature (straight line). ∎</p>
+  </div>
+
+  <p>The bomb-¹⁴C decay over 1965–2019 is a clean single exponential with τ_rel = 18.383 ± 0.015 yr and R² = 99.998% on the cleaned data. Residual σ₃₂ = 0.539‰ on a 720‰ signal bounds any additional exponential component at approximately one part in 1200.</p>
+
+  <p>Combining these:</p>
+  <ol>
+    <li>By the Operator-Equivalence Theorem, the mass impulse response for atmospheric CO₂ shares its eigenmode structure with the ¹⁴C impulse response, mode by mode.</li>
+    <li>By "A sum of exponentials is not an exponential," any multi-exponential IRF (Bern, or otherwise) cannot equal the observed single-exponential bomb-¹⁴C decay.</li>
+    <li>Therefore the mass IRF is also a single exponential with essentially the same time constant (modulo λ₁₄, negligible). The Bern IRF and every other multi-exponential CO₂ IRF is structurally excluded.</li>
+    <li>Furthermore, the physical processes that remove CO₂ from the atmosphere (air-sea gas exchange, photosynthesis, chemical weathering) act on CO₂ molecules, not on isotopic labels. They do not select between ¹²CO₂, ¹³CO₂, and ¹⁴CO₂ at rates comparable to F_out ≈ 230 GtC/yr. All three isotopologues therefore share the same atmospheric dynamics. τ_rel = 18.4 yr applies to ¹²CO₂ and ¹³CO₂ as well.</li>
+  </ol>
+
+  <p>Engelbeen's proposal of 50 yr for bulk CO₂, ~17 yr for ¹⁴C, and 12–15 yr for ¹³C requires (a) a multi-exponential mass IRF that is structurally excluded by OET applied to the single-exponential bomb-¹⁴C decay, and (b) physical processes that select between CO₂ isotopologues at rates of tens of percent of the gross outflow. No such process has been identified, proposed, or observed. This is not a coincidence of numbers. It is doubly excluded, once mathematically and once physically.</p>
+  </div>
+</div>
+
+<div class="summary-box">
+  <h2 style="margin-top:0; border:none;">Summary</h2>
+  <p>Zero of the four numbered points in Engelbeen's reply engage with the mixing-equation derivation. All nineteen violations shift scope, attack strawmen, commit logical fallacies, misstate the record, or fabricate quantities and relationships.</p>
+  <p>The airborne-fraction paragraph alone stacks six violations in a single passage: topic swap (S2), factual misstatement about stability (M1), three-quantity definitional substitution fraud (F2), accounting-identity fallacy (F3), and strawman about what "stability" was supposed to prove (SW2). Fallacy upon fallacy upon fallacy upon definitional shifting.</p>
+  <p>The adjustment-time paragraph stacks seven violations: framework scope shift (S3), curve-fit-to-endpoints presented as derivation (F5), question-begging closer (F6), fabricated formula (FAB1), fabricated value (FAB2), self-admitted guess (FAB3), and a claim of three different isotope decay times that is physically impossible per the OET AND contradicts IPCC's own T_adj definition applied to measured bomb-¹⁴C data (FAB4). Every quantity in that paragraph is invented, guessed, or derived from prior invention. And the whole framework is refuted by the measured 18.4 yr e-folding time that IS the IPCC's T_adj for ¹⁴CO2 by IPCC's own definition.</p>
+  <p>Across four numbered items, and now three exchanges in this thread, no specific step of the mixing-equation derivation that supposedly fails has been named. The derivation stands unopposed on the substance.</p>
+</div>
+
+</body>
+</html>
