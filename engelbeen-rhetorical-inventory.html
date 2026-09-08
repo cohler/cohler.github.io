@@ -364,7 +364,7 @@
   <p>IPCC defines T_adj as the e-folding decay timescale of a pulse injected into the atmosphere. Applied to the actual atmospheric pulse-decay data available (the bomb-¹⁴C spike, per Hua 2022), that definition gives:</p>
   <p style="text-align:center; font-size:1.1em;"><b>T_adj (¹⁴CO2) = 18.4 yr</b> (measured e-folding time, clean single exponential)</p>
   <p>The Happer et al. (2026) "50-year adjustment time" is not derived from any comparable measurement. It is a fitted decay constant obtained by assuming an exponential-decay functional form and choosing the constant so that the modeled trajectory matches endpoint concentrations. It is a two-parameter curve fit to an assumed form. It disagrees with IPCC's own definition applied to actual pulse-decay data by nearly a factor of three.</p>
-  <p>Furthermore, the bomb-¹⁴C decay is a clean single exponential, which directly falsifies the Bern IRF multi-exponential construct that the Happer 50-year framework implicitly rests on. Citing a curve fit to a falsified functional form as if it were derived physics is doubly circular.</p>
+  <p>Furthermore, the bomb-¹⁴C decay is a clean single exponential, and its time constant is 18.4 yr, not 50 yr. Under the Operator-Equivalence Theorem (see FAB5 below), the mass IRF and the ¹⁴C IRF share their eigenvalues. A mass IRF governed by a 50-yr time constant would require the ¹⁴C decay to also proceed at 50 yr. It does not; it proceeds at 18.4 yr. Happer's single-exponential 50-yr model is therefore excluded by direct comparison of its assumed time constant with the measured pulse-decay time constant, and additionally excluded by OET. (The Bern IRF, which is a separate multi-exponential construct in the AR2–AR6 assessments, is excluded by a different argument: by "a sum of exponentials is not an exponential," no multi-exponential can equal the observed clean single exponential at all.)</p>
   </div>
 </div>
 
@@ -422,19 +422,15 @@
   <div class="inv-body">
   <p>This equation is not IPCC's definition of T_adj either. It is a model-specific derivation that follows only from a first-order, steady-state, single-reservoir, well-mixed system with a scalar return coefficient R. Under any other conditions (multi-reservoir, non-first-order, non-steady-state) it is simply wrong. None of the required conditions are asserted, derived, or defended in the text. And R itself is left undefined: whether it is a slow-fraction complement (1 − φ_slow), an instantaneous return coefficient, or some other quantity is not specified.</p>
 
-  <p><b>The correct physical relationship.</b> The bridge equation connecting residence time and pulse-decay adjustment time for the coupled atmosphere–reservoir CO₂ system, derivable from first-principles mass balance, is</p>
+  <p><b>The correct physical picture.</b> Bulk CO₂ has a single atmospheric removal timescale, τ_res = M_a / F_out = 3.8 yr, derived from mass balance and independently confirmed by Koutsoyiannis (2024) via Refined Reservoir Routing analysis of Mauna Loa and Barrow concentration data. There is no separate physical quantity called an "adjustment time" for bulk CO₂.</p>
 
-  <p style="text-align:center; font-family:monospace; font-size:1.05em;">τ_rel = τ_res / φ_slow</p>
+  <p>The bomb-¹⁴C decay proceeds on an observed timescale τ_rel ≈ 18.4 yr only because the bomb tests created a large sudden isotopic disequilibrium in atmospheric ¹⁴C that had to work through the coupled reservoirs. ¹⁴C leaving the atmosphere partly returned from fast reservoirs (surface ocean, active biosphere) still carrying elevated ¹⁴C; only the fraction penetrating slow reservoirs (deep ocean, refractory biosphere) was effectively removed from the tracer signal. The bridge equation relates the two timescales:</p>
 
-  <p>where φ_slow is the fraction of incoming CO₂ that enters slow reservoirs (deep ocean, refractory biosphere) rather than returning rapidly to the atmosphere at the contemporary ratio. From measured quantities:</p>
+  <p style="text-align:center; font-family:monospace; font-size:1.05em;">τ_rel = τ_res / φ_slow = 3.8 yr / 0.20 ≈ 18.4 yr</p>
 
-  <ul>
-    <li>τ_res = M_a / F_out = 3.8 yr (atmospheric mass over gross outflow)</li>
-    <li>φ_slow ≈ 0.20 (from mass balance of independently measured atmospheric and flux quantities)</li>
-    <li>τ_rel = 3.8 / 0.20 = 18.4 yr, matching the bomb-¹⁴C measurement exactly with no tuning or fitting.</li>
-  </ul>
+  <p>where 1/φ_slow ≈ 5 is the <b>isotopic disequilibrium factor</b> and φ_slow ≈ 0.20 is measured independently from mass balance. τ_res and τ_rel are not two independent parameters; they are the same physics viewed through bulk mass balance and through isotopic disequilibrium respectively. Bulk CO₂ is removed at 3.8 yr and ¹⁴CO₂ tracer relaxes at 18.4 yr, and once the disequilibrium factor is accounted for these are the same thing.</p>
 
-  <p>This physical relationship has structural content and matches data. Engelbeen's T_adj = T_res / (1 − R) with his fabricated R = 0.92 gives T_adj = 3.8 / 0.08 = 47.5 yr, which matches the Happer 50 yr only because R was reverse-engineered from that same 50 yr number.</p>
+  <p>Engelbeen's T_adj = T_res / (1 − R) with his fabricated R = 0.92 gives T_adj = 3.8 / 0.08 = 47.5 yr, which matches the Happer 50 yr only because R was reverse-engineered from that same 50 yr number. There is no independent physical measurement of any 50-yr timescale.</p>
 
   <p>Furthermore, this whole framework has no bearing on the Keeling intercept paper. The Keeling analysis works on mass-balance-derived isotopic signatures over sampling windows. It invokes no kinetic decay model, no residence time, no adjustment time, no return fraction. The formula is Engelbeen's own fabricated assumption, deployed to attack a paper that does not use it.</p>
   </div>
@@ -501,7 +497,7 @@
     <li>Furthermore, the physical processes that remove CO₂ from the atmosphere (air-sea gas exchange, photosynthesis, chemical weathering) act on CO₂ molecules, not on isotopic labels. They do not select between ¹²CO₂, ¹³CO₂, and ¹⁴CO₂ at rates comparable to F_out ≈ 230 GtC/yr. All three isotopologues therefore share the same atmospheric dynamics. τ_rel = 18.4 yr applies to ¹²CO₂ and ¹³CO₂ as well.</li>
   </ol>
 
-  <p>Engelbeen's proposal of 50 yr for bulk CO₂, ~17 yr for ¹⁴C, and 12–15 yr for ¹³C requires (a) a multi-exponential mass IRF that is structurally excluded by OET applied to the single-exponential bomb-¹⁴C decay, and (b) physical processes that select between CO₂ isotopologues at rates of tens of percent of the gross outflow. No such process has been identified, proposed, or observed. This is not a coincidence of numbers. It is doubly excluded, once mathematically and once physically.</p>
+  <p>Engelbeen's proposal of 50 yr for bulk CO₂, ~17 yr for ¹⁴C, and 12–15 yr for ¹³C requires (a) different eigenvalues of the atmospheric exchange operator for different isotopes of the same molecule, which the Operator-Equivalence Theorem excludes, and (b) physical processes that select between CO₂ isotopologues at rates of tens of percent of the gross outflow. No such process has been identified, proposed, or observed. This is not a coincidence of numbers. It is doubly excluded, once mathematically and once physically.</p>
   </div>
 </div>
 
