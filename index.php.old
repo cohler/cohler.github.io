@@ -183,26 +183,6 @@ Key Result: The GMST construct is physically meaningless.',
 
 ];
 
-// ── Short-URL Aliases ───────────────────────────────────────────────────────
-// Short slug => canonical slug in $papers. Requests to /ALIAS/ (and
-// /ALIAS/filename) 301-redirect to the canonical URL.
-
-$aliases = [
-    'co2'    => 'co2-dynamics',
-    'ptt'    => 'physical-tether-theorem',
-    'ohc'    => 'argo-ohc',
-    'argo'   => 'argo-ohc',
-    'grok3'  => 'grok-3-beta',
-    'puppet' => 'puppeteers',
-];
-
-// Guard: an alias key must not collide with a real paper slug, or it would
-// silently hijack the real paper's URL. Fail loudly at startup instead.
-if (array_intersect_key($aliases, $papers)) {
-    http_response_code(500);
-    exit('Config error: alias collides with paper slug');
-}
-
 // Sort papers by sort_date descending
 uasort($papers, function($a, $b) {
     return strcmp($b['sort_date'], $a['sort_date']);
@@ -468,14 +448,6 @@ $segments = $query ? explode('/', $query, 2) : [];
 
 $path = $segments[0] ?? null;
 $file = $segments[1] ?? null;
-
-// Route 0: Alias -> 301 redirect to canonical slug
-if ($path && isset($aliases[$path])) {
-    $canonical = $aliases[$path];
-    $location = '/' . $canonical . '/' . ($file ? rawurlencode($file) : '');
-    header('Location: ' . $location, true, 301);
-    exit;
-}
 
 // Route 1: File download
 if ($path && isset($papers[$path]) && $file) {
