@@ -222,26 +222,38 @@ function get_counts(string $slug): array {
     return [0, 0];
 }
 
-function save_counts(string $slug, int $views, int $downloads): void {
+// Atomic read-modify-write with exclusive lock. $field: 0=views, 1=downloads.
+// Never writes a value lower than what is on disk, so a stale copy cannot
+// overwrite accumulated counts.
+function increment_counter(string $slug, int $field): array {
     global $COUNTS_DIR;
     if (!is_dir($COUNTS_DIR)) {
         mkdir($COUNTS_DIR, 0755, true);
     }
-    file_put_contents($COUNTS_DIR . '/' . $slug . '.txt', "$views $downloads");
+    $file = $COUNTS_DIR . '/' . $slug . '.txt';
+    $fp = fopen($file, 'c+');
+    if (!$fp) return [0, 0];
+    if (!flock($fp, LOCK_EX)) { fclose($fp); return [0, 0]; }
+    $raw = stream_get_contents($fp);
+    $parts = explode(' ', trim((string)$raw));
+    $v = (int)($parts[0] ?? 0);
+    $d = (int)($parts[1] ?? 0);
+    if ($field === 0) $v++; else $d++;
+    ftruncate($fp, 0);
+    rewind($fp);
+    fwrite($fp, "$v $d");
+    fflush($fp);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    return [$v, $d];
 }
 
 function increment_views(string $slug): array {
-    $counts = get_counts($slug);
-    $counts[0]++;
-    save_counts($slug, $counts[0], $counts[1]);
-    return $counts;
+    return increment_counter($slug, 0);
 }
 
 function increment_downloads(string $slug): array {
-    $counts = get_counts($slug);
-    $counts[1]++;
-    save_counts($slug, $counts[0], $counts[1]);
-    return $counts;
+    return increment_counter($slug, 1);
 }
 
 function format_date(string $date): string {
@@ -470,8 +482,13 @@ $path = $segments[0] ?? null;
 $file = $segments[1] ?? null;
 
 // Route 0: Alias -> 301 redirect to canonical slug
+// Count the view on the alias itself so short-URL hits (e.g. /keeling)
+// aren't lost when clients don't follow the 301.
 if ($path && isset($aliases[$path])) {
     $canonical = $aliases[$path];
+    if (!$file) {
+        increment_views($canonical);
+    }
     $location = '/' . $canonical . '/' . ($file ? rawurlencode($file) : '');
     header('Location: ' . $location, true, 301);
     exit;
