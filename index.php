@@ -518,6 +518,11 @@ if ($path && isset($aliases[$path])) {
 }
 // Route 1: File download / inline view
 if ($path && isset($papers[$path]) && $file) {
+    $view_inline = false;
+    if (substr($file, 0, 5) === 'view/') {
+        $view_inline = true;
+        $file = substr($file, 5);
+    }
     $filepath = __DIR__ . '/' . basename($file);
     if (file_exists($filepath)) {
         increment_downloads($path);
@@ -532,7 +537,7 @@ if ($path && isset($papers[$path]) && $file) {
             'jpeg' => 'image/jpeg',
         ];
         $mime = $mime_types[$ext] ?? 'application/octet-stream';
-        $disposition = isset($_GET['view']) ? 'inline' : 'attachment';
+        $disposition = $view_inline ? 'inline' : 'attachment';
         header('Content-Type: ' . $mime);
         header('Content-Disposition: ' . $disposition . '; filename="' . basename($file) . '"');
         header('Content-Length: ' . filesize($filepath));
@@ -540,8 +545,7 @@ if ($path && isset($papers[$path]) && $file) {
         exit;
     }
     $file = null;
-}
-/*
+}/*
 // Route 1: File download
 if ($path && isset($papers[$path]) && $file) {
     $filepath = __DIR__ . '/' . basename($file);
@@ -960,9 +964,8 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 <?= $downloads ?>
             </span>
-            <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>?view=1" class="btn" target="_blank" rel="noopener">View PDF</a>
-            <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>" class="btn btn-primary">Download PDF</a>
-            <div class="citation-dropdown">
+            <a href="/<?= $slug ?>/view/<?= htmlspecialchars($filename) ?>" class="btn" target="_blank" rel="noopener">View PDF</a>
+            <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>" class="btn btn-primary">Download PDF</a>            <div class="citation-dropdown">
                 <button class="btn" onclick="toggleCitation('<?= $slug ?>')">Cite</button>
                 <div class="citation-menu" id="menu-<?= $slug ?>">
                     <button onclick="showCitation('<?= $slug ?>','apa')">APA</button>
