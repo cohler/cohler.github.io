@@ -12,6 +12,29 @@
 
 $papers = [
 
+    'ehb' => [
+        'citation_title'     => 'Isotopic, Radiocarbon, and Energy-Balance Measurements Falsify the Anthropogenic Attribution of Atmospheric CO2 A Formal Critique of Engelbeen et al. (2024)',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-10-21',
+        'sort_date'          => '2026-10-21',
+        'citation_year'      => '2026',
+        'status'             => '',
+        'citation_journal'   => 'Science of Climate Change',
+        'citation_volume'    => '6',
+        'citation_issue'     => '4',
+        'citation_firstpage' => '100',
+        'citation_lastpage'  => '136',
+        'citation_doi'       => 'https://doi.org/10.53234/scc202612/06',
+        'citation_publisher' => 'SCC Publishing',
+        'citation_abstract'  => 'Engelbeen, Hannon & Burton (2024) [25], hereafter EHB, is a 65-page CO2 Coalition report claiming to establish anthropogenic dominance of atmospheric CO2. EHB's own framing on p. 7 is that "the carbon mass balance is what definitely proves that humans are the main cause of the increase of CO2 in the atmosphere"; the report's other eight sections (isotopes, oxygen, ocean chemistry, process characteristics, ice cores, plant stomata, pre-Mauna Loa chemical methods) are labeled by EHB themselves as "additional evidence for the human contribution." By EHB's own construction the report is one proof with supporting appendices. The mass-balance proof is null by Cohler & Soon (2026c) [22] Theorem 1: the identity F_anth − dM_a/dt = F_out − F_nat holds in every physically admissible state and carries zero evidential weight for any causal proposition. That verdict alone ends the report at what EHB say the report is doing. The supporting sections are nevertheless audited here and each fails against direct empirical measurement. The Keeling relation applied to the modern Scripps 13C record forces the fossil fraction of the net atmospheric addition to f ≈ 0, indistinguishable from zero within measurement uncertainty. The bomb-spike 14C single-exponential decay over 1965–2019 gives τ_rel ≈ 18.4 yr, R² > 99.8%, no permanent fraction, falsifying the Bern impulse-response function. The oxygen budget constrains sink partition, not source attribution. The ocean-chemistry argument invokes an "average ocean pH" that is not a physical quantity. The process-characteristics argument multiplies a physically meaningless global-mean temperature; the actual driver, the CERES top-of-atmosphere net energy imbalance of 4.3 ± 4 W m⁻² (1σ) applied locally via van't Hoff solubility and Arrhenius/Q10 respiration, reproduces the observed ~2.25 ppm/yr growth with no anthropogenic contribution required. The 50-year adjustment time on which any long-adjustment-time claim depends is a circular regression that assumes the conclusion. Ice-core gas-age smoothing in the only three cores spanning past interglacials attenuates century-scale peaks below scatter. The stomata dismissal is circular. The chemical-method dismissal generalizes from one 1942 peak to reject 90,000 measurements. The report's three dominant rhetorical modes are unsupported assertion, non-sequitur, and omission-as-disproof.',
+        'citation_keywords'  => 'atmospheric CO2; anthropogenic attribution; Keeling relation; carbon isotopes (𝛿13C); bomb radiocarbon (14C); Bern impulse-response function; mass balance; CERES top-of-atmosphere energy imbalance; van’t Hoff solubility; carbon cycle',
+        'description'        => '',
+        'filename'           => 'ehb.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+    ],
+
     'keeling' => [
         'citation_title'     => 'Mathematical Falsification of the Fossil-Dominant Hypothesis for Rising Atmospheric CO2 Using the Keeling Relation',
         'authors'            => 'Jonathan Cohler; Willie Soon',
