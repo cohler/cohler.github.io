@@ -516,7 +516,32 @@ if ($path && isset($aliases[$path])) {
     header('Location: ' . $location, true, 301);
     exit;
 }
-
+// Route 1: File download / inline view
+if ($path && isset($papers[$path]) && $file) {
+    $filepath = __DIR__ . '/' . basename($file);
+    if (file_exists($filepath)) {
+        increment_downloads($path);
+        $ext = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
+        $mime_types = [
+            'pdf' => 'application/pdf',
+            'doc' => 'application/msword',
+            'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'txt' => 'text/plain',
+            'png' => 'image/png',
+            'jpg' => 'image/jpeg',
+            'jpeg' => 'image/jpeg',
+        ];
+        $mime = $mime_types[$ext] ?? 'application/octet-stream';
+        $disposition = isset($_GET['view']) ? 'inline' : 'attachment';
+        header('Content-Type: ' . $mime);
+        header('Content-Disposition: ' . $disposition . '; filename="' . basename($file) . '"');
+        header('Content-Length: ' . filesize($filepath));
+        readfile($filepath);
+        exit;
+    }
+    $file = null;
+}
+/*
 // Route 1: File download
 if ($path && isset($papers[$path]) && $file) {
     $filepath = __DIR__ . '/' . basename($file);
@@ -541,7 +566,7 @@ if ($path && isset($papers[$path]) && $file) {
     }
     $file = null;
 }
-
+*/
 // Route 2: Landing page
 if ($path && isset($papers[$path]) && !$file) {
     $counts = increment_views($path);
@@ -935,6 +960,7 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 <?= $downloads ?>
             </span>
+            <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>?view=1" class="btn" target="_blank" rel="noopener">View PDF</a>
             <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>" class="btn btn-primary">Download PDF</a>
             <div class="citation-dropdown">
                 <button class="btn" onclick="toggleCitation('<?= $slug ?>')">Cite</button>
