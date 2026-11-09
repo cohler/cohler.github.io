@@ -236,7 +236,6 @@ intensive property; Natural climate variability',
 // /ALIAS/filename) 301-redirect to the canonical URL.
 
 $aliases = [
-    'co2'    => 'co2-dynamics',
     'ptt'    => 'physical-tether-theorem',
     'ohc'    => 'argo-ohc',
     'argo'   => 'argo-ohc',
