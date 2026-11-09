@@ -12,6 +12,52 @@
 
 $papers = [
 
+    'attribution' => [
+        'citation_title'     => 'The Counterfactual Referent Problem:
+A Formal Proof That Extreme-Event Attribution Claims
+Are Not Physical Statements, and the Documented Pattern
+of Their Fraudulent Presentation',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-10-01',
+        'sort_date'          => '2026-10-01',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '40',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'Extreme-event attribution studies report ratios of the form R = P(E | F)/P(E | C), where F denotes a
+factual climate-model run with anthropogenic forcing and C denotes a counterfactual run with that forcing
+removed. The output R is presented to the public, to courts, and to policymakers as a physical fact about the
+world. This paper proves that R is not a physical fact and cannot be made into one by any refinement of the
+models that produce it. The proof does not depend on model resolution, tuning, parameterization, ensemble
+spread, selection bias, or tail-distribution assumptions; it is prior to all of them. It rests on a category
+error. P(E | C) has no physical referent, because the sample space of counterfactual Earth trajectories
+fails every operational-access condition required of a physical probability. This first result follows from
+Definition A.1 and from empirical premises about the state of the physical world (no laboratory analog,
+no analog planetary system) that we make explicit. We catalog specific published misrepresentations with
+authors and quotations, formally define scientific fraud in terms of misrepresentation of epistemic type, and
+prove that the documented pattern satisfies the definition conditional on the theorem, on the interpretive
+convention that unqualified counterfactual claims about physical events, quantities, or event classes refer to
+those physical objects, on an operational standard of professional-competence access, and on the empirical
+premise that the class of statements is issued in reliance contexts with material consequences. Under those
+four premises, the pattern is scientific fraud in the sense of Definition A.8. In the documented cases, the
+presenters claim to measure the effect of anthropogenic forcing on the probability of physical events. Under
+the theorem, they cannot.',
+        'citation_keywords'  => 'event attribution, counterfactual inference, climate models, philosophy of science,
+category error, operational access, scientific fraud, epistemology of models, World
+Weather Attribution (WWA)',
+        'description'        => '',
+        'filename'           => 'attribution.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'extremeevent',
+    ],
+
     'breakpoint' => [
         'citation_title'     => 'Extension of the Stationary Keeling Intercept
 to 2025 on the Combined Law Dome and Cape Grim Record
