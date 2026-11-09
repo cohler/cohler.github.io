@@ -12,22 +12,45 @@
 
 $papers = [
 
+    'ehb' => [
+        'citation_title'     => 'Isotopic, Radiocarbon, and Energy-Balance Measurements Falsify the Anthropogenic Attribution of Atmospheric CO2 A Formal Critique of Engelbeen et al. (2024)',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-10-21',
+        'sort_date'          => '2026-10-21',
+        'citation_year'      => '2026',
+        'status'             => '',
+        'citation_journal'   => 'Science of Climate Change',
+        'citation_volume'    => '6',
+        'citation_issue'     => '4',
+        'citation_firstpage' => '100',
+        'citation_lastpage'  => '136',
+        'citation_doi'       => 'https://doi.org/10.53234/scc202612/06',
+        'citation_publisher' => 'SCC Publishing',
+        'citation_abstract'  => 'Engelbeen, Hannon & Burton (2024) [25], hereafter EHB, is a 65-page CO2 Coalition report claiming to establish anthropogenic dominance of atmospheric CO2. EHB\'s own framing on p. 7 is that "the carbon mass balance is what definitely proves that humans are the main cause of the increase of CO2 in the atmosphere"; the report\'s other eight sections (isotopes, oxygen, ocean chemistry, process characteristics, ice cores, plant stomata, pre-Mauna Loa chemical methods) are labeled by EHB themselves as "additional evidence for the human contribution." By EHB\'s own construction the report is one proof with supporting appendices. The mass-balance proof is null by Cohler & Soon (2026c) [22] Theorem 1: the identity F_anth − dM_a/dt = F_out − F_nat holds in every physically admissible state and carries zero evidential weight for any causal proposition. That verdict alone ends the report at what EHB say the report is doing. The supporting sections are nevertheless audited here and each fails against direct empirical measurement. The Keeling relation applied to the modern Scripps 13C record forces the fossil fraction of the net atmospheric addition to f ≈ 0, indistinguishable from zero within measurement uncertainty. The bomb-spike 14C single-exponential decay over 1965–2019 gives τ_rel ≈ 18.4 yr, R² > 99.8%, no permanent fraction, falsifying the Bern impulse-response function. The oxygen budget constrains sink partition, not source attribution. The ocean-chemistry argument invokes an "average ocean pH" that is not a physical quantity. The process-characteristics argument multiplies a physically meaningless global-mean temperature; the actual driver, the CERES top-of-atmosphere net energy imbalance of 4.3 ± 4 W m⁻² (1σ) applied locally via van\'t Hoff solubility and Arrhenius/Q10 respiration, reproduces the observed ~2.25 ppm/yr growth with no anthropogenic contribution required. The 50-year adjustment time on which any long-adjustment-time claim depends is a circular regression that assumes the conclusion. Ice-core gas-age smoothing in the only three cores spanning past interglacials attenuates century-scale peaks below scatter. The stomata dismissal is circular. The chemical-method dismissal generalizes from one 1942 peak to reject 90,000 measurements. The report\'s three dominant rhetorical modes are unsupported assertion, non-sequitur, and omission-as-disproof.',
+        'citation_keywords'  => 'atmospheric CO2; anthropogenic attribution; Keeling relation; carbon isotopes (𝛿13C); bomb radiocarbon (14C); Bern impulse-response function; mass balance; CERES top-of-atmosphere energy imbalance; van’t Hoff solubility; carbon cycle',
+        'description'        => '',
+        'filename'           => 'ehb.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+    ],
+
     'keeling' => [
         'citation_title'     => 'Mathematical Falsification of the Fossil-Dominant Hypothesis for Rising Atmospheric CO2 Using the Keeling Relation',
         'authors'            => 'Jonathan Cohler; Willie Soon',
-        'citation_date'      => '2026-08-25',
-        'sort_date'          => '2026-08-25',
+        'citation_date'      => '2026-10-21',
+        'sort_date'          => '2026-10-21',
         'citation_year'      => '2026',
-        'status'             => 'Under review',
-        'citation_journal'   => '',
-        'citation_volume'    => '',
-        'citation_issue'     => '',
-        'citation_firstpage' => '1',
-        'citation_lastpage'  => '13',
-        'citation_doi'       => '',
-        'citation_publisher' => '',
-        'citation_abstract'  => 'The IPCC, NASA, NOAA, and EPA state that essentially all of the observed rise in atmospheric CO₂ since the pre-industrial era originates from fossil-fuel combustion. This paper shows that claim is mathematically inconsistent with the isotopic record those same agencies rely on. The Keeling plot of δ¹³C against 1/C has an intercept δ¹³C_I equal to the flux-weighted isotopic signature of the net carbon addition to the atmosphere. Applied by Koutsoyiannis (2024) to instrumental δ¹³C records from four Scripps CO₂ Program stations (Barrow, La Jolla, Mauna Loa, South Pole) spanning about 1978 to present, this construction gives δ¹³C_I = −13.2 ± 0.2‰. Caribbean sclerosponge δ¹³C reconstructions of surface-water dissolved inorganic carbon by Böhm et al. (2002) extend this value back to approximately 1500 AD with no significant drift. Independent Keeling regression of the Law Dome ice-core record by Köhler et al. (2006) yields the same intercept with r² = 0.96. The two-endmember mixture equation δ¹³C_I = f·δ¹³C_F + (1 − f)·δ¹³C_N, using the standard fossil signature δ¹³C_F ≈ −28‰ and the physically admissible range −13.2‰ ≤ δ¹³C_N ≤ −8‰, forces the fossil fraction f of the net addition into the interval [0, 0.26]. Even under the counterfactual relaxation δ¹³C_N = 0‰, well outside any physically realizable natural-reservoir signature, f is bounded above by 0.471. The five-century invariance of δ¹³C_I across a roughly 10⁴-fold increase in fossil emissions further collapses the admissible band to f ≈ 0. The claim of fossil dominance is therefore not merely empirically weak; it is inconsistent with the arithmetic of the isotopic constraint applied to the standard measurement record. The rejection of the conclusion requires the rejection of one of three inputs: elementary mass-balance algebra, the standard isotopic endmember values used throughout the carbon-cycle literature, or the primary Scripps and sclerosponge datasets themselves.',
-        'citation_keywords'  => 'atmospheric CO₂; carbon isotopes; Keeling plot; fossil-fuel attribution; carbon cycle; δ¹³C; sclerosponge proxy; mass balance; IPCC',
+        'status'             => '',
+        'citation_journal'   => 'Science of Climate Change',
+        'citation_volume'    => '6',
+        'citation_issue'     => '4',
+        'citation_firstpage' => '81',
+        'citation_lastpage'  => '99',
+        'citation_doi'       => 'https://doi.org/10.53234/scc202612/05',
+        'citation_publisher' => 'SCC Publishing',
+        'citation_abstract'  => 'The IPCC, NASA, NOAA, and EPA state that essentially all of the observed rise in atmospheric CO2 since the pre-industrial era originates from fossil-fuel combustion. This paper shows that claim is mathematically inconsistent with the isotopic record those same agencies rely on. The Keeling plot of δ13C against 1/C has an intercept δ13C_I equal to the flux-weighted isotopic signature of the net carbon addition to the atmosphere. Applied by Koutsoyiannis (2024a) [16] to instrumental δ13C records from four Scripps CO2 Program stations (Barrow, La Jolla, Mauna Loa, South Pole) spanning about 1978 to present, this construction gives δ13C_I = -13.2 ± 0.2‰. Caribbean sclerosponge δ13C reconstructions of surface-water dissolved inorganic carbon by Böhm et al. (2002) [2] extend this value back to approximately 1500 AD with no significant drift. Independent Keeling regression of the Law Dome ice-core record by Kohler et al. (2006) [14] yields the same intercept with r² = 0.96. The two-endmember mixture equation δ13C_I = f δ13C_F + (1-f) δ13C_N, using the standard fossil signature δ13C_F ≈ -28‰ and the physically admissible range -13.2‰ ≤ δ13C_N ≤ -8‰, forces the fossil fraction f of the net addition into the interval [0, 0.26]. Even under the counterfactual relaxation δ13C_N = 0‰, well outside any physically realizable natural-reservoir signature, f is bounded above by 0.471. The five-century invariance of δ13C_I across a roughly 10⁴-fold increase in fossil emissions further collapses the admissible band to f ≈ 0. The claim of fossil dominance is therefore not merely empirically weak; it is inconsistent with the arithmetic of the isotopic constraint applied to the standard measurement record. The rejection of the conclusion requires the rejection of one of three inputs: elementary mass-balance algebra, the standard isotopic endmember values used throughout the carbon-cycle literature, or the primary Scripps and sclerosponge datasets themselves.',
+        'citation_keywords'  => 'atmospheric CO2; carbon isotopes; Keeling plot; fossil-fuel attribution; carbon cycle; δ13C; sclerosponge proxy; mass balance; IPCC',
         'description'        => '',
         'filename'           => 'keeling.pdf',
         'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
@@ -183,6 +206,26 @@ Key Result: The GMST construct is physically meaningless.',
 
 ];
 
+// ── Short-URL Aliases ───────────────────────────────────────────────────────
+// Short slug => canonical slug in $papers. Requests to /ALIAS/ (and
+// /ALIAS/filename) 301-redirect to the canonical URL.
+
+$aliases = [
+    'co2'    => 'co2-dynamics',
+    'ptt'    => 'physical-tether-theorem',
+    'ohc'    => 'argo-ohc',
+    'argo'   => 'argo-ohc',
+    'grok3'  => 'grok-3-beta',
+    'puppet' => 'puppeteers',
+];
+
+// Guard: an alias key must not collide with a real paper slug, or it would
+// silently hijack the real paper's URL. Fail loudly at startup instead.
+if (array_intersect_key($aliases, $papers)) {
+    http_response_code(500);
+    exit('Config error: alias collides with paper slug');
+}
+
 // Sort papers by sort_date descending
 uasort($papers, function($a, $b) {
     return strcmp($b['sort_date'], $a['sort_date']);
@@ -202,26 +245,38 @@ function get_counts(string $slug): array {
     return [0, 0];
 }
 
-function save_counts(string $slug, int $views, int $downloads): void {
+// Atomic read-modify-write with exclusive lock. $field: 0=views, 1=downloads.
+// Never writes a value lower than what is on disk, so a stale copy cannot
+// overwrite accumulated counts.
+function increment_counter(string $slug, int $field): array {
     global $COUNTS_DIR;
     if (!is_dir($COUNTS_DIR)) {
         mkdir($COUNTS_DIR, 0755, true);
     }
-    file_put_contents($COUNTS_DIR . '/' . $slug . '.txt', "$views $downloads");
+    $file = $COUNTS_DIR . '/' . $slug . '.txt';
+    $fp = fopen($file, 'c+');
+    if (!$fp) return [0, 0];
+    if (!flock($fp, LOCK_EX)) { fclose($fp); return [0, 0]; }
+    $raw = stream_get_contents($fp);
+    $parts = explode(' ', trim((string)$raw));
+    $v = (int)($parts[0] ?? 0);
+    $d = (int)($parts[1] ?? 0);
+    if ($field === 0) $v++; else $d++;
+    ftruncate($fp, 0);
+    rewind($fp);
+    fwrite($fp, "$v $d");
+    fflush($fp);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    return [$v, $d];
 }
 
 function increment_views(string $slug): array {
-    $counts = get_counts($slug);
-    $counts[0]++;
-    save_counts($slug, $counts[0], $counts[1]);
-    return $counts;
+    return increment_counter($slug, 0);
 }
 
 function increment_downloads(string $slug): array {
-    $counts = get_counts($slug);
-    $counts[1]++;
-    save_counts($slug, $counts[0], $counts[1]);
-    return $counts;
+    return increment_counter($slug, 1);
 }
 
 function format_date(string $date): string {
@@ -449,6 +504,48 @@ $segments = $query ? explode('/', $query, 2) : [];
 $path = $segments[0] ?? null;
 $file = $segments[1] ?? null;
 
+// Route 0: Alias -> 301 redirect to canonical slug
+// Count the view on the alias itself so short-URL hits (e.g. /keeling)
+// aren't lost when clients don't follow the 301.
+if ($path && isset($aliases[$path])) {
+    $canonical = $aliases[$path];
+    if (!$file) {
+        increment_views($canonical);
+    }
+    $location = '/' . $canonical . '/' . ($file ? rawurlencode($file) : '');
+    header('Location: ' . $location, true, 301);
+    exit;
+}
+// Route 1: File download / inline view
+if ($path && isset($papers[$path]) && $file) {
+    $view_inline = false;
+    if (substr($file, 0, 5) === 'view/') {
+        $view_inline = true;
+        $file = substr($file, 5);
+    }
+    $filepath = __DIR__ . '/' . basename($file);
+    if (file_exists($filepath)) {
+        increment_downloads($path);
+        $ext = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
+        $mime_types = [
+            'pdf' => 'application/pdf',
+            'doc' => 'application/msword',
+            'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'txt' => 'text/plain',
+            'png' => 'image/png',
+            'jpg' => 'image/jpeg',
+            'jpeg' => 'image/jpeg',
+        ];
+        $mime = $mime_types[$ext] ?? 'application/octet-stream';
+        $disposition = $view_inline ? 'inline' : 'attachment';
+        header('Content-Type: ' . $mime);
+        header('Content-Disposition: ' . $disposition . '; filename="' . basename($file) . '"');
+        header('Content-Length: ' . filesize($filepath));
+        readfile($filepath);
+        exit;
+    }
+    $file = null;
+}/*
 // Route 1: File download
 if ($path && isset($papers[$path]) && $file) {
     $filepath = __DIR__ . '/' . basename($file);
@@ -473,7 +570,7 @@ if ($path && isset($papers[$path]) && $file) {
     }
     $file = null;
 }
-
+*/
 // Route 2: Landing page
 if ($path && isset($papers[$path]) && !$file) {
     $counts = increment_views($path);
@@ -867,8 +964,8 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 <?= $downloads ?>
             </span>
-            <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>" class="btn btn-primary">Download PDF</a>
-            <div class="citation-dropdown">
+            <a href="/<?= $slug ?>/view/<?= htmlspecialchars($filename) ?>" class="btn" target="_blank" rel="noopener">View PDF</a>
+            <a href="/<?= $slug ?>/<?= htmlspecialchars($filename) ?>" class="btn btn-primary">Download PDF</a>            <div class="citation-dropdown">
                 <button class="btn" onclick="toggleCitation('<?= $slug ?>')">Cite</button>
                 <div class="citation-menu" id="menu-<?= $slug ?>">
                     <button onclick="showCitation('<?= $slug ?>','apa')">APA</button>

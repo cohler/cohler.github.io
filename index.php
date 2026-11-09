@@ -279,6 +279,38 @@ function increment_downloads(string $slug): array {
     return increment_counter($slug, 1);
 }
 
+// ── Access-Lock Helpers ─────────────────────────────────────────────────────
+// A paper is "protected" if its 'password' field is a non-empty string.
+// Papers without this field (or with empty password) behave EXACTLY as before.
+// Unlock cookie carries hash_hmac(slug, SECRET) — never the password itself.
+// Change UNLOCK_SECRET to invalidate all existing unlock cookies.
+
+define('UNLOCK_SECRET', 'CHANGE-THIS-TO-A-LONG-RANDOM-STRING-6f3a9c8d4b2e1a7f');
+
+function paper_is_protected(array $paper): bool {
+    return !empty($paper['password']);
+}
+
+function unlock_token(string $slug): string {
+    return hash_hmac('sha256', $slug, UNLOCK_SECRET);
+}
+
+function is_unlocked(string $slug, array $paper): bool {
+    if (!paper_is_protected($paper)) return true;
+    $cookie = $_COOKIE['unlock_' . $slug] ?? '';
+    return $cookie !== '' && hash_equals(unlock_token($slug), $cookie);
+}
+
+function set_unlock_cookie(string $slug): void {
+    setcookie('unlock_' . $slug, unlock_token($slug), [
+        'expires'  => time() + 7 * 24 * 3600,
+        'path'     => '/',
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => !empty($_SERVER['HTTPS']),
+    ]);
+}
+
 function format_date(string $date): string {
     if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
         return date('F j, Y', strtotime($date));
@@ -523,6 +555,16 @@ if ($path && isset($papers[$path]) && $file) {
         $view_inline = true;
         $file = substr($file, 5);
     }
+    // Lock gate: for protected papers, require a valid unlock cookie.
+    // No cookie / bad cookie → 403 with a link back to the landing page.
+    // Public papers (no 'password' field) skip this branch entirely.
+    if (!is_unlocked($path, $papers[$path])) {
+        http_response_code(403);
+        header('Content-Type: text/html; charset=utf-8');
+        $safe_slug = htmlspecialchars($path);
+        echo "<!doctype html><html><head><meta charset='utf-8'><title>Password required</title></head><body style='font-family:sans-serif;padding:40px;max-width:600px;margin:0 auto'><h1>Password required</h1><p>This paper is protected. <a href='/{$safe_slug}/'>Enter the password to unlock it</a>.</p></body></html>";
+        exit;
+    }
     $filepath = __DIR__ . '/' . basename($file);
     if (file_exists($filepath)) {
         increment_downloads($path);
@@ -573,8 +615,30 @@ if ($path && isset($papers[$path]) && $file) {
 */
 // Route 2: Landing page
 if ($path && isset($papers[$path]) && !$file) {
+    $paper = $papers[$path];
+
+    // Password form submission (only reachable for protected papers).
+    // Public papers never POST here, so their behavior is unchanged.
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && paper_is_protected($paper)) {
+        $submitted = (string)($_POST['password'] ?? '');
+        if ($submitted !== '' && hash_equals((string)$paper['password'], $submitted)) {
+            set_unlock_cookie($path);
+            header('Location: /' . $path . '/', true, 302);
+            exit;
+        }
+        render_unlock_page($path, $paper, 'Incorrect password.');
+        exit;
+    }
+
+    // Protected + no valid cookie: show the unlock page, no view increment.
+    if (!is_unlocked($path, $paper)) {
+        render_unlock_page($path, $paper, '');
+        exit;
+    }
+
+    // Public paper, or protected paper with valid cookie: unchanged.
     $counts = increment_views($path);
-    render_landing($path, $papers[$path], $counts);
+    render_landing($path, $paper, $counts);
     exit;
 }
 
@@ -721,6 +785,22 @@ function render_head(string $title, string $description = '', ?array $paper = nu
     }
     .paper-status.preprint { background: #d48800; }
     .paper-status.under-review { background: #0077b6; }
+    .paper-status.locked { background: #555; }
+
+    .unlock-form { margin: 30px 0; }
+    .unlock-form label { display: block; font-size: 0.95em; margin-bottom: 8px; color: #333; }
+    .unlock-form input[type=password] {
+        width: 100%; max-width: 320px; padding: 8px 12px;
+        font-size: 1em; border: 1px solid #ccc; border-radius: 4px;
+        margin-right: 8px;
+    }
+    .unlock-form button {
+        padding: 8px 18px; font-size: 1em; border: none;
+        background: #0066cc; color: #fff; border-radius: 4px; cursor: pointer;
+    }
+    .unlock-form button:hover { background: #0052a3; }
+    .unlock-error { color: #c00; margin-top: 10px; font-size: 0.95em; }
+    .unlock-note { color: #666; font-size: 0.9em; margin-top: 20px; }
 
     .paper-meta {
         display: flex;
@@ -899,6 +979,29 @@ document.addEventListener('keydown', function(e) {
 }
 
 function render_paper_card(string $slug, array $paper, array $counts, bool $link_title = true, bool $show_status = false): void {
+    // Locked papers on the listing: minimal card — title (clickable, prompts
+    // for password), authors, date, lock badge. No counts, no PDF buttons,
+    // no cite menu, no abstract leakage. Public papers skip this branch.
+    if ($link_title && !is_unlocked($slug, $paper)) {
+        $title_display = htmlspecialchars($paper['citation_title']);
+        $authors = format_authors_display($paper['authors']);
+        $date = format_date($paper['citation_date']);
+?>
+    <div class="paper">
+        <a href="/<?= $slug ?>/" class="paper-title"><?= $title_display ?></a>
+        <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
+        <div class="paper-date">
+            <?= htmlspecialchars($date) ?>
+            <span class="paper-status locked">🔒 Password required</span>
+        </div>
+        <div class="paper-meta">
+            <a href="/<?= $slug ?>/" class="btn btn-primary">Unlock</a>
+        </div>
+    </div>
+<?php
+        return;
+    }
+
     $title_display = htmlspecialchars($paper['citation_title']);
     $authors = format_authors_display($paper['authors']);
     $date = format_date($paper['citation_date']);
@@ -1034,6 +1137,40 @@ function render_landing(string $slug, array $paper, array $counts): void {
             <?= htmlspecialchars($paper['citation_keywords']) ?>
         </div>
     <?php endif; ?>
+
+<?php
+    render_footer();
+}
+function render_unlock_page(string $slug, array $paper, string $error): void {
+    // Minimal page for a locked paper when the viewer has no valid cookie.
+    // render_head is called with $paper = null so NO citation meta tags,
+    // NO schema.org JSON, and NO abstract-containing og:description are
+    // emitted. Title + authors + password form only.
+    render_head(
+        $paper['citation_title'] . ' — Password required',
+        'This paper is password-protected.'
+    );
+?>
+    <a href="/" class="back-link">&#8592; All papers</a>
+
+    <div class="paper">
+        <span class="paper-title" style="color: #000;"><?= htmlspecialchars($paper['citation_title']) ?></span>
+        <div class="paper-authors"><?= htmlspecialchars(format_authors_display($paper['authors'])) ?></div>
+        <div class="paper-date">
+            <?= htmlspecialchars(format_date($paper['citation_date'])) ?>
+            <span class="paper-status locked">🔒 Password required</span>
+        </div>
+
+        <form class="unlock-form" method="POST" action="/<?= htmlspecialchars($slug) ?>/">
+            <label for="password">Enter password to view this paper:</label>
+            <input type="password" id="password" name="password" autofocus autocomplete="current-password">
+            <button type="submit">Unlock</button>
+            <?php if ($error !== ''): ?>
+                <div class="unlock-error"><?= htmlspecialchars($error) ?></div>
+            <?php endif; ?>
+            <div class="unlock-note">Once unlocked, this paper stays accessible from this browser for 7 days.</div>
+        </form>
+    </div>
 
 <?php
     render_footer();
