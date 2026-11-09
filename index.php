@@ -100,15 +100,15 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_volume'    => '',
         'citation_issue'     => '',
         'citation_firstpage' => '1',
-        'citation_lastpage'  => '36',
+        'citation_lastpage'  => '49',
         'citation_doi'       => '',
         'citation_publisher' => '',
         'citation_abstract'  => 'Observed changes in atmospheric CO2 concentration during the instrumental period, and isotopic
 signatures back to the Little Ice Age, are likely explained by natural biogeochemical feedbacks,
 with no detectable anthropogenic contribution. This is supported by mass-balance reservoir routing
-showing short CO₂ residence times of 3.5–4 years, stable Keeling plot intercepts of −13.2‰
+showing short CO2 residence times of 3.5–4 years, stable Keeling plot intercepts of −13.2‰
 over centuries demonstrating overwhelming biosphere dominance and undetectable fossil-fuel
-influence, unidirectional precedence of local temperatures → CO₂ across all timescales from the
+influence, unidirectional precedence of local temperatures → CO2 across all timescales from the
 present to ~500 million years ago, and thermodynamic considerations that establish the physical
 meaninglessness of a global mean surface temperature (GMST). IPCC Bern Impulse Response
 Function (IRF) model parameters show instability across assessments, violate mass conservation,
@@ -118,7 +118,7 @@ to the full 1965–2019 global Hua et al. (2022) record, extending and tightenin
 upper bound Koutsoyiannis (2024) obtained from the 1965–1985 subset; the two fits are selfconsistent
 across their shared range, with the longer window exploiting the complete post-ban
 decay. This single functional form over 54 years directly falsifies the Bern model\’s multi-exponential
-structure, IPCC permanent airborne fraction, and multi-millennial CO₂ persistence claims.
+structure, IPCC permanent airborne fraction, and multi-millennial CO2 persistence claims.
 Critical examination of conflicting airborne fraction definitions reveals foundational inconsistencies
 in IPCC CO2 attribution. These convergent lines establish that natural processes explain observed
 CO2 variations with negligible human influence. A unified first-principles synthesis shows
