@@ -12,6 +12,52 @@
 
 $papers = [
 
+    'breakpoint' => [
+        'citation_title'     => 'Extension of the Stationary Keeling Intercept
+to 2025 on the Combined Law Dome and Cape Grim Record
+and a Statistically Significant 1997–1998 Regime Shift
+Opposite to the Fossil-Fuel Dominance Prediction',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-11-07',
+        'sort_date'          => '2026-11-07',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '10',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'We extend the Koutsoyiannis (2024) [13] Keeling-plot stationary-intercept analysis of atmospheric
+𝛿13C to the full 1020-year span from 1006 to 2025 using the Francey et al. (1999) [9] Law Dome
+ice-core record, the Cape Grim Air Archive (CGAA) flasks, and the CSIRO Cape Grim CGO5011
+in situ monthly 𝛿13C record paired with the collocated Cape Grim CO2 monthly record. The fullrecord
+Keeling intercept is 𝑏_K = −13.42 ± 0.07‰ (OLS 1𝜎; ±0.10‰ HAC-robust), 𝑁 = 101,
+𝑟² = 0.988, statistically identical to the Koutsoyiannis four-site Scripps result of −13.2 ± 0.2‰
+and 15‰ removed from the standard fossil-fuel value of −28‰. Every CGAA-containing subwindow
+from 1750–2025 to 1850–2025 falls in the [−13.4, −13.8]‰ band. A Chow / Andrews
+sup-𝐹 scan of the modern segment locates a structural break at 1997–1998 (sup-𝐹 ≈ 52). Pre- and
+post-break fits give 𝑏_K = −13.77 ± 0.33‰ (1978–1998, 𝑟² = 0.960) and 𝑏_K = −12.79 ± 0.05‰
+(1998–2025, 𝑟² = 0.997); a Welch-style test of the intercept difference gives Δ𝑏_K = +0.98‰ with
+𝑡_OLS = 2.92 (𝑝 = 0.011) and 𝑡_HAC = 2.66 (𝑝 = 0.018). The post-break shift moves 𝑏_K toward
+the ocean-outgassing value of −8‰, not toward the fossil value of −28‰, during the highest emissions
+decades. Under the mass partition equation with 𝑓 ≈ 0 and standard 𝛿13C values for
+ocean outgassing (−8‰) and C3 biosphere respiration (−27‰), the ocean share of the non-fossil
+net flux rises from ≈ 70% to ≈ 75% across the break. The sign is opposite to fossil-dominance
+and consistent with the ocean-dominated TOA mechanism of Cohler & Soon (2026b) [5]. Three
+of the four TOA contributors enumerated in that work (CERES albedo decline onset, AMO phase
+flip, PDO phase flip, post-Pinatubo aerosol recovery) coincide at 1997–1998.',
+        'citation_keywords'  => 'atmospheric CO2; carbon isotopes; 𝛿13C; Keeling plot; Law Dome; Cape Grim;
+structural break; Chow test; fossil-fuel attribution; CERES; TOA imbalance',
+        'description'        => '',
+        'filename'           => 'breakpoint.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'cgaaextension',
+    ],
+
     'bomb14c' => [
         'citation_title'     => 'Fifty-Four Years of Atmospheric Bomb-Radiocarbon Decay Falsify the Central Assumptions of the IPCC Carbon-Cycle Framework',
         'authors'            => 'Jonathan Cohler; Willie Soon',
