@@ -12,6 +12,41 @@
 
 $papers = [
 
+    'window' => [
+        'citation_title'     => 'A Statistically Significant Positive Recent-Window Trend in the Atmospheric Input Isotopic Signature δ13CI Falsifies the Fossil-Fuel Dominance Hypothesis for Rising Atmospheric CO2',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-09-20',
+        'sort_date'          => '2026-09-20',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '14',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'We test the prediction that fossil-fuel dominance of the recent CO2 rise, the hypothesis central to
+IPCC assessment [3] and reasserted in recent carbon-cycle attribution analyses [6], should drive
+the net atmospheric input isotopic signature 𝛿13C_I strongly negative during the highest-emissions
+window. Applying Equation 13 of Koutsoyiannis (2024) [13] with the fixed-Δ[CO2] technique
+to the Francey et al. (1999) [7] Law Dome, firn, and Cape Grim Air Archive record, we find the
+1977–1996 trend in 𝛿13CI to be +2.94‰ per decade against a Hurst–Kolmogorov 95% envelope
+of [−1.26, +1.24]‰ per decade, with 𝑝 < 10−4. The trend is statistically significant, its sign
+is opposite to the fossil-dominance prediction, and its magnitude is more than twice the upper
+envelope bound. The fossil-dominance hypothesis is falsified on this record. The positive sign is
+consistent with a growing ocean-outgassing contribution under recent warming, the mechanism
+developed in Cohler & Soon (2026b) [5].',
+        'citation_keywords'  => 'atmospheric CO2; carbon isotopes; 𝛿13C; Keeling plot; Law Dome; fossil-fuel attribution;
+Hurst–Kolmogorov; falsification; Suess effect',
+        'description'        => '',
+        'filename'           => 'window.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'positive',
+    ],
+
     'identities' => [
         'citation_title'     => 'Accounting Identities Are Not Evidence: A Formal Proof of the Evidential Vacuity of Definitional Truths in Causal Inference',
         'authors'            => 'Jonathan Cohler; Willie Soon',
