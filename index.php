@@ -89,11 +89,11 @@ Key Result: The GMST construct is physically meaningless.',
         'author_emails'       => 'cohler@post.harvard.edu',
     ],
 
-    'co2-dynamics' => [
-        'citation_title'     => 'Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles',
+    'co2' => [
+        'citation_title'     => 'Dominance of Natural Atmospheric CO2 Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles',
         'authors'            => 'Jonathan Cohler; Willie Soon',
-        'citation_date'      => '2026-03',
-        'sort_date'          => '2026-03-01',
+        'citation_date'      => '2026-10-20',
+        'sort_date'          => '2026-10-20',
         'citation_year'      => '2026',
         'status'             => 'Under review',
         'citation_journal'   => '',
@@ -103,13 +103,38 @@ Key Result: The GMST construct is physically meaningless.',
         'citation_lastpage'  => '36',
         'citation_doi'       => '',
         'citation_publisher' => '',
-        'citation_abstract'  => 'Observed changes in atmospheric CO₂ concentration during the instrumental period and isotopic signatures back to the Little Ice Age are likely explained by natural biogeo-chemical feedbacks, with no detectable anthropogenic contribution. This is supported by mass-balance reservoir routing showing short CO₂ residence times of 3.5–4 years, stable Keeling plot intercepts of −13.2‰ over centuries demonstrating overwhelming biosphere dominance and undetectable fossil-fuel influence, unidirectional precedence of local temperatures → CO₂ across all timescales from the present to ~500 million years ago, and thermodynamic considerations that question the physical meaningfulness of a global mean surface temperature (GMST). IPCC Bern model parameters show instability across assessments, violate mass conservation, and introduce unsupported source discrimina-tion. The global bomb-¹⁴C pulse from nuclear testing exhibits single-exponential decay (e-folding time 17.2 years) matching observations over 55+ years, which directly falsifies the Bern model\'s multi-exponential structure, permanent airborne fraction, and mul-ti-millennial CO₂ persistence claims. Critical examination of conflicting airborne fraction definitions reveals foundational inconsistencies in IPCC CO₂ attribution. These convergent lines establish that natural processes can explain observed CO₂ variations with negligible human influence. A unified first-principles synthesis shows that a modest natural top-of-atmosphere radiative imbalance of ~2.6 W m⁻² can account for the observed rise in atmospheric CO₂ via temperature-driven oceanic outgassing and enhanced soil respira-tion, without detectable anthropogenic contribution.',
-        'citation_keywords'  => 'CO₂ residence time; δ¹³C isotopic signature; Keeling plot; Bern model; Revelle factor; Biosphere dominance; Anthropogenic fingerprint; Global mean surface temperature (GMST); Thermodynamic intensive property; Natural climate variability',
+        'citation_abstract'  => 'Observed changes in atmospheric CO2 concentration during the instrumental period, and isotopic
+signatures back to the Little Ice Age, are likely explained by natural biogeochemical feedbacks,
+with no detectable anthropogenic contribution. This is supported by mass-balance reservoir routing
+showing short CO₂ residence times of 3.5–4 years, stable Keeling plot intercepts of −13.2‰
+over centuries demonstrating overwhelming biosphere dominance and undetectable fossil-fuel
+influence, unidirectional precedence of local temperatures → CO₂ across all timescales from the
+present to ~500 million years ago, and thermodynamic considerations that establish the physical
+meaninglessness of a global mean surface temperature (GMST). IPCC Bern Impulse Response
+Function (IRF) model parameters show instability across assessments, violate mass conservation,
+and introduce unsupported source discrimination. The global bomb-¹⁴C pulse from nuclear testing
+exhibits clean single-exponential decay with e-folding time τ = 18.389 yr (R² = 99.825%) fitted
+to the full 1965–2019 global Hua et al. (2022) record, extending and tightening the τ ≈ 17.2 yr
+upper bound Koutsoyiannis (2024) obtained from the 1965–1985 subset; the two fits are selfconsistent
+across their shared range, with the longer window exploiting the complete post-ban
+decay. This single functional form over 54 years directly falsifies the Bern model\’s multi-exponential
+structure, IPCC permanent airborne fraction, and multi-millennial CO₂ persistence claims.
+Critical examination of conflicting airborne fraction definitions reveals foundational inconsistencies
+in IPCC CO2 attribution. These convergent lines establish that natural processes explain observed
+CO2 variations with negligible human influence. A unified first-principles synthesis shows
+that a modest natural top-of-atmosphere radiative imbalance of ~2.6 W m⁻² accounts for the observed
+rise from 2000 to 2025 in atmospheric CO2 via temperature-driven oceanic outgassing and
+enhanced soil respiration, with no anthropogenic contribution detectable in the Keeling net-input
+signature over the instrumental or sclerosponge records.',
+        'citation_keywords'  => 'CO2 residence time; δ¹³C isotopic signature; Keeling plot; Bern model; Revelle factor;
+Biosphere dominance; Anthropogenic fingerprint; Global mean surface temperature; Thermodynamic
+intensive property; Natural climate variability',
         'description'        => 'Natural biogeochemical feedbacks fully explain observed atmospheric CO2 changes with no detectable anthropogenic contribution, supported by short residence times, stable isotopic signatures, unidirectional temperature-to-CO2 causality, and empirical falsification of the IPCC Bern model.',
-        'filename'           => 'co2-dynamics.pdf',
+        'filename'           => 'co2.pdf',
         'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
         'corresponding_email' => 'cohler@post.harvard.edu',
-        'author_emails'       => 'cohler@post.harvard.edu; soon.willie@epss.hu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'co2dynamics',
     ],
 
     'argo-ohc' => [
