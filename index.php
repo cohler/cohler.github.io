@@ -12,6 +12,30 @@
 
 $papers = [
 
+    'identities' => [
+        'citation_title'     => 'Accounting Identities Are Not Evidence: A Formal Proof of the Evidential Vacuity of Definitional Truths in Causal Inference',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-09-20',
+        'sort_date'          => '2026-09-20',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '15',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'An accounting identity is a statement whose truth follows from definitions and conservation laws alone. Familiar examples include the national-income identity, the double-entry bookkeeping identity, the caloric energy-balance equation, and the atmospheric carbon mass balance 𝐹anth − d𝑀𝑎/d𝑡 = 𝐹out − 𝐹nat. We prove, using only elementary set theory, that no accounting identity can serve as evidence for any claim about cause. Two consequences follow at once. First, the identity cannot pick a side between a causal claim and its reverse. Second, stacking many accounting identities does not help: the overlap of any finite collection of identities is again the whole state space, so the “many lines of evidence” defense is empty when every line is an identity rewritten in different notation. The same error has been named independently across economics, medicine, demography, fluid dynamics, and double-entry bookkeeping. The carbon mass balance is one instance. The Global Carbon Budget, IPCC AR6 Working Group I Chapter 5, and the Summary for Policymakers\’ “about 56%” land-and-ocean uptake figure each present a rearrangement of the mass-balance identity as evidence for human causation. The non-peer-reviewed EHB (2024) report states openly that the mass balance “definitely proves” human causation. Five separate presentations of the identity in that paper are audited and shown to be empty. The paper\’s stated conclusion is invalidated by the theorem applied to the very argument advanced for it.',
+        'citation_keywords'  => 'accounting identity; causal inference; carbon cycle; mass balance; atmospheric CO2 attribution; airborne fraction; Bayesian confirmation; definitional truth; anthropogenic attribution',
+        'description'        => '',
+        'filename'           => 'identities.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'vacuity',
+    ],
+
     'ehb' => [
         'citation_title'     => 'Isotopic, Radiocarbon, and Energy-Balance Measurements Falsify the Anthropogenic Attribution of Atmospheric CO2 A Formal Critique of Engelbeen et al. (2024)',
         'authors'            => 'Jonathan Cohler; Willie Soon',
