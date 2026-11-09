@@ -12,6 +12,58 @@
 
 $papers = [
 
+    'bomb14c' => [
+        'citation_title'     => 'Fifty-Four Years of Atmospheric Bomb-Radiocarbon Decay Falsify the Central Assumptions of the IPCC Carbon-Cycle Framework',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-11-06',
+        'sort_date'          => '2026-11-06',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '111',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'The IPCC carbon-cycle framework projects future CO2 scenarios using the Bern impulse-response
+function, a multi-exponential parameterization. The atmospheric bomb radiocarbon record falsifies
+it. In the Hua et al. (2022) [55] global Δ¹⁴C compilation, the post-1965 bomb signal decays as
+a single exponential with 𝑒-folding time 𝜏_rel = 18.383 ± 0.015 yr, residual scatter 0.539‰ and
+explained variance 99.998% in the 32-point bias-corrected fit. Every published Bern function
+diverges from the observed decay within the first year. The analysis rests on three independent
+empirical measurements: 𝜏rel; the fitted amplitude 𝐴_32 = 709.115 ± 0.585‰ at 𝑡 = 1965; and
+the CO2 molecular residence time 𝜏res = 3.80 ± 0.12 yr from the Koutsoyiannis (2024a) [72]
+Refined Reservoir Routing fit to Mauna Loa and Barrow. Every other quantity is a first-principles
+consequence of these three and mass conservation, with no adjustable parameters. The cleaning
+is not curve fitting: the exponential form is established on the unaltered data (eight zonal fits,
+all 𝑅² > 99.6%) before any bias correction; plateau boundaries come from archival audit of Hua
+compilation events, confirmed by a first-principles smoothness criterion exceeded by factors of
+6–14. A single exponential is mathematically incompatible with any sum of distinct exponentials
+at any parameter setting (Vandermonde and Cauchy-Schwarz proof). The operator-equivalence
+theorem extends this exclusion from the isotopic decay to the CO2 mass impulse response, so no
+slow bulk-CO2 mode escapes the bound. One first-order mass-balance ODE connects 𝜏rel and 𝜏_res
+through the bridge equation, yielding 𝜙_slow = 0.203±0.006, confirmed to 0.74𝜎 by an independent
+two-box stratosphere-troposphere ODE (𝜙^2box_slow = 0.199 ± 0.008). The single-exponential shape
+requires the gross exchange rate constant while atmospheric CO2 grew 31.6%; 𝐹_nat/𝑀_a is stable to
+±0.4% year-to-year, and a Newey–West HAC regression of annual log-growth rates returns slope
+𝛽 = 0.980±0.042, not rejecting 𝛽 = 1 at 0.48𝜎; and 𝛿13C_I is stationary at −13.2‰ over the 1978–
+2022 instrumental window [73] and across a 500-year sclerosponge and Law Dome extension;
+its 1977–1996 Francey trend is +2.94‰/decade at 𝑝 < 10−4 against a Hurst-Kolmogorov null,
+opposite to fossil dominance [41, 21]. Jungfraujoch measurements 2020–2024 [75] confirm the
+extrapolated exponential. The atmospheric CO2 rise is dominated by non-fossil-fuel sources.
+The Bern parameterization and the long-conjectured “Suess effect” are both falsified by direct
+observation.',
+        'citation_keywords'  => 'carbon cycle; atmospheric mass balance; residence time; adjustment time; bomb-14C;
+Bern model; Suess effect; biospheric expansion; isotopic ratio relaxation',
+        'description'        => '',
+        'filename'           => 'bomb14c.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'radiocarbon',
+    ],
+
     'window' => [
         'citation_title'     => 'A Statistically Significant Positive Recent-Window Trend in the Atmospheric Input Isotopic Signature δ13CI Falsifies the Fossil-Fuel Dominance Hypothesis for Rising Atmospheric CO2',
         'authors'            => 'Jonathan Cohler; Willie Soon',
