@@ -1347,11 +1347,11 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
 function render_listing(array $papers): void {
     render_head(
         'Jonathan Cohler — Papers',
-        'Preprints and published works by Jonathan Cohler.'
+        'peer-reviewed, under review, and preprints by Jonathan Cohler.'
     );
 ?>
     <h1>Jonathan Cohler</h1>
-    <h2>Preprints and published works</h2>
+    <h2>peer-reviewed, under review, and preprints</h2>
 
     <?php foreach ($papers as $slug => $paper): ?>
         <?php $counts = get_counts($slug); ?>
