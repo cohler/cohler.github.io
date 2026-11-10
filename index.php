@@ -785,6 +785,24 @@ if ($path && isset($aliases[$path])) {
     header('Location: ' . $location, true, 301);
     exit;
 }
+// Route 0.5: Explicit re-lock — clears the unlock_<slug> cookie so the
+// paper prompts for a password again on the next request. The cookie is
+// HttpOnly so JavaScript cannot delete it; the server has to do it.
+// Reached via <a href="/<slug>/lock">. Public papers can also hit this
+// harmlessly (no cookie exists to clear); the redirect lands on the
+// normal landing page.
+if ($path && isset($papers[$path]) && $file === 'lock') {
+    setcookie('unlock_' . $path, '', [
+        'expires'  => time() - 3600,
+        'path'     => '/',
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => !empty($_SERVER['HTTPS']),
+    ]);
+    unset($_COOKIE['unlock_' . $path]);
+    header('Location: /' . $path . '/', true, 302);
+    exit;
+}
 // Route 1: File download / inline view
 if ($path && isset($papers[$path]) && $file) {
     $view_inline = false;
@@ -1329,6 +1347,9 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
                     <button onclick="showCitation('<?= $slug ?>','bibtex')">BibTeX</button>
                 </div>
             </div>
+            <?php if (paper_is_protected($paper)): ?>
+                <a href="/<?= $slug ?>/lock" class="btn" title="Re-lock this paper in your browser">🔒 Lock</a>
+            <?php endif; ?>
         </div>
 
         <div class="citation-output" id="cite-output-<?= $slug ?>">
