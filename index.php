@@ -512,7 +512,7 @@ function increment_downloads(string $slug): array {
 // Unlock cookie carries hash_hmac(slug, SECRET) — never the password itself.
 // Change UNLOCK_SECRET to invalidate all existing unlock cookies.
 
-define('UNLOCK_SECRET', 'CHANGE-THIS-TO-A-LONG-RANDOM-STRING-6f3a9c8d4b2e1a7f');
+define('UNLOCK_SECRET', 'a55f9ff606a06fb141ea29b96cd70857499b265282aea3643d87badb5fc7ea45');
 
 function paper_is_protected(array $paper): bool {
     return !empty($paper['password']);
@@ -536,6 +536,16 @@ function set_unlock_cookie(string $slug): void {
         'samesite' => 'Lax',
         'secure'   => !empty($_SERVER['HTTPS']),
     ]);
+}
+
+function format_pages(array $paper): string {
+    $first = $paper['citation_firstpage'] ?? '';
+    $last  = $paper['citation_lastpage'] ?? '';
+    if ($first === '' || $last === '') return '';
+    if (!ctype_digit((string)$first) || !ctype_digit((string)$last)) return '';
+    $n = (int)$last - (int)$first + 1;
+    if ($n < 1) return '';
+    return $n . ' page' . ($n === 1 ? '' : 's');
 }
 
 function format_date(string $date): string {
@@ -1012,6 +1022,7 @@ function render_head(string $title, string $description = '', ?array $paper = nu
     }
     .paper-status.preprint { background: #d48800; }
     .paper-status.under-review { background: #0077b6; }
+    .paper-status.peer-reviewed { background: #2d8f3f; }
     .paper-status.locked { background: #555; }
 
     .unlock-form { margin: 30px 0; }
@@ -1213,12 +1224,19 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
         $title_display = htmlspecialchars($paper['citation_title']);
         $authors = format_authors_display($paper['authors']);
         $date = format_date($paper['citation_date']);
+        $status = $paper['status'];
+        $status_label = $status !== '' ? $status : 'Peer-reviewed';
+        $status_class = strtolower(str_replace(' ', '-', $status_label));
 ?>
     <div class="paper">
         <a href="/<?= $slug ?>/" class="paper-title"><?= $title_display ?></a>
         <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
         <div class="paper-date">
             <?= htmlspecialchars($date) ?>
+            <?php $pages_str = format_pages($paper); if ($pages_str !== ''): ?>
+                &middot; <?= htmlspecialchars($pages_str) ?>
+            <?php endif; ?>
+            <span class="paper-status <?= htmlspecialchars($status_class) ?>"><?= htmlspecialchars($status_label) ?></span>
             <span class="paper-status locked">🔒 Password required</span>
         </div>
         <div class="paper-meta">
@@ -1280,8 +1298,12 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
         <?php endif; ?>
         <div class="paper-date">
             <?= htmlspecialchars($date) ?>
-            <?php if ($show_status && $status): ?>
-                <span class="paper-status <?= htmlspecialchars(strtolower(str_replace(' ', '-', $status))) ?>"><?= htmlspecialchars($status) ?></span>
+            <?php $pages_str = format_pages($paper); if ($pages_str !== ''): ?>
+                &middot; <?= htmlspecialchars($pages_str) ?>
+            <?php endif; ?>
+            <?php if ($show_status): ?>
+                <?php $label = $status !== '' ? $status : 'Peer-reviewed'; ?>
+                <span class="paper-status <?= htmlspecialchars(strtolower(str_replace(' ', '-', $label))) ?>"><?= htmlspecialchars($label) ?></span>
             <?php endif; ?>
         </div>
 
@@ -1333,7 +1355,7 @@ function render_listing(array $papers): void {
 
     <?php foreach ($papers as $slug => $paper): ?>
         <?php $counts = get_counts($slug); ?>
-        <?php render_paper_card($slug, $paper, $counts, true, false); ?>
+        <?php render_paper_card($slug, $paper, $counts, true, true); ?>
     <?php endforeach; ?>
 
 <?php
@@ -1380,11 +1402,20 @@ function render_unlock_page(string $slug, array $paper, string $error): void {
 ?>
     <a href="/" class="back-link">&#8592; All papers</a>
 
+    <?php
+        $status = $paper['status'];
+        $status_label = $status !== '' ? $status : 'Peer-reviewed';
+        $status_class = strtolower(str_replace(' ', '-', $status_label));
+    ?>
     <div class="paper">
         <span class="paper-title" style="color: #000;"><?= htmlspecialchars($paper['citation_title']) ?></span>
         <div class="paper-authors"><?= htmlspecialchars(format_authors_display($paper['authors'])) ?></div>
         <div class="paper-date">
             <?= htmlspecialchars(format_date($paper['citation_date'])) ?>
+            <?php $pages_str = format_pages($paper); if ($pages_str !== ''): ?>
+                &middot; <?= htmlspecialchars($pages_str) ?>
+            <?php endif; ?>
+            <span class="paper-status <?= htmlspecialchars($status_class) ?>"><?= htmlspecialchars($status_label) ?></span>
             <span class="paper-status locked">🔒 Password required</span>
         </div>
 

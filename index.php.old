@@ -12,6 +12,209 @@
 
 $papers = [
 
+    'attribution' => [
+        'citation_title'     => 'The Counterfactual Referent Problem:
+A Formal Proof That Extreme-Event Attribution Claims
+Are Not Physical Statements, and the Documented Pattern
+of Their Fraudulent Presentation',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-10-01',
+        'sort_date'          => '2026-10-01',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '40',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'Extreme-event attribution studies report ratios of the form R = P(E | F)/P(E | C), where F denotes a
+factual climate-model run with anthropogenic forcing and C denotes a counterfactual run with that forcing
+removed. The output R is presented to the public, to courts, and to policymakers as a physical fact about the
+world. This paper proves that R is not a physical fact and cannot be made into one by any refinement of the
+models that produce it. The proof does not depend on model resolution, tuning, parameterization, ensemble
+spread, selection bias, or tail-distribution assumptions; it is prior to all of them. It rests on a category
+error. P(E | C) has no physical referent, because the sample space of counterfactual Earth trajectories
+fails every operational-access condition required of a physical probability. This first result follows from
+Definition A.1 and from empirical premises about the state of the physical world (no laboratory analog,
+no analog planetary system) that we make explicit. We catalog specific published misrepresentations with
+authors and quotations, formally define scientific fraud in terms of misrepresentation of epistemic type, and
+prove that the documented pattern satisfies the definition conditional on the theorem, on the interpretive
+convention that unqualified counterfactual claims about physical events, quantities, or event classes refer to
+those physical objects, on an operational standard of professional-competence access, and on the empirical
+premise that the class of statements is issued in reliance contexts with material consequences. Under those
+four premises, the pattern is scientific fraud in the sense of Definition A.8. In the documented cases, the
+presenters claim to measure the effect of anthropogenic forcing on the probability of physical events. Under
+the theorem, they cannot.',
+        'citation_keywords'  => 'event attribution, counterfactual inference, climate models, philosophy of science,
+category error, operational access, scientific fraud, epistemology of models, World
+Weather Attribution (WWA)',
+        'description'        => '',
+        'filename'           => 'attribution.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'extremeevent',
+    ],
+
+    'breakpoint' => [
+        'citation_title'     => 'Extension of the Stationary Keeling Intercept
+to 2025 on the Combined Law Dome and Cape Grim Record
+and a Statistically Significant 1997–1998 Regime Shift
+Opposite to the Fossil-Fuel Dominance Prediction',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-11-07',
+        'sort_date'          => '2026-11-07',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '10',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'We extend the Koutsoyiannis (2024) [13] Keeling-plot stationary-intercept analysis of atmospheric
+𝛿13C to the full 1020-year span from 1006 to 2025 using the Francey et al. (1999) [9] Law Dome
+ice-core record, the Cape Grim Air Archive (CGAA) flasks, and the CSIRO Cape Grim CGO5011
+in situ monthly 𝛿13C record paired with the collocated Cape Grim CO2 monthly record. The fullrecord
+Keeling intercept is 𝑏_K = −13.42 ± 0.07‰ (OLS 1𝜎; ±0.10‰ HAC-robust), 𝑁 = 101,
+𝑟² = 0.988, statistically identical to the Koutsoyiannis four-site Scripps result of −13.2 ± 0.2‰
+and 15‰ removed from the standard fossil-fuel value of −28‰. Every CGAA-containing subwindow
+from 1750–2025 to 1850–2025 falls in the [−13.4, −13.8]‰ band. A Chow / Andrews
+sup-𝐹 scan of the modern segment locates a structural break at 1997–1998 (sup-𝐹 ≈ 52). Pre- and
+post-break fits give 𝑏_K = −13.77 ± 0.33‰ (1978–1998, 𝑟² = 0.960) and 𝑏_K = −12.79 ± 0.05‰
+(1998–2025, 𝑟² = 0.997); a Welch-style test of the intercept difference gives Δ𝑏_K = +0.98‰ with
+𝑡_OLS = 2.92 (𝑝 = 0.011) and 𝑡_HAC = 2.66 (𝑝 = 0.018). The post-break shift moves 𝑏_K toward
+the ocean-outgassing value of −8‰, not toward the fossil value of −28‰, during the highest emissions
+decades. Under the mass partition equation with 𝑓 ≈ 0 and standard 𝛿13C values for
+ocean outgassing (−8‰) and C3 biosphere respiration (−27‰), the ocean share of the non-fossil
+net flux rises from ≈ 70% to ≈ 75% across the break. The sign is opposite to fossil-dominance
+and consistent with the ocean-dominated TOA mechanism of Cohler & Soon (2026b) [5]. Three
+of the four TOA contributors enumerated in that work (CERES albedo decline onset, AMO phase
+flip, PDO phase flip, post-Pinatubo aerosol recovery) coincide at 1997–1998.',
+        'citation_keywords'  => 'atmospheric CO2; carbon isotopes; 𝛿13C; Keeling plot; Law Dome; Cape Grim;
+structural break; Chow test; fossil-fuel attribution; CERES; TOA imbalance',
+        'description'        => '',
+        'filename'           => 'breakpoint.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'cgaaextension',
+    ],
+
+    'bomb14c' => [
+        'citation_title'     => 'Fifty-Four Years of Atmospheric Bomb-Radiocarbon Decay Falsify the Central Assumptions of the IPCC Carbon-Cycle Framework',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-11-06',
+        'sort_date'          => '2026-11-06',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '111',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'The IPCC carbon-cycle framework projects future CO2 scenarios using the Bern impulse-response
+function, a multi-exponential parameterization. The atmospheric bomb radiocarbon record falsifies
+it. In the Hua et al. (2022) [55] global Δ¹⁴C compilation, the post-1965 bomb signal decays as
+a single exponential with 𝑒-folding time 𝜏_rel = 18.383 ± 0.015 yr, residual scatter 0.539‰ and
+explained variance 99.998% in the 32-point bias-corrected fit. Every published Bern function
+diverges from the observed decay within the first year. The analysis rests on three independent
+empirical measurements: 𝜏rel; the fitted amplitude 𝐴_32 = 709.115 ± 0.585‰ at 𝑡 = 1965; and
+the CO2 molecular residence time 𝜏res = 3.80 ± 0.12 yr from the Koutsoyiannis (2024a) [72]
+Refined Reservoir Routing fit to Mauna Loa and Barrow. Every other quantity is a first-principles
+consequence of these three and mass conservation, with no adjustable parameters. The cleaning
+is not curve fitting: the exponential form is established on the unaltered data (eight zonal fits,
+all 𝑅² > 99.6%) before any bias correction; plateau boundaries come from archival audit of Hua
+compilation events, confirmed by a first-principles smoothness criterion exceeded by factors of
+6–14. A single exponential is mathematically incompatible with any sum of distinct exponentials
+at any parameter setting (Vandermonde and Cauchy-Schwarz proof). The operator-equivalence
+theorem extends this exclusion from the isotopic decay to the CO2 mass impulse response, so no
+slow bulk-CO2 mode escapes the bound. One first-order mass-balance ODE connects 𝜏rel and 𝜏_res
+through the bridge equation, yielding 𝜙_slow = 0.203±0.006, confirmed to 0.74𝜎 by an independent
+two-box stratosphere-troposphere ODE (𝜙^2box_slow = 0.199 ± 0.008). The single-exponential shape
+requires the gross exchange rate constant while atmospheric CO2 grew 31.6%; 𝐹_nat/𝑀_a is stable to
+±0.4% year-to-year, and a Newey–West HAC regression of annual log-growth rates returns slope
+𝛽 = 0.980±0.042, not rejecting 𝛽 = 1 at 0.48𝜎; and 𝛿13C_I is stationary at −13.2‰ over the 1978–
+2022 instrumental window [73] and across a 500-year sclerosponge and Law Dome extension;
+its 1977–1996 Francey trend is +2.94‰/decade at 𝑝 < 10−4 against a Hurst-Kolmogorov null,
+opposite to fossil dominance [41, 21]. Jungfraujoch measurements 2020–2024 [75] confirm the
+extrapolated exponential. The atmospheric CO2 rise is dominated by non-fossil-fuel sources.
+The Bern parameterization and the long-conjectured “Suess effect” are both falsified by direct
+observation.',
+        'citation_keywords'  => 'carbon cycle; atmospheric mass balance; residence time; adjustment time; bomb-14C;
+Bern model; Suess effect; biospheric expansion; isotopic ratio relaxation',
+        'description'        => '',
+        'filename'           => 'bomb14c.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'radiocarbon',
+    ],
+
+    'window' => [
+        'citation_title'     => 'A Statistically Significant Positive Recent-Window Trend in the Atmospheric Input Isotopic Signature δ13CI Falsifies the Fossil-Fuel Dominance Hypothesis for Rising Atmospheric CO2',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-09-20',
+        'sort_date'          => '2026-09-20',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '14',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'We test the prediction that fossil-fuel dominance of the recent CO2 rise, the hypothesis central to
+IPCC assessment [3] and reasserted in recent carbon-cycle attribution analyses [6], should drive
+the net atmospheric input isotopic signature 𝛿13C_I strongly negative during the highest-emissions
+window. Applying Equation 13 of Koutsoyiannis (2024) [13] with the fixed-Δ[CO2] technique
+to the Francey et al. (1999) [7] Law Dome, firn, and Cape Grim Air Archive record, we find the
+1977–1996 trend in 𝛿13CI to be +2.94‰ per decade against a Hurst–Kolmogorov 95% envelope
+of [−1.26, +1.24]‰ per decade, with 𝑝 < 10−4. The trend is statistically significant, its sign
+is opposite to the fossil-dominance prediction, and its magnitude is more than twice the upper
+envelope bound. The fossil-dominance hypothesis is falsified on this record. The positive sign is
+consistent with a growing ocean-outgassing contribution under recent warming, the mechanism
+developed in Cohler & Soon (2026b) [5].',
+        'citation_keywords'  => 'atmospheric CO2; carbon isotopes; 𝛿13C; Keeling plot; Law Dome; fossil-fuel attribution;
+Hurst–Kolmogorov; falsification; Suess effect',
+        'description'        => '',
+        'filename'           => 'window.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'positive',
+    ],
+
+    'identities' => [
+        'citation_title'     => 'Accounting Identities Are Not Evidence: A Formal Proof of the Evidential Vacuity of Definitional Truths in Causal Inference',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-09-20',
+        'sort_date'          => '2026-09-20',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '15',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'An accounting identity is a statement whose truth follows from definitions and conservation laws alone. Familiar examples include the national-income identity, the double-entry bookkeeping identity, the caloric energy-balance equation, and the atmospheric carbon mass balance 𝐹anth − d𝑀𝑎/d𝑡 = 𝐹out − 𝐹nat. We prove, using only elementary set theory, that no accounting identity can serve as evidence for any claim about cause. Two consequences follow at once. First, the identity cannot pick a side between a causal claim and its reverse. Second, stacking many accounting identities does not help: the overlap of any finite collection of identities is again the whole state space, so the “many lines of evidence” defense is empty when every line is an identity rewritten in different notation. The same error has been named independently across economics, medicine, demography, fluid dynamics, and double-entry bookkeeping. The carbon mass balance is one instance. The Global Carbon Budget, IPCC AR6 Working Group I Chapter 5, and the Summary for Policymakers’ “about 56%” land-and-ocean uptake figure each present a rearrangement of the mass-balance identity as evidence for human causation. The non-peer-reviewed EHB (2024) report states openly that the mass balance “definitely proves” human causation. Five separate presentations of the identity in that paper are audited and shown to be empty. The paper’s stated conclusion is invalidated by the theorem applied to the very argument advanced for it.',
+        'citation_keywords'  => 'accounting identity; causal inference; carbon cycle; mass balance; atmospheric CO2 attribution; airborne fraction; Bayesian confirmation; definitional truth; anthropogenic attribution',
+        'description'        => '',
+        'filename'           => 'identities.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'vacuity',
+    ],
+
     'ehb' => [
         'citation_title'     => 'Isotopic, Radiocarbon, and Energy-Balance Measurements Falsify the Anthropogenic Attribution of Atmospheric CO2 A Formal Critique of Engelbeen et al. (2024)',
         'authors'            => 'Jonathan Cohler; Willie Soon',
@@ -89,27 +292,52 @@ Key Result: The GMST construct is physically meaningless.',
         'author_emails'       => 'cohler@post.harvard.edu',
     ],
 
-    'co2-dynamics' => [
-        'citation_title'     => 'Dominance of Natural Atmospheric CO₂ Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles',
+    'co2' => [
+        'citation_title'     => 'Dominance of Natural Atmospheric CO2 Dynamics: Falsification of Anthropogenic Attribution Through Mass-Balance Analysis, Isotopic Diagnostics, and Thermodynamic First Principles',
         'authors'            => 'Jonathan Cohler; Willie Soon',
-        'citation_date'      => '2026-03',
-        'sort_date'          => '2026-03-01',
+        'citation_date'      => '2026-10-20',
+        'sort_date'          => '2026-10-20',
         'citation_year'      => '2026',
         'status'             => 'Under review',
         'citation_journal'   => '',
         'citation_volume'    => '',
         'citation_issue'     => '',
         'citation_firstpage' => '1',
-        'citation_lastpage'  => '36',
+        'citation_lastpage'  => '49',
         'citation_doi'       => '',
         'citation_publisher' => '',
-        'citation_abstract'  => 'Observed changes in atmospheric CO₂ concentration during the instrumental period and isotopic signatures back to the Little Ice Age are likely explained by natural biogeo-chemical feedbacks, with no detectable anthropogenic contribution. This is supported by mass-balance reservoir routing showing short CO₂ residence times of 3.5–4 years, stable Keeling plot intercepts of −13.2‰ over centuries demonstrating overwhelming biosphere dominance and undetectable fossil-fuel influence, unidirectional precedence of local temperatures → CO₂ across all timescales from the present to ~500 million years ago, and thermodynamic considerations that question the physical meaningfulness of a global mean surface temperature (GMST). IPCC Bern model parameters show instability across assessments, violate mass conservation, and introduce unsupported source discrimina-tion. The global bomb-¹⁴C pulse from nuclear testing exhibits single-exponential decay (e-folding time 17.2 years) matching observations over 55+ years, which directly falsifies the Bern model\'s multi-exponential structure, permanent airborne fraction, and mul-ti-millennial CO₂ persistence claims. Critical examination of conflicting airborne fraction definitions reveals foundational inconsistencies in IPCC CO₂ attribution. These convergent lines establish that natural processes can explain observed CO₂ variations with negligible human influence. A unified first-principles synthesis shows that a modest natural top-of-atmosphere radiative imbalance of ~2.6 W m⁻² can account for the observed rise in atmospheric CO₂ via temperature-driven oceanic outgassing and enhanced soil respira-tion, without detectable anthropogenic contribution.',
-        'citation_keywords'  => 'CO₂ residence time; δ¹³C isotopic signature; Keeling plot; Bern model; Revelle factor; Biosphere dominance; Anthropogenic fingerprint; Global mean surface temperature (GMST); Thermodynamic intensive property; Natural climate variability',
+        'citation_abstract'  => 'Observed changes in atmospheric CO2 concentration during the instrumental period, and isotopic
+signatures back to the Little Ice Age, are likely explained by natural biogeochemical feedbacks,
+with no detectable anthropogenic contribution. This is supported by mass-balance reservoir routing
+showing short CO2 residence times of 3.5–4 years, stable Keeling plot intercepts of −13.2‰
+over centuries demonstrating overwhelming biosphere dominance and undetectable fossil-fuel
+influence, unidirectional precedence of local temperatures → CO2 across all timescales from the
+present to ~500 million years ago, and thermodynamic considerations that establish the physical
+meaninglessness of a global mean surface temperature (GMST). IPCC Bern Impulse Response
+Function (IRF) model parameters show instability across assessments, violate mass conservation,
+and introduce unsupported source discrimination. The global bomb-¹⁴C pulse from nuclear testing
+exhibits clean single-exponential decay with e-folding time τ = 18.389 yr (R² = 99.825%) fitted
+to the full 1965–2019 global Hua et al. (2022) record, extending and tightening the τ ≈ 17.2 yr
+upper bound Koutsoyiannis (2024) obtained from the 1965–1985 subset; the two fits are selfconsistent
+across their shared range, with the longer window exploiting the complete post-ban
+decay. This single functional form over 54 years directly falsifies the Bern model\’s multi-exponential
+structure, IPCC permanent airborne fraction, and multi-millennial CO2 persistence claims.
+Critical examination of conflicting airborne fraction definitions reveals foundational inconsistencies
+in IPCC CO2 attribution. These convergent lines establish that natural processes explain observed
+CO2 variations with negligible human influence. A unified first-principles synthesis shows
+that a modest natural top-of-atmosphere radiative imbalance of ~2.6 W m⁻² accounts for the observed
+rise from 2000 to 2025 in atmospheric CO2 via temperature-driven oceanic outgassing and
+enhanced soil respiration, with no anthropogenic contribution detectable in the Keeling net-input
+signature over the instrumental or sclerosponge records.',
+        'citation_keywords'  => 'CO2 residence time; δ¹³C isotopic signature; Keeling plot; Bern model; Revelle factor;
+Biosphere dominance; Anthropogenic fingerprint; Global mean surface temperature; Thermodynamic
+intensive property; Natural climate variability',
         'description'        => 'Natural biogeochemical feedbacks fully explain observed atmospheric CO2 changes with no detectable anthropogenic contribution, supported by short residence times, stable isotopic signatures, unidirectional temperature-to-CO2 causality, and empirical falsification of the IPCC Bern model.',
-        'filename'           => 'co2-dynamics.pdf',
+        'filename'           => 'co2.pdf',
         'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
         'corresponding_email' => 'cohler@post.harvard.edu',
-        'author_emails'       => 'cohler@post.harvard.edu; soon.willie@epss.hu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'co2dynamics',
     ],
 
     'argo-ohc' => [
@@ -211,7 +439,6 @@ Key Result: The GMST construct is physically meaningless.',
 // /ALIAS/filename) 301-redirect to the canonical URL.
 
 $aliases = [
-    'co2'    => 'co2-dynamics',
     'ptt'    => 'physical-tether-theorem',
     'ohc'    => 'argo-ohc',
     'argo'   => 'argo-ohc',
@@ -277,6 +504,38 @@ function increment_views(string $slug): array {
 
 function increment_downloads(string $slug): array {
     return increment_counter($slug, 1);
+}
+
+// ── Access-Lock Helpers ─────────────────────────────────────────────────────
+// A paper is "protected" if its 'password' field is a non-empty string.
+// Papers without this field (or with empty password) behave EXACTLY as before.
+// Unlock cookie carries hash_hmac(slug, SECRET) — never the password itself.
+// Change UNLOCK_SECRET to invalidate all existing unlock cookies.
+
+define('UNLOCK_SECRET', 'CHANGE-THIS-TO-A-LONG-RANDOM-STRING-6f3a9c8d4b2e1a7f');
+
+function paper_is_protected(array $paper): bool {
+    return !empty($paper['password']);
+}
+
+function unlock_token(string $slug): string {
+    return hash_hmac('sha256', $slug, UNLOCK_SECRET);
+}
+
+function is_unlocked(string $slug, array $paper): bool {
+    if (!paper_is_protected($paper)) return true;
+    $cookie = $_COOKIE['unlock_' . $slug] ?? '';
+    return $cookie !== '' && hash_equals(unlock_token($slug), $cookie);
+}
+
+function set_unlock_cookie(string $slug): void {
+    setcookie('unlock_' . $slug, unlock_token($slug), [
+        'expires'  => time() + 7 * 24 * 3600,
+        'path'     => '/',
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => !empty($_SERVER['HTTPS']),
+    ]);
 }
 
 function format_date(string $date): string {
@@ -523,6 +782,16 @@ if ($path && isset($papers[$path]) && $file) {
         $view_inline = true;
         $file = substr($file, 5);
     }
+    // Lock gate: for protected papers, require a valid unlock cookie.
+    // No cookie / bad cookie → 403 with a link back to the landing page.
+    // Public papers (no 'password' field) skip this branch entirely.
+    if (!is_unlocked($path, $papers[$path])) {
+        http_response_code(403);
+        header('Content-Type: text/html; charset=utf-8');
+        $safe_slug = htmlspecialchars($path);
+        echo "<!doctype html><html><head><meta charset='utf-8'><title>Password required</title></head><body style='font-family:sans-serif;padding:40px;max-width:600px;margin:0 auto'><h1>Password required</h1><p>This paper is protected. <a href='/{$safe_slug}/'>Enter the password to unlock it</a>.</p></body></html>";
+        exit;
+    }
     $filepath = __DIR__ . '/' . basename($file);
     if (file_exists($filepath)) {
         increment_downloads($path);
@@ -573,8 +842,30 @@ if ($path && isset($papers[$path]) && $file) {
 */
 // Route 2: Landing page
 if ($path && isset($papers[$path]) && !$file) {
+    $paper = $papers[$path];
+
+    // Password form submission (only reachable for protected papers).
+    // Public papers never POST here, so their behavior is unchanged.
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && paper_is_protected($paper)) {
+        $submitted = (string)($_POST['password'] ?? '');
+        if ($submitted !== '' && hash_equals((string)$paper['password'], $submitted)) {
+            set_unlock_cookie($path);
+            header('Location: /' . $path . '/', true, 302);
+            exit;
+        }
+        render_unlock_page($path, $paper, 'Incorrect password.');
+        exit;
+    }
+
+    // Protected + no valid cookie: show the unlock page, no view increment.
+    if (!is_unlocked($path, $paper)) {
+        render_unlock_page($path, $paper, '');
+        exit;
+    }
+
+    // Public paper, or protected paper with valid cookie: unchanged.
     $counts = increment_views($path);
-    render_landing($path, $papers[$path], $counts);
+    render_landing($path, $paper, $counts);
     exit;
 }
 
@@ -721,6 +1012,22 @@ function render_head(string $title, string $description = '', ?array $paper = nu
     }
     .paper-status.preprint { background: #d48800; }
     .paper-status.under-review { background: #0077b6; }
+    .paper-status.locked { background: #555; }
+
+    .unlock-form { margin: 30px 0; }
+    .unlock-form label { display: block; font-size: 0.95em; margin-bottom: 8px; color: #333; }
+    .unlock-form input[type=password] {
+        width: 100%; max-width: 320px; padding: 8px 12px;
+        font-size: 1em; border: 1px solid #ccc; border-radius: 4px;
+        margin-right: 8px;
+    }
+    .unlock-form button {
+        padding: 8px 18px; font-size: 1em; border: none;
+        background: #0066cc; color: #fff; border-radius: 4px; cursor: pointer;
+    }
+    .unlock-form button:hover { background: #0052a3; }
+    .unlock-error { color: #c00; margin-top: 10px; font-size: 0.95em; }
+    .unlock-note { color: #666; font-size: 0.9em; margin-top: 20px; }
 
     .paper-meta {
         display: flex;
@@ -899,6 +1206,29 @@ document.addEventListener('keydown', function(e) {
 }
 
 function render_paper_card(string $slug, array $paper, array $counts, bool $link_title = true, bool $show_status = false): void {
+    // Locked papers on the listing: minimal card — title (clickable, prompts
+    // for password), authors, date, lock badge. No counts, no PDF buttons,
+    // no cite menu, no abstract leakage. Public papers skip this branch.
+    if ($link_title && !is_unlocked($slug, $paper)) {
+        $title_display = htmlspecialchars($paper['citation_title']);
+        $authors = format_authors_display($paper['authors']);
+        $date = format_date($paper['citation_date']);
+?>
+    <div class="paper">
+        <a href="/<?= $slug ?>/" class="paper-title"><?= $title_display ?></a>
+        <div class="paper-authors"><?= htmlspecialchars($authors) ?></div>
+        <div class="paper-date">
+            <?= htmlspecialchars($date) ?>
+            <span class="paper-status locked">🔒 Password required</span>
+        </div>
+        <div class="paper-meta">
+            <a href="/<?= $slug ?>/" class="btn btn-primary">Unlock</a>
+        </div>
+    </div>
+<?php
+        return;
+    }
+
     $title_display = htmlspecialchars($paper['citation_title']);
     $authors = format_authors_display($paper['authors']);
     $date = format_date($paper['citation_date']);
@@ -1034,6 +1364,40 @@ function render_landing(string $slug, array $paper, array $counts): void {
             <?= htmlspecialchars($paper['citation_keywords']) ?>
         </div>
     <?php endif; ?>
+
+<?php
+    render_footer();
+}
+function render_unlock_page(string $slug, array $paper, string $error): void {
+    // Minimal page for a locked paper when the viewer has no valid cookie.
+    // render_head is called with $paper = null so NO citation meta tags,
+    // NO schema.org JSON, and NO abstract-containing og:description are
+    // emitted. Title + authors + password form only.
+    render_head(
+        $paper['citation_title'] . ' — Password required',
+        'This paper is password-protected.'
+    );
+?>
+    <a href="/" class="back-link">&#8592; All papers</a>
+
+    <div class="paper">
+        <span class="paper-title" style="color: #000;"><?= htmlspecialchars($paper['citation_title']) ?></span>
+        <div class="paper-authors"><?= htmlspecialchars(format_authors_display($paper['authors'])) ?></div>
+        <div class="paper-date">
+            <?= htmlspecialchars(format_date($paper['citation_date'])) ?>
+            <span class="paper-status locked">🔒 Password required</span>
+        </div>
+
+        <form class="unlock-form" method="POST" action="/<?= htmlspecialchars($slug) ?>/">
+            <label for="password">Enter password to view this paper:</label>
+            <input type="password" id="password" name="password" autofocus autocomplete="current-password">
+            <button type="submit">Unlock</button>
+            <?php if ($error !== ''): ?>
+                <div class="unlock-error"><?= htmlspecialchars($error) ?></div>
+            <?php endif; ?>
+            <div class="unlock-note">Once unlocked, this paper stays accessible from this browser for 7 days.</div>
+        </form>
+    </div>
 
 <?php
     render_footer();
