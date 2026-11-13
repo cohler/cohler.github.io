@@ -453,6 +453,31 @@ if (array_intersect_key($aliases, $papers)) {
     exit('Config error: alias collides with paper slug');
 }
 
+// ── Static-file aliases ─────────────────────────────────────────────────────
+// Short slug => file metadata. Serves one file at /<slug>, no landing page,
+// no view counts, no paper metadata. For one-off reports, audits, catalogs
+// that are not science papers.
+
+$static_files = [
+    'hannon75-audit' => [
+        'file'        => '75 Lies by Renee Hannon Forensic Audit.html',
+        'mime'        => 'text/html; charset=utf-8',
+        'disposition' => 'inline',
+    ],
+    'hannon75-catalog' => [
+        'file'        => '75 Lies by Renee Hannon Catalog.pdf',
+        'mime'        => 'application/pdf',
+        'disposition' => 'inline',
+    ],
+];
+
+// Guard: a static-file slug must not collide with a paper slug or an alias.
+if (array_intersect_key($static_files, $papers) ||
+    array_intersect_key($static_files, $aliases)) {
+    http_response_code(500);
+    exit('Config error: static-file slug collides with paper slug or alias');
+}
+
 // Sort papers by sort_date descending
 uasort($papers, function($a, $b) {
     return strcmp($b['sort_date'], $a['sort_date']);
@@ -772,6 +797,23 @@ $segments = $query ? explode('/', $query, 2) : [];
 
 $path = $segments[0] ?? null;
 $file = $segments[1] ?? null;
+
+// Route 0a: Static-file alias -> serve the file directly.
+// No landing page, no counters, no paper metadata.
+if ($path && isset($static_files[$path]) && !$file) {
+    $cfg = $static_files[$path];
+    $filepath = __DIR__ . '/' . $cfg['file'];
+    if (file_exists($filepath)) {
+        header('Content-Type: ' . $cfg['mime']);
+        header('Content-Disposition: ' . $cfg['disposition']
+             . '; filename="' . basename($cfg['file']) . '"');
+        header('Content-Length: ' . filesize($filepath));
+        readfile($filepath);
+        exit;
+    }
+    http_response_code(404);
+    exit('File not found');
+}
 
 // Route 0: Alias -> 301 redirect to canonical slug
 // Count the view on the alias itself so short-URL hits (e.g. /keeling)
