@@ -474,6 +474,11 @@ $static_files = [
         'mime'        => 'application/pdf',
         'disposition' => 'inline',
     ],
+    'IPCC-Bolin-Lies' => [
+        'file'        => 'Bert Bolin and the Foundational Fiction of IPCC Climate Attribution.pdf',
+        'mime'        => 'application/pdf',
+        'disposition' => 'inline',
+    ],
 ];
 
 // Guard: a static-file slug must not collide with a paper slug or an alias.
