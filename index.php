@@ -272,7 +272,7 @@ Hurst–Kolmogorov; falsification; Suess effect',
         'citation_volume'    => '',
         'citation_issue'     => '',
         'citation_firstpage' => '1',
-        'citation_lastpage'  => '15',
+        'citation_lastpage'  => '16',
         'citation_doi'       => '',
         'citation_publisher' => '',
         'citation_abstract'  => 'We develop a rigorous formal framework that defines the necessary and sufficient conditions for an abstract construct to serve as a useful probe of physical reality. Within this framework we prove the Physical Tether Theorem: an abstract construct A is a scientifically valid probe of physical reality PR if and only if A is tethered to PR by a unique induced quotientvalued operational mapping (equivalently, unique up to empirical-content symmetries).
