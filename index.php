@@ -9,6 +9,9 @@
 // Authors: first name first, semicolon-separated. e.g. "Jonathan Cohler; Willie Soon"
 // Status: "Preprint", "Under review", or "" (published)
 // sort_date: YYYY-MM-DD used for ordering only (most recent first)
+// lean_repos: optional list of Lean 4 formalization repo URLs. Each one gets a
+//   "λ Lean" badge. Live link only when the paper is viewable (public, or
+//   protected and unlocked in this browser); otherwise an inert badge.
 
 $papers = [
 
@@ -56,6 +59,7 @@ Weather Attribution (WWA)',
         'corresponding_email' => 'cohler@post.harvard.edu',
         'author_emails'       => 'cohler@post.harvard.edu',
         'password'            => 'extremeevent',
+        'lean_repos'          => ['https://github.com/cohler/wwa-lean'],
     ],
 
     'breakpoint' => [
@@ -104,56 +108,53 @@ structural break; Chow test; fossil-fuel attribution; CERES; TOA imbalance',
         'password'            => 'cgaaextension',
     ],
 
-    'bomb14c' => [
-        'citation_title'     => 'Fifty-Four Years of Atmospheric Bomb-Radiocarbon Decay Falsify the Central Assumptions of the IPCC Carbon-Cycle Framework',
+    'bomb14c-1' => [
+        'citation_title'     => 'Fifty-Four Years of Atmospheric Bomb-Radiocarbon Decay Falsify the Central Assumptions of the IPCC Carbon-Cycle Framework. Part I: Empirical Determination of the Atmospheric ¹⁴C Impulse Response and Direct Comparison with the IPCC Bern Framework',
         'authors'            => 'Jonathan Cohler; Willie Soon',
-        'citation_date'      => '2026-11-06',
-        'sort_date'          => '2026-11-06',
+        'citation_date'      => '2026-11-12',
+        'sort_date'          => '2026-11-12',
         'citation_year'      => '2026',
         'status'             => 'Under review',
         'citation_journal'   => '',
         'citation_volume'    => '',
         'citation_issue'     => '',
         'citation_firstpage' => '1',
-        'citation_lastpage'  => '111',
+        'citation_lastpage'  => '55',
         'citation_doi'       => '',
         'citation_publisher' => '',
-        'citation_abstract'  => 'The IPCC carbon-cycle framework projects future CO2 scenarios using the Bern impulse-response
-function, a multi-exponential parameterization. The atmospheric bomb radiocarbon record falsifies
-it. In the Hua et al. (2022) [55] global Δ¹⁴C compilation, the post-1965 bomb signal decays as
-a single exponential with 𝑒-folding time 𝜏_rel = 18.383 ± 0.015 yr, residual scatter 0.539‰ and
-explained variance 99.998% in the 32-point bias-corrected fit. Every published Bern function
-diverges from the observed decay within the first year. The analysis rests on three independent
-empirical measurements: 𝜏rel; the fitted amplitude 𝐴_32 = 709.115 ± 0.585‰ at 𝑡 = 1965; and
-the CO2 molecular residence time 𝜏res = 3.80 ± 0.12 yr from the Koutsoyiannis (2024a) [72]
-Refined Reservoir Routing fit to Mauna Loa and Barrow. Every other quantity is a first-principles
-consequence of these three and mass conservation, with no adjustable parameters. The cleaning
-is not curve fitting: the exponential form is established on the unaltered data (eight zonal fits,
-all 𝑅² > 99.6%) before any bias correction; plateau boundaries come from archival audit of Hua
-compilation events, confirmed by a first-principles smoothness criterion exceeded by factors of
-6–14. A single exponential is mathematically incompatible with any sum of distinct exponentials
-at any parameter setting (Vandermonde and Cauchy-Schwarz proof). The operator-equivalence
-theorem extends this exclusion from the isotopic decay to the CO2 mass impulse response, so no
-slow bulk-CO2 mode escapes the bound. One first-order mass-balance ODE connects 𝜏rel and 𝜏_res
-through the bridge equation, yielding 𝜙_slow = 0.203±0.006, confirmed to 0.74𝜎 by an independent
-two-box stratosphere-troposphere ODE (𝜙^2box_slow = 0.199 ± 0.008). The single-exponential shape
-requires the gross exchange rate constant while atmospheric CO2 grew 31.6%; 𝐹_nat/𝑀_a is stable to
-±0.4% year-to-year, and a Newey–West HAC regression of annual log-growth rates returns slope
-𝛽 = 0.980±0.042, not rejecting 𝛽 = 1 at 0.48𝜎; and 𝛿13C_I is stationary at −13.2‰ over the 1978–
-2022 instrumental window [73] and across a 500-year sclerosponge and Law Dome extension;
-its 1977–1996 Francey trend is +2.94‰/decade at 𝑝 < 10−4 against a Hurst-Kolmogorov null,
-opposite to fossil dominance [41, 21]. Jungfraujoch measurements 2020–2024 [75] confirm the
-extrapolated exponential. The atmospheric CO2 rise is dominated by non-fossil-fuel sources.
-The Bern parameterization and the long-conjectured “Suess effect” are both falsified by direct
-observation.',
-        'citation_keywords'  => 'carbon cycle; atmospheric mass balance; residence time; adjustment time; bomb-14C;
-Bern model; Suess effect; biospheric expansion; isotopic ratio relaxation',
+        'citation_abstract'  => 'The IPCC carbon-cycle framework projects future CO2 scenarios using the Bern impulse-response function, a multi-exponential parameterization. The atmospheric bomb radiocarbon record falsifies it directly. In the Hua et al. (2022) [24] global Δ¹⁴C compilation, every one of eight independent zonal and hemispheric single-exponential fits to the unaltered data yields R² > 99.6% with σ < 10.5‰, and the post-1965 global decay follows a single exponential with e-folding time τ_rel = 18.383 ± 0.015 yr, residual scatter 0.539‰ and explained variance 99.998% in the 32-point bias-corrected fit. The AR2, AR3, AR4, and AR5/AR6 Bern functions predict that 33%, 35%, 42%, and 48% respectively of a CO2 pulse remains airborne after 54 years; the observed value is 4.3%. The Bern functions diverge from the observed decay within the first year, by a factor of ∼10× at 54 years, and by factors of ∼90× at 100 years and ∼18,500× at 200 years. The hemispheric asymmetry τ_SH − τ_NH = 0.788 yr is a parameter-free consequence of Earth’s hemispheric ocean-area asymmetry, predicted to within 3% from one external flux-ratio constraint and one global bomb-¹⁴C anchor. The cleaning is bias subtraction, not curve fitting: the single-exponential shape is established empirically on the unaltered 55-point record before any correction; plateau boundaries come from an archival audit of documented Hua et al. (2022) [24] compilation events, confirmed independently by a first-principles smoothness criterion exceeded by factors of 6–14 in excluded stretches. Three non-overlapping windows of the cleaned record (Early 1967–1994, Middle 1998–2010, Late 2011–2019) recover the same τ within 0.05 yr. Independent high-precision Jungfraujoch measurements 2020–2024 [37], on a measurement chain unrelated to Hua et al. (2022) [24], extend the record five years past the 32-point fit window and lie on the extrapolated single exponential within ±5‰. Independent biological cross-confirmation from the Wassenaar et al. (2026) [64] Gatineau Park leaf archive gives a slope indistinguishable from the Jungfraujoch atmospheric rate. This is Part I of a two-part series. Part I establishes the empirical falsification by direct comparison. Part II [10] develops the mass-balance framework, proves the structural impossibility of any multi-exponential impulse response (Vandermonde, Cauchy–Schwarz, and operator-equivalence theorems), and applies the framework to the attribution of the industrial-era CO2 rise.',
+        'citation_keywords'  => 'carbon cycle; bomb-¹⁴C; Bern impulse-response function; Hua compilation; atmospheric decay; Jungfraujoch; compilation audit',
         'description'        => '',
-        'filename'           => 'bomb14c.pdf',
+        'filename'           => 'bomb14c-1.pdf',
         'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
         'corresponding_email' => 'cohler@post.harvard.edu',
         'author_emails'       => 'cohler@post.harvard.edu',
-        'password'            => 'radiocarbon',
+        'password'            => 'impulseresponse',
+    ],
+
+    'bomb14c-2' => [
+        'citation_title'     => 'Fifty-Four Years of Atmospheric Bomb-Radiocarbon Decay Falsify the Central Assumptions of the IPCC Carbon-Cycle Framework. Part II: Mass-Balance Framework, Structural Bern Exclusion, and Carbon-Cycle Attribution',
+        'authors'            => 'Jonathan Cohler; Willie Soon',
+        'citation_date'      => '2026-11-12',
+        'sort_date'          => '2026-11-12',
+        'citation_year'      => '2026',
+        'status'             => 'Under review',
+        'citation_journal'   => '',
+        'citation_volume'    => '',
+        'citation_issue'     => '',
+        'citation_firstpage' => '1',
+        'citation_lastpage'  => '67',
+        'citation_doi'       => '',
+        'citation_publisher' => '',
+        'citation_abstract'  => 'Part I of this series [21] established the empirical falsification of the IPCC Bern impulse-response function (IRF) by direct comparison with the atmospheric bomb-¹⁴C record: the observed Δ¹⁴C [51] decays as a single exponential at τ_rel = 18.383 ± 0.015 yr with R² = 99.998% in the 32-point bias-corrected fit, while every AR2 through AR6 Bern function diverges by factors of 10× to 18,500× at 54, 100, and 200 yr. Part II develops the first-principles framework in three steps. First, the tracer-versus-bulk fallacy is foreclosed at every level on which it has been mounted: chemical identity, air–sea gas-exchange operator, the local intensive Revelle factor, and operator equivalence at the mass-balance eigenvalue level. Second, a one-reservoir mass-balance ODE on atmospheric Δ¹⁴C, with gross inflow decomposed into fast-recycled and deep-mixed components, yields the bridge equation τ_rel = D̄ τ_res / φ̄_slow with φ̄_slow = 0.203 ± 0.006 from the Koutsoyiannis RRR residence time τ_res = 3.80 ± 0.12 yr [66]; an independent two-reservoir stratosphere–troposphere ODE yields φ_slow^2box = 0.199 ± 0.008 (agreeing at 0.74σ) with fast eigenvalue τ_fast = 3.08 ± 1.04 yr matching independent stratospheric turnover measurements. Third, the Vandermonde determinant and Cauchy–Schwarz upward-curvature theorems prove that no sum of exponentials with distinct decay rates can equal a single exponential, and the operator-equivalence theorem extends this from the isotopic decay to the bulk-CO2 mass impulse response, bounding any Bern-posited slow mode at one part in ∼1316 of the fit amplitude; the AR5/AR6 Bern permanent fraction exceeds this by a factor of ∼285. Applied to attribution: the single-exponential shape requires the gross exchange rate constant while atmospheric CO2 grew 31.6%; F_nat/M_a is stable to ±0.4% with Newey–West HAC slope β̂ = 0.980 ± 0.042, not rejecting β = 1 at 0.48σ; δ¹³C_I is stationary at −13.2‰ with a +2.94‰/decade recent-window trend opposite to fossil dominance [67, 38, 19]. The anthropogenic share of the deep-mixed leak is (21 ± 1)% and the non-fossil-fuel share (79 ± 1)%. The Bern parameterization and the long-conjectured “Suess effect” are both falsified.',
+        'citation_keywords'  => 'carbon cycle; atmospheric mass balance; residence time; adjustment time; Bern model; operator equivalence; Suess effect; biospheric expansion; isotopic ratio relaxation',
+        'description'        => '',
+        'filename'           => 'bomb14c-2.pdf',
+        'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA 02420, USA; Institute of Earth Physics and Space Science, 9400 Sopron, Hungary',
+        'corresponding_email' => 'cohler@post.harvard.edu',
+        'author_emails'       => 'cohler@post.harvard.edu',
+        'password'            => 'bernexclusion',
+        'lean_repos'          => ['https://github.com/cohler/asene-lean', 'https://github.com/cohler/oet-lean'],
     ],
 
     'window' => [
@@ -213,6 +214,7 @@ Hurst–Kolmogorov; falsification; Suess effect',
         'corresponding_email' => 'cohler@post.harvard.edu',
         'author_emails'       => 'cohler@post.harvard.edu',
         'password'            => 'vacuity',
+        'lean_repos'          => ['https://github.com/cohler/evai-lean'],
     ],
 
     'ehb' => [
@@ -290,6 +292,7 @@ Key Result: The GMST construct is physically meaningless.',
         'affiliations'        => 'Cohler & Associates, Inc., Lexington, MA, USA',
         'corresponding_email' => 'cohler@post.harvard.edu',
         'author_emails'       => 'cohler@post.harvard.edu',
+        'lean_repos'          => ['https://github.com/cohler/ptt-lean'],
     ],
 
     'co2' => [
@@ -444,6 +447,7 @@ $aliases = [
     'argo'   => 'argo-ohc',
     'grok3'  => 'grok-3-beta',
     'puppet' => 'puppeteers',
+    'bomb14c' => 'bomb14c-1',  // combined paper split into Part I and Part II
 ];
 
 // Guard: an alias key must not collide with a real paper slug, or it would
@@ -571,6 +575,41 @@ function set_unlock_cookie(string $slug): void {
         'samesite' => 'Lax',
         'secure'   => !empty($_SERVER['HTTPS']),
     ]);
+}
+
+// ── Lean-Formalization Badges ───────────────────────────────────────────────
+// Badge always shows if the paper has lean_repos. It is a live link only when
+// $viewable is true. A protected paper that is still locked gets an inert
+// <span>, so the badge cannot be used to route around the password.
+
+function lean_repos(array $paper): array {
+    $repos = $paper['lean_repos'] ?? [];
+    if (!is_array($repos)) $repos = [$repos];
+    return array_values(array_filter($repos, function($u) {
+        return is_string($u) && $u !== '';
+    }));
+}
+
+function render_lean_badges(array $paper, bool $viewable): string {
+    $repos = lean_repos($paper);
+    if (!$repos) return '';
+    $multi = count($repos) > 1;
+    $out = '';
+    foreach ($repos as $url) {
+        $name  = basename((string)parse_url($url, PHP_URL_PATH));
+        $label = 'λ Lean' . ($multi ? ' · ' . htmlspecialchars($name) : '');
+        if ($viewable) {
+            $out .= ' <a href="' . htmlspecialchars($url) . '" class="paper-status lean"'
+                  . ' target="_blank" rel="noopener"'
+                  . ' title="Machine-verified Lean 4 formalization: ' . htmlspecialchars($name) . ' (opens GitHub)">'
+                  . $label . '</a>';
+        } else {
+            $out .= ' <span class="paper-status lean lean-inert"'
+                  . ' title="Machine-verified Lean 4 formalization available. Unlock the paper to access the repository.">'
+                  . $label . '</span>';
+        }
+    }
+    return $out;
 }
 
 function format_pages(array $paper): string {
@@ -1094,6 +1133,16 @@ function render_head(string $title, string $description = '', ?array $paper = nu
     .paper-status.under-review { background: #0077b6; }
     .paper-status.peer-reviewed { background: #2d8f3f; }
     .paper-status.locked { background: #555; }
+    .paper-status.lean { background: #5b3cc4; }
+    a.paper-status.lean:hover { background: #46299e; text-decoration: none; }
+    .paper-status.lean-inert { background: #b3a7dd; cursor: default; }
+
+    .lean-note {
+        font-size: 0.9em; color: #444; background: #f4f1fc;
+        border-left: 3px solid #5b3cc4; padding: 10px 14px;
+        margin: 0 0 10px 0; border-radius: 0 4px 4px 0;
+    }
+    .lean-note .paper-status { margin-left: 0; margin-right: 4px; }
 
     .unlock-form { margin: 30px 0; }
     .unlock-form label { display: block; font-size: 0.95em; margin-bottom: 8px; color: #333; }
@@ -1307,7 +1356,8 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
                 &middot; <?= htmlspecialchars($pages_str) ?>
             <?php endif; ?>
             <span class="paper-status <?= htmlspecialchars($status_class) ?>"><?= htmlspecialchars($status_label) ?></span>
-            <span class="paper-status locked">🔒 Password required</span>
+            <span class="paper-status locked">🔒 Password required</span><?php echo render_lean_badges($paper, false), "
+"; ?>
         </div>
         <div class="paper-meta">
             <a href="/<?= $slug ?>/" class="btn btn-primary">Unlock</a>
@@ -1374,7 +1424,7 @@ function render_paper_card(string $slug, array $paper, array $counts, bool $link
             <?php if ($show_status): ?>
                 <?php $label = $status !== '' ? $status : 'Peer-reviewed'; ?>
                 <span class="paper-status <?= htmlspecialchars(strtolower(str_replace(' ', '-', $label))) ?>"><?= htmlspecialchars($label) ?></span>
-            <?php endif; ?>
+            <?php endif; echo render_lean_badges($paper, is_unlocked($slug, $paper)); ?>
         </div>
 
         <div class="paper-meta">
@@ -1426,6 +1476,11 @@ function render_listing(array $papers): void {
     <h1>Jonathan Cohler</h1>
     <h2>peer-reviewed, under review, and preprints</h2>
 
+    <div class="lean-note">
+        <span class="paper-status lean">λ Lean</span>
+        Papers carrying this badge have a companion Lean 4 repository in which the paper's theorems are formally stated and machine-verified by the Lean proof checker. Click the badge to open the repository. For password-protected papers the badge becomes a link once the paper is unlocked.
+    </div>
+
     <?php foreach ($papers as $slug => $paper): ?>
         <?php $counts = get_counts($slug); ?>
         <?php render_paper_card($slug, $paper, $counts, true, true); ?>
@@ -1445,7 +1500,12 @@ function render_landing(string $slug, array $paper, array $counts): void {
 ?>
     <a href="/" class="back-link">&#8592; All papers</a>
 
-    <?php render_paper_card($slug, $paper, $counts, false, true); ?>
+    <?php render_paper_card($slug, $paper, $counts, false, true); if (lean_repos($paper)): ?>
+        <div class="lean-note">
+            <strong>λ Lean:</strong> this paper's theorems are machine-verified in Lean 4. Repository:
+            <?php foreach (lean_repos($paper) as $i => $url): ?><?= $i ? ', ' : ' ' ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener"><?= htmlspecialchars(basename((string)parse_url($url, PHP_URL_PATH))) ?></a><?php endforeach; ?>
+        </div>
+    <?php endif; ?>
     <?php if ($paper['citation_abstract']): ?>
         <div class="abstract">
             <span class="abstract-label">Abstract: </span>
@@ -1489,9 +1549,15 @@ function render_unlock_page(string $slug, array $paper, string $error): void {
                 &middot; <?= htmlspecialchars($pages_str) ?>
             <?php endif; ?>
             <span class="paper-status <?= htmlspecialchars($status_class) ?>"><?= htmlspecialchars($status_label) ?></span>
-            <span class="paper-status locked">🔒 Password required</span>
+            <span class="paper-status locked">🔒 Password required</span><?php echo render_lean_badges($paper, false), "
+"; ?>
         </div>
 
+<?php if (lean_repos($paper)): ?>
+        <div class="lean-note">
+            <strong>λ Lean:</strong> this paper's theorems are machine-verified in Lean 4. The repository link becomes active once the paper is unlocked.
+        </div>
+<?php endif; ?>
         <form class="unlock-form" method="POST" action="/<?= htmlspecialchars($slug) ?>/">
             <label for="password">Enter password to view this paper:</label>
             <input type="password" id="password" name="password" autofocus autocomplete="current-password">
